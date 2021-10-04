@@ -8,6 +8,11 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+
+    public function specialization() {
+        return $this->belongsToMany('App\Specialization');
+    }
+
     use Notifiable;
 
     /**

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use App\Specialization;
 use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
@@ -114,24 +115,50 @@ class UserSeeder extends Seeder
                 "profile_pic" => "https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png",
                 "cv" => "",
             ],
-            
         ];
 
-        foreach ($doctorArray as $doctor) {
+        $specializationArray = [
+            "Odontoiatria",
+            "Oncologia",
+            "Cardiologia",
+            "Gastroenterologia",
+            "Osteopatia",
+            "Psicologia",
+            "Anestesia",
+            "Neurologia",
+            "Neuro-chirurgia",
+            "Urologia",
+            "Ginecologia",
+            "Dermatologia",
+            "Chirurgia",
+            "Chirurgia Estetica",
+            "Psichiatria",
+            "Pediatria",
+            "Ematologia"
+        ];
 
-            $doctorObject = new User();
+        $listOfSpecializationId = [];
 
-            $doctorObject->name=$doctor['name'];
-            $doctorObject->lastname=$doctor['lastname'];
-            $doctorObject->email=$doctor['email'];
-            $doctorObject->password=$doctor['password'];
-            $doctorObject->address=$doctor['address'];
-            $doctorObject->qualification=$doctor['qualification'];
-            $doctorObject->profile_pic=$doctor['profile_pic'];
-            $doctorObject->cv=$doctor['cv'];
-
-            $doctorObject->save();
+        foreach ($specializationArray as $specialization) {
+            $specializationObject = new Specialization();
+            $specializationObject->name = $specialization;
+            $specializationObject->save();
+            $listOfSpecializationId[] = $specializationObject->id;
         }
 
+        foreach ($doctorArray as $doctor) {
+            $doctorObject = new User();
+            $doctorObject->name = $doctor['name'];
+            $doctorObject->lastname = $doctor['lastname'];
+            $doctorObject->email = $doctor['email'];
+            $doctorObject->password = $doctor['password'];
+            $doctorObject->address = $doctor['address'];
+            $doctorObject->qualification = $doctor['qualification'];
+            $doctorObject->profile_pic = $doctor['profile_pic'];
+            $doctorObject->cv = $doctor['cv'];
+            $doctorObject->save();
+            $specializationId = array_rand(array_flip($listOfSpecializationId), 1);
+            $doctorObject->specialization()->sync($specializationId);
+        }
     }
 }
