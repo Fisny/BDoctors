@@ -5,6 +5,7 @@ use App\User;
 use App\Specialization;
 use App\Sponsorship;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 
 class UserSeeder extends Seeder
 {
@@ -144,25 +145,25 @@ class UserSeeder extends Seeder
                 "price" => 2.99,
                 "description" => "24 ore di sponsorizzazione",
                 "duration" => 24,
-                "name" => "Bronzo"
+                "name" => "Platinum"
             ],
             [
                 "price" => 5.99,
                 "description" => "72 ore di sponsorizzazione",
                 "duration" => 72,
-                "name" => "Argento"
+                "name" => "Silver"
             ],
             [
                 "price" => 9.99,
                 "description" => "144 ore di sponsorizzazione",
                 "duration" => 144,
-                "name" => "Oro"
+                "name" => "Gold"
             ]
         ];
 
         $listOfSponsorshipId = [];
 
-        foreach($sponsorshipArray as $sponsorship) {
+        foreach ($sponsorshipArray as $sponsorship) {
             $sponsorshipObject = new Sponsorship();
             $sponsorshipObject->price = $sponsorship['price'];
             $sponsorshipObject->description = $sponsorship['description'];
@@ -196,15 +197,17 @@ class UserSeeder extends Seeder
             $doctorObject->save();
             $specializationId = array_rand(array_flip($listOfSpecializationId), rand(1, 3));
             $doctorObject->specialization()->sync($specializationId);
-            
+
             $sponsorshipId = array_rand(array_flip($listOfSponsorshipId), 1);
-            $doctorObject->sponsorship()->sync($sponsorshipId,'2021');
+            $sponsorshipChosen = Sponsorship::where('id', $sponsorshipId)->first();
+            $created_at = Carbon::now();
+            $date_end = Carbon::now()->addHour($sponsorshipChosen->duration);
+            $doctorObject->sponsorship()->attach($doctorObject, [
+                'sponsorship_id' => $sponsorshipId,
+                'user_id' => $doctorObject->id,
+                'date_end' => $date_end,
+                'created_at' => $created_at
+            ]);
         }
-
-
-
-
     }
-
-
 }

@@ -21,7 +21,7 @@ class CreateSponsorshipUserTable extends Migration
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('sponsorship_id')->references('id')->on('sponsorships')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('date_end')->nullable();
+            $table->dateTime('date_end')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
