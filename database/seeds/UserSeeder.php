@@ -7,6 +7,7 @@ use App\Sponsorship;
 use App\Review;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
+use Faker\Generator as Faker;
 
 class UserSeeder extends Seeder
 {
@@ -15,7 +16,7 @@ class UserSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         $doctorArray = [
             [
@@ -231,17 +232,9 @@ class UserSeeder extends Seeder
             $doctorObject->qualification = $doctor['qualification'];
             $doctorObject->profile_pic = $doctor['profile_pic'];
             $doctorObject->cv = $doctor['cv'];
-
-            // for($i=0; $i= rand(1,3); $i++ ){
-            //     $reviewObj = new Review();
-            //     $reviewObj->user_name =  $review['user_name'];
-            //     $reviewObj->date =  $review['date'];
-            //     $reviewObj->text =  $review['text'];
-            //     $reviewObj->avatar =  $review['avatar'];
-            //     $doctorObject->message()->save();
-            // }
-
             $doctorObject->save();
+
+
             $specializationId = array_rand(array_flip($listOfSpecializationId), rand(1, 3));
             $doctorObject->specialization()->sync($specializationId);
 
@@ -255,6 +248,18 @@ class UserSeeder extends Seeder
                 'date_end' => $date_end,
                 'created_at' => $created_at
             ]);
+
+            for ($i = 0; $i = rand(1, 3); $i++) {
+                // $index = rand(1, 4);
+                $review = $reviewsArray[1];
+                $reviewObj = new Review();
+                $reviewObj->user_name =  $review['user_name'];
+                $reviewObj->vote =  $review['vote'];
+                $reviewObj->text =  $review['text'];
+                $reviewObj->avatar =  $review['avatar'];
+                $reviewObj->user_id = $doctorObject['id'];
+                $reviewObj->save();
+            }
         }
     }
 }

@@ -15,10 +15,11 @@ class CreateSponsorshipsTable extends Migration
     {
         Schema::create('sponsorships', function (Blueprint $table) {
             $table->id();
-            $table->float('price', 4,2);
+            $table->float('price', 4, 2);
             $table->text('description');
             $table->integer('duration');
-            $table->string('name',50);
+            $table->string('name', 50);
+
             $table->timestamps();
         });
     }
