@@ -13,6 +13,10 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Specialization');
     }
 
+    public function sponsorship() {
+        return $this->belongsToMany('App\Sponsorship')->withPivot('date_end');
+    }
+
     use Notifiable;
 
     /**

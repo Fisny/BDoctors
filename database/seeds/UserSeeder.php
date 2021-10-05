@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\User;
 use App\Specialization;
+use App\Sponsorship;
 use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
@@ -137,6 +138,42 @@ class UserSeeder extends Seeder
             "Ematologia"
         ];
 
+
+        $sponsorshipArray = [
+            [
+                "price" => 2.99,
+                "description" => "24 ore di sponsorizzazione",
+                "duration" => 24,
+                "name" => "Bronzo"
+            ],
+            [
+                "price" => 5.99,
+                "description" => "72 ore di sponsorizzazione",
+                "duration" => 72,
+                "name" => "Argento"
+            ],
+            [
+                "price" => 9.99,
+                "description" => "144 ore di sponsorizzazione",
+                "duration" => 144,
+                "name" => "Oro"
+            ]
+        ];
+
+        $listOfSponsorshipId = [];
+
+        foreach($sponsorshipArray as $sponsorship) {
+            $sponsorshipObject = new Sponsorship();
+            $sponsorshipObject->price = $sponsorship['price'];
+            $sponsorshipObject->description = $sponsorship['description'];
+            $sponsorshipObject->duration = $sponsorship['duration'];
+            $sponsorshipObject->name = $sponsorship['name'];
+            $sponsorshipObject->save();
+            $listOfSponsorshipId[] = $sponsorshipObject->id;
+        }
+
+
+
         $listOfSpecializationId = [];
 
         foreach ($specializationArray as $specialization) {
@@ -159,6 +196,15 @@ class UserSeeder extends Seeder
             $doctorObject->save();
             $specializationId = array_rand(array_flip($listOfSpecializationId), rand(1, 3));
             $doctorObject->specialization()->sync($specializationId);
+            
+            $sponsorshipId = array_rand(array_flip($listOfSponsorshipId), 1);
+            $doctorObject->sponsorship()->sync($sponsorshipId,'2021');
         }
+
+
+
+
     }
+
+
 }
