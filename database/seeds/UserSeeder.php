@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\User;
 use App\Specialization;
 use App\Sponsorship;
+use App\Review;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 
@@ -184,6 +185,42 @@ class UserSeeder extends Seeder
             $listOfSpecializationId[] = $specializationObject->id;
         }
 
+        $reviewsArray = [
+            [
+                'user_name' => 'titti92',
+                'vote' => 2,
+                'text' => 'Poco professionale. Non ci tornerei.',
+                'avatar' => 'https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png'
+            ],
+            [
+                'user_name' => 'User',
+                'vote' => 5,
+                'text' => 'Mi sono trovato benissimo. Medico competente e disponibile.',
+                'avatar' => 'https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png'
+            ],
+            [
+                'user_name' => 'Davide',
+                'vote' => 4,
+                'text' => "Medico competente, peccato la parcella un po' troppo salata.",
+                'avatar' => 'https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png'
+            ],
+            [
+                'user_name' => 'Ottavio',
+                'vote' => 3,
+                'text' => 'Ho portato il mio gatto Bit pensando fosse un veterinario.',
+                'avatar' => 'https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png'
+            ],
+        ];
+
+        // foreach ($reviewsArray as $review) {
+        //     $reviewObj = new Review();
+        //     $reviewObj->user_name =  $review['user_name'];
+        //     $reviewObj->date =  $review['date'];
+        //     $reviewObj->text =  $review['text'];
+        //     $reviewObj->avatar =  $review['avatar'];
+        //     $reviewObj->save();
+        // }
+
         foreach ($doctorArray as $doctor) {
             $doctorObject = new User();
             $doctorObject->name = $doctor['name'];
@@ -194,6 +231,16 @@ class UserSeeder extends Seeder
             $doctorObject->qualification = $doctor['qualification'];
             $doctorObject->profile_pic = $doctor['profile_pic'];
             $doctorObject->cv = $doctor['cv'];
+
+            // for($i=0; $i= rand(1,3); $i++ ){
+            //     $reviewObj = new Review();
+            //     $reviewObj->user_name =  $review['user_name'];
+            //     $reviewObj->date =  $review['date'];
+            //     $reviewObj->text =  $review['text'];
+            //     $reviewObj->avatar =  $review['avatar'];
+            //     $doctorObject->message()->save();
+            // }
+
             $doctorObject->save();
             $specializationId = array_rand(array_flip($listOfSpecializationId), rand(1, 3));
             $doctorObject->specialization()->sync($specializationId);

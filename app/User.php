@@ -9,12 +9,19 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
 
-    public function specialization() {
+    public function specialization()
+    {
         return $this->belongsToMany('App\Specialization');
     }
 
-    public function sponsorship() {
+    public function sponsorship()
+    {
         return $this->belongsToMany('App\Sponsorship')->withPivot('date_end');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany('App\Review');
     }
 
     use Notifiable;
