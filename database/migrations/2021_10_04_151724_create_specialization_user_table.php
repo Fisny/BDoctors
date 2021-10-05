@@ -16,12 +16,11 @@ class CreateSpecializationUserTable extends Migration
         Schema::create('specialization_user', function (Blueprint $table) {
             $table->id();
 
-            
-            $table->unsignedBigInteger('specialization_id');
-            $table->foreign('specialization_id')->references('id')->on('users');
-            
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('specializations');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('specialization_id')->nullable();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('specialization_id')->references('id')->on('specializations')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

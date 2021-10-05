@@ -157,7 +157,7 @@ class UserSeeder extends Seeder
             $doctorObject->profile_pic = $doctor['profile_pic'];
             $doctorObject->cv = $doctor['cv'];
             $doctorObject->save();
-            $specializationId = array_rand(array_flip($listOfSpecializationId), 1);
+            $specializationId = array_rand(array_flip($listOfSpecializationId), rand(1, 3));
             $doctorObject->specialization()->sync($specializationId);
         }
     }
