@@ -231,17 +231,13 @@ class UserSeeder extends Seeder
             $doctorObject->qualification = $doctor['qualification'];
             $doctorObject->profile_pic = $doctor['profile_pic'];
             $doctorObject->cv = $doctor['cv'];
+            
 
-            // for($i=0; $i= rand(1,3); $i++ ){
-            //     $reviewObj = new Review();
-            //     $reviewObj->user_name =  $review['user_name'];
-            //     $reviewObj->date =  $review['date'];
-            //     $reviewObj->text =  $review['text'];
-            //     $reviewObj->avatar =  $review['avatar'];
-            //     $doctorObject->message()->save();
-            // }
+            
 
             $doctorObject->save();
+
+            
             $specializationId = array_rand(array_flip($listOfSpecializationId), rand(1, 3));
             $doctorObject->specialization()->sync($specializationId);
 
@@ -255,6 +251,16 @@ class UserSeeder extends Seeder
                 'date_end' => $date_end,
                 'created_at' => $created_at
             ]);
+
+
+                $reviewObj = new Review();
+                $reviewObj->user_name =  $reviewsArray[1]['user_name'];
+                $reviewObj->vote =  $reviewsArray[1]['vote'];
+                $reviewObj->text = $reviewsArray[1]['text'];
+                $reviewObj->avatar =  $reviewsArray[1]['avatar'];
+                $reviewObj->user_id = $doctorObject->id;
+                $reviewObj->save();
+
         }
     }
 }

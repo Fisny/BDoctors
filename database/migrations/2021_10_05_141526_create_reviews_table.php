@@ -20,6 +20,9 @@ class CreateReviewsTable extends Migration
             $table->smallInteger('vote');
             $table->text('text')->nullable();
             $table->text('avatar')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+
 
             $table->timestamps();
         });
