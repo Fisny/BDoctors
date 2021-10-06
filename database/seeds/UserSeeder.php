@@ -186,41 +186,6 @@ class UserSeeder extends Seeder
             $listOfSpecializationId[] = $specializationObject->id;
         }
 
-        $reviewsArray = [
-            [
-                'user_name' => 'titti92',
-                'vote' => 2,
-                'text' => 'Poco professionale. Non ci tornerei.',
-                'avatar' => 'https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png'
-            ],
-            [
-                'user_name' => 'User',
-                'vote' => 5,
-                'text' => 'Mi sono trovato benissimo. Medico competente e disponibile.',
-                'avatar' => 'https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png'
-            ],
-            [
-                'user_name' => 'Davide',
-                'vote' => 4,
-                'text' => "Medico competente, peccato la parcella un po' troppo salata.",
-                'avatar' => 'https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png'
-            ],
-            [
-                'user_name' => 'Ottavio',
-                'vote' => 3,
-                'text' => 'Ho portato il mio gatto Bit pensando fosse un veterinario.',
-                'avatar' => 'https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png'
-            ],
-        ];
-
-        // foreach ($reviewsArray as $review) {
-        //     $reviewObj = new Review();
-        //     $reviewObj->user_name =  $review['user_name'];
-        //     $reviewObj->date =  $review['date'];
-        //     $reviewObj->text =  $review['text'];
-        //     $reviewObj->avatar =  $review['avatar'];
-        //     $reviewObj->save();
-        // }
 
         foreach ($doctorArray as $doctor) {
             $doctorObject = new User();
@@ -240,25 +205,21 @@ class UserSeeder extends Seeder
 
             $sponsorshipId = array_rand(array_flip($listOfSponsorshipId), 1);
             $sponsorshipChosen = Sponsorship::where('id', $sponsorshipId)->first();
-            $created_at = Carbon::now();
+            // $created_at = Carbon::now();
             $date_end = Carbon::now()->addHour($sponsorshipChosen->duration);
-            $doctorObject->sponsorship()->attach($doctorObject, [
-                'sponsorship_id' => $sponsorshipId,
-                'user_id' => $doctorObject->id,
+            $doctorObject->sponsorship()->attach($sponsorshipId, [
                 'date_end' => $date_end,
-                'created_at' => $created_at
             ]);
 
-            for ($i = 0; $i = rand(1, 3); $i++) {
-                // $index = rand(1, 4);
-                $review = $reviewsArray[1];
-                $reviewObj = new Review();
-                $reviewObj->user_name =  $review['user_name'];
-                $reviewObj->vote =  $review['vote'];
-                $reviewObj->text =  $review['text'];
-                $reviewObj->avatar =  $review['avatar'];
-                $reviewObj->user_id = $doctorObject['id'];
-                $reviewObj->save();
+
+
+            for ($i = 0; $i < rand(0, 10); $i++) {
+                $review = new Review();
+                $review->user_name = $faker->name();
+                $review->vote = rand(1, 5);
+                $review->text = $faker->paragraph(rand(1, 5));
+                $review->avatar = "https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png";
+                $doctorObject->reviews()->save($review);
             }
         }
     }

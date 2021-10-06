@@ -16,7 +16,7 @@ class User extends Authenticatable
 
     public function sponsorship()
     {
-        return $this->belongsToMany('App\Sponsorship')->withPivot('date_end');
+        return $this->belongsToMany('App\Sponsorship')->withTimestamps()->withPivot('date_end');
     }
 
     public function reviews()
