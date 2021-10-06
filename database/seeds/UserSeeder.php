@@ -5,6 +5,7 @@ use App\User;
 use App\Specialization;
 use App\Sponsorship;
 use App\Review;
+use App\Message;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 use Faker\Generator as Faker;
@@ -220,6 +221,16 @@ class UserSeeder extends Seeder
                 $review->text = $faker->paragraph(rand(1, 5));
                 $review->avatar = "https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png";
                 $doctorObject->reviews()->save($review);
+            }
+
+            for ($i = 0; $i < rand(0, 5); $i++) {
+                $message = new Message();
+                $message->name = $faker->firstName();
+                $message->lastname = $faker->lastName();
+                $message->email = $faker->email();
+                $message->text = $faker->paragraph(rand(3, 6));
+                $message->avatar = "https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png";
+                $doctorObject->messages()->save($message);
             }
         }
     }
