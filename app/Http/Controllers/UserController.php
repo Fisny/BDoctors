@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Specialization;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -19,8 +21,9 @@ class UserController extends Controller
 
     public function index()
     {
-        $users= User::all();
-        return view('users.index', compact('users'));
+        $users = User::all();
+        $specializations = Specialization::all();
+        return view('users.index', compact('users', 'specializations'));
     }
 
     /**
@@ -30,7 +33,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        $specializations = Specialization::all();
+        return view('users.create', compact('specializations'));
     }
 
     /**
@@ -52,7 +56,7 @@ class UserController extends Controller
 
         //questa funzione permette il passaggio della chiave valore e il salvataggio
         $this->fillAndSave($user, $data);
-        
+
         $user->specialization()->sync($data['specializations']);
 
         return redirect()->route('user.show', $user);
@@ -67,7 +71,6 @@ class UserController extends Controller
     public function show(User $user)
     {
         return view('users.show', compact('user'));
-        
     }
 
     /**
@@ -78,7 +81,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('users.edit', compact('user'));
+        $specializations = Specialization::all();
+        return view('users.edit', compact('user', 'specializations'));
     }
 
     /**
@@ -95,6 +99,8 @@ class UserController extends Controller
         $data = $request->all();
 
         $this->fillAndSave($user, $data);
+
+        $user->specialization()->sync($data['specializations']);
 
         return redirect()->route('users.show', $user);
     }
@@ -118,10 +124,10 @@ class UserController extends Controller
             "lastname" => "required|string|max:50",
             "email" => "required|email",
             "password" => "required|confirmed|min:6|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'])",
-            "address"=> "required|string|min:5",
+            "address" => "required|string|min:5",
             "qualification" => "required|string",
-            "profile_pic" => "url",
-            "cv"=> "url",
+            "profile_pic" => "image",
+            "cv" => "url",
             "specializations" => "required"
         ]);
     }
