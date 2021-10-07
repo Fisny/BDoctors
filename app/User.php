@@ -5,9 +5,11 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
+    protected $with = ['specialization', 'reviews', 'messages', 'sponsorship'];
 
     public function specialization()
     {
@@ -16,7 +18,8 @@ class User extends Authenticatable
 
     public function sponsorship()
     {
-        return $this->belongsToMany('App\Sponsorship')->withTimestamps()->withPivot('date_end');
+        $currentDate = Carbon::now();
+        return $this->belongsToMany('App\Sponsorship')->withTimestamps()->wherePivot('date_end', '>=', $currentDate);;
     }
 
     public function reviews()

@@ -206,7 +206,6 @@ class UserSeeder extends Seeder
 
             $sponsorshipId = array_rand(array_flip($listOfSponsorshipId), 1);
             $sponsorshipChosen = Sponsorship::where('id', $sponsorshipId)->first();
-            // $created_at = Carbon::now();
             $date_end = Carbon::now()->addHour($sponsorshipChosen->duration);
             $doctorObject->sponsorship()->attach($sponsorshipId, [
                 'date_end' => $date_end,
