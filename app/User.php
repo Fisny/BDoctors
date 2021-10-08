@@ -19,7 +19,7 @@ class User extends Authenticatable
     public function sponsorship()
     {
         $currentDate = Carbon::now();
-        return $this->belongsToMany('App\Sponsorship')->withTimestamps()->wherePivot('date_end', '>=', $currentDate);;
+        return $this->belongsToMany('App\Sponsorship')->withTimestamps()->wherePivot('date_end', '>=', $currentDate);
     }
 
     public function reviews()

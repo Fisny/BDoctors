@@ -10,6 +10,21 @@ use App\User;
 
 class DoctorsController extends Controller
 {
+    public function filter($id)
+    {
+        $filteredDoctors = User::whereHas('specialization', function ($e) use ($id) {
+            $e->where('specialization_id', $id);
+        })->paginate(8);
+        return response()->json($filteredDoctors);
+    }
+
+    // public function filter($word)
+    // {
+    //     $filteredDoctors = User::whereHas('specialization', function ($e) use ($word) {
+    //         $e->where('specialization_id', '%' . $word . '%');
+    //     })->paginate(8);
+    //     return response()->json($filteredDoctors);
+    // }
 
     public function allDoctors()
     {
@@ -25,15 +40,9 @@ class DoctorsController extends Controller
     }
 
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        $doctor = User::where('id', $id)->first();
+        return response()->json($doctor);
     }
 }

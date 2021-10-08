@@ -24,4 +24,6 @@ Route::namespace('Api')->group(function () {
 
     Route::get('sponsored', 'DoctorsController@getSponsoredDoctors');
     Route::get('alldoctors', 'DoctorsController@allDoctors');
+    Route::get('doctors/{id}', 'DoctorsController@show');
+    Route::get('doctors/filter/{id}/', 'DoctorsController@filter');
 });
