@@ -2333,7 +2333,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       doctors: [],
-      number: 0
+      number: 0,
+      arrayLength: 0
     };
   },
   methods: {
@@ -2344,9 +2345,11 @@ __webpack_require__.r(__webpack_exports__);
         _this.doctors = response.data;
       });
     },
-    randomNumber: function randomNumber() {
-      this.number = Math.floor(Math.random() * (16 - 1 + 1)) + 1;
-      return this.doctors['specializations'][this.number]['name']; // return this.doctors['spacializations'][1]['name'];
+    randomSpecializations: function randomSpecializations() {
+      this.arrayLength = this.doctors['specializations'].length; // console.log(this.arrayLength);
+
+      this.number = Math.floor(Math.random() * (this.arrayLength - 1)) + 1;
+      return this.doctors['specializations'][this.number]['name'];
     }
   }
 });
@@ -38722,7 +38725,7 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
             _c("h5", { staticClass: "card-title" }, [
-              _vm._v(_vm._s(_vm.randomNumber()))
+              _vm._v(_vm._s(_vm.randomSpecializations()))
             ]),
             _vm._v(" "),
             _c("p", { staticClass: "card-text" }, [

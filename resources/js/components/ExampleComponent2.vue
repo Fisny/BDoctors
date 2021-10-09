@@ -6,7 +6,7 @@
             <div class="card">
                 <h5 class="card-header">{{doctor.qualification}} {{doctor.name}} {{doctor.lastname}}</h5>
                 <div class="card-body">
-                    <h5 class="card-title">{{randomNumber()}}</h5>
+                    <h5 class="card-title">{{randomSpecializations()}}</h5>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
@@ -24,7 +24,8 @@
         data(){
             return{
                 doctors:[],
-                number:0
+                number:0,
+                arrayLength:0
             }
         },
         methods:{
@@ -33,11 +34,13 @@
                     this.doctors=response.data
                 });
             },
-            randomNumber : function(){
-                this.number = Math.floor(Math.random() * (16 - 1 + 1)) + 1;
+            randomSpecializations : function(){
+                this.arrayLength=this.doctors['specializations'].length;
+                // console.log(this.arrayLength);
+                this.number = Math.floor(Math.random() * (this.arrayLength-1)) + 1;
                 return this.doctors['specializations'][this.number]['name'];
                 
-                // return this.doctors['spacializations'][1]['name'];
+        
                 
             }
         }
