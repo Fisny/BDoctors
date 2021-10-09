@@ -9,6 +9,8 @@ use Carbon\Carbon;
 
 class User extends Authenticatable
 {
+    //imposta come predefinito il metodo with
+    //ogni record user mostrerà anche i dati delle relazioni specificate
     protected $with = ['specialization', 'reviews', 'messages', 'sponsorship'];
 
     public function specialization()
@@ -18,6 +20,7 @@ class User extends Authenticatable
 
     public function sponsorship()
     {
+        //wherePivot definisce come predefinita per la funzione sponsorship la query che filtra le sponsorship attive
         $currentDate = Carbon::now();
         return $this->belongsToMany('App\Sponsorship')->withTimestamps()->wherePivot('date_end', '>=', $currentDate);
     }

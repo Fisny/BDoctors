@@ -26,4 +26,7 @@ Route::namespace('Api')->group(function () {
     Route::get('alldoctors', 'DoctorsController@allDoctors');
     Route::get('doctors/{id}', 'DoctorsController@show');
     Route::get('doctors/filter/{id}/', 'DoctorsController@filter');
+    Route::get('specializations', 'DataController@specializationsList');
+    Route::get('sponsorship', 'DataController@sponsorshipsList');
+    Route::post('message', 'MessageController@store');
 });

@@ -15,13 +15,13 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            
+
             $table->string('name', 50);
             $table->string('lastname', 50);
-            $table->string('email', 255); 
-            $table->text('text'); 
-            $table->text('avatar')->nullable();;
-            
+            $table->string('email', 255);
+            $table->text('text');
+            $table->text('avatar')->nullable();
+
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
@@ -39,12 +39,3 @@ class CreateMessagesTable extends Migration
         Schema::dropIfExists('messages');
     }
 }
-
-
-
-
-
-
-
-
-

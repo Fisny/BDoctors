@@ -10,6 +10,7 @@ use App\User;
 
 class DoctorsController extends Controller
 {
+    //api get restituisce la lista di medicii con la specializzazione selezionata(tramite id)
     public function filter($id)
     {
         $filteredDoctors = User::whereHas('specialization', function ($e) use ($id) {
@@ -26,13 +27,15 @@ class DoctorsController extends Controller
     //     return response()->json($filteredDoctors);
     // }
 
+
+    //api get restituisce la lista completa di medici, in ordine alfabetico
     public function allDoctors()
     {
         $allDoctors = User::orderBy('lastname')->get();;
         return response()->json($allDoctors);
     }
 
-
+    //api get restituisce la lista dei medici con sponsorizzazioni attive
     public function getSponsoredDoctors()
     {
         $sponsoredDoctors = User::has('sponsorship')->get();
