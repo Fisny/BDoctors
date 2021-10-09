@@ -10,14 +10,22 @@ use App\User;
 
 class DoctorsController extends Controller
 {
-    //api get restituisce la lista di medicii con la specializzazione selezionata(tramite id)
+    //api get restituisce la lista di medici con la specializzazione selezionata(tramite id)
     public function filter($id)
     {
-        $filteredDoctors = User::whereHas('specialization', function ($e) use ($id) {
+        //medici senza sponsorizzazioni attive
+        $filteredDoctors2 = User::whereHas('specialization', function ($e) use ($id) {
             $e->where('specialization_id', $id);
-        })->paginate(8);
-        return response()->json($filteredDoctors);
+        })->whereDoesntHave('sponsorship'); //nota bene: se metti il get() non funge
+
+        //medici con sponsorizzazioni attive +(union) medici senza
+        $filteredDoctors1 = User::whereHas('specialization', function ($e) use ($id) {
+            $e->where('specialization_id', $id);
+        })->has('sponsorship')->union($filteredDoctors2)->paginate(6);
+
+        return response()->json($filteredDoctors1);
     }
+
 
     // public function filter($word)
     // {
