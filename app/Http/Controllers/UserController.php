@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Specialization;
-use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+use App\User;
+use App\Specialization;
+use App\Message;
+
 
 class UserController extends Controller
 {
@@ -116,6 +120,7 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('users.index');
     }
+
 
     private function customValidate($request)
     {

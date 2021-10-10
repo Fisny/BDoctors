@@ -30,5 +30,5 @@ Route::namespace('Api')->group(function () {
     Route::get('sponsorship', 'DataController@sponsorshipsList');
     Route::post('message/send', 'MessageController@store');
     Route::post('review/post', 'ReviewController@store');
-    Route::delete('review/{id}', 'ReviewController@destroy');
+    Route::delete('message/{id}', 'MessageController@destroy');
 });

@@ -40,14 +40,4 @@ class ReviewController extends Controller
             'message' => $newReview
         ]);
     }
-
-    //api delete, cancella la recensione con id selezionato
-    public function destroy($id)
-    {
-        $review = Review::find($id);
-        $review->delete();
-        return response()->json([
-            'response' => 'success'
-        ]);
-    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('users', UserController::class);
+//rotte di UserController
+Route::resource('users', 'UserController');
+
+//rotte del MessageController
+Route::get('/messages/user', 'MessageController@showMessages')->name('messages')->middleware('auth');
+Route::delete('/messages/{message}/delete', 'MessageController@destroy')->middleware('auth');

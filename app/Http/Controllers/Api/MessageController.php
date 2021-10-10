@@ -42,4 +42,14 @@ class MessageController extends Controller
             'message' => $newMessage
         ]);
     }
+
+    //api delete, cancella il messagio con id selezionato
+    public function destroy($id)
+    {
+        $message = Message::find($id);
+        $message->delete();
+        return response()->json([
+            'response' => 'success'
+        ]);
+    }
 }
