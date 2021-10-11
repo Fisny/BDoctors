@@ -1,11 +1,13 @@
 
 <template>
     <div class="container">
-        <div v-for="specialization in specializations" :key="specialization.id" class="test">
-            <div id="example-2">
-                <button v-on:click="startFilter([specialization.id])">{{specialization.name}}</button>
+            <div class="filterContainer">
+                <div v-for="specialization in specializations" :key="specialization.id" class="test">
+                    <div id="example-2">
+                        <button v-on:click="startFilter([specialization.id])">{{specialization.name}}</button>
+                    </div>
+                </div>
             </div>
-        </div>
         <div v-for="doctor in doctors" :key="doctor.id" class="test">
 
             <div class="card">
