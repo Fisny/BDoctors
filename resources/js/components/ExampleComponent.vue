@@ -1,60 +1,73 @@
-
 <template>
     <div class="container">
-            <div class="filterContainer">
-                <div v-for="specialization in specializations" :key="specialization.id" class="test">
-                    <div id="example-2">
-                        <button v-on:click="startFilter([specialization.id])">{{specialization.name}}</button>
-                    </div>
+
+        <!-- TITOLO -->
+        <div class="search-title">
+        Trova il medico perfetto per te<span>.</span>
+        </div>
+
+        <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE -->
+        <div class="filter-container">
+            <div v-for="specialization in specializations" :key="specialization.id" class="test">
+                <div id="example-2">
+                    <button v-on:click="startFilter([specialization.id])">{{ specialization.name }}</button>
                 </div>
             </div>
-        <div v-for="doctor in doctors" :key="doctor.id" class="test">
+        </div>
 
+        <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
+        <div v-for="doctor in doctors" :key="doctor.id" class="test">
             <div class="card">
-                <h5 class="card-header">{{doctor.qualification}} {{doctor.name}} {{doctor.lastname}}</h5>
+                <h5 class="card-header">{{ doctor.qualification }} {{ doctor.name }} {{ doctor.lastname }}</h5>
                 <div class="card-body">
                     <div v-for="specialization in doctor.specialization" :key="specialization.id" class="test">
-                        <h5 class="card-title">Specialista in {{specialization.name}}</h5>
+                        <h5 class="card-title">Specialista in {{ specialization.name }}</h5>
                     </div>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                     <a href="#" class="btn btn-primary">Visita il profilo</a>
                 </div>
             </div>
-
         </div>
     </div>
 </template>
+
 <script>
-    export default {
-        mounted() {
-            this.getDoctors(),
-            this.getSpecializations();
-        },  
-        data(){
-            return{
-                doctors:[],
-                specializations:[],
-                number:0,
-                arrayLength:0
-            }
-        },
-        methods:{
-                getSpecializations(){
-                axios.get('http://127.0.0.1:8000/api/specializations').then((response)=>{
-                    this.specializations=response.data
-                });
-            },
-            getDoctors(){
-                axios.get('http://127.0.0.1:8000/api/sponsored/').then((response)=>{
-                    this.doctors=response.data
-                });
-            },
-            startFilter : function(id){
-                axios.get('http://127.0.0.1:8000/api/doctors/filter/'+id).then((response)=>{
-                this.doctors=response.data.data});
-            }
-        }
-}
+export default {
+  mounted() {
+    this.getDoctors(), this.getSpecializations();
+  },
+  data() {
+    return {
+      doctors: [],
+      specializations: [],
+      number: 0,
+      arrayLength: 0,
+    };
+  },
+  methods: {
+    // Stampa lista sponsorizzazioni
+    getSpecializations() {
+      axios
+        .get("http://127.0.0.1:8000/api/specializations")
+        .then((response) => {
+          this.specializations = response.data;
+        });
+    },
+    // Stampa dei medici con sponsorizzazione attiva
+    getDoctors() {
+      axios.get("http://127.0.0.1:8000/api/sponsored/").then((response) => {
+        this.doctors = response.data;
+      });
+    },
+    // Ricerca medici per specializzazione
+    startFilter: function (id) {
+      axios
+        .get("http://127.0.0.1:8000/api/doctors/filter/" + id)
+        .then((response) => {
+          this.doctors = response.data.data;
+        });
+    },
+  },
+};
 </script>
 
 <style lang="sass" scooped>
