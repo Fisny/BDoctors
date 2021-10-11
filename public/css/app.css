@@ -12338,41 +12338,46 @@ body {
   background-color: #c4fff9;
 }
 
-.profile_picture {
+.show-column {
+  background-color: white;
+  border: 2px solid #07beb8;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.show-column .profile_picture {
   max-width: 150px;
   max-height: 150px;
   border: 2px solid #07beb8;
 }
 
-.rating {
+.show-column .rating {
   color: gold;
   font-size: 20px;
 }
 
-.show-column {
-  background-color: white;
-  border: 2px solid #07beb8;
-  border-radius: 10px;
+.contacts {
+  margin-right: 10px;
 }
 
 .reviews {
   height: 600px;
 }
 
-.box_review {
+.reviews .box_review {
   height: 38px;
   width: 100%;
   margin-bottom: 100px;
 }
 
-.new_review {
+.reviews .new_review {
   height: 100%;
   width: 100%;
   border: 1px solid #07beb8;
   transition: all 0.5s ease;
 }
 
-.new_review:focus {
+.reviews .new_review:focus {
   height: 6em;
   border: 1px solid #07beb8;
 }

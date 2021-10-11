@@ -16,7 +16,7 @@
             rating (optional)
         --}}
         <div class="row flex-wrap">
-            <div class="col-3 show-column contacts">
+            <div class="col-lg-3 col-xs-12 show-column contacts">
                 <div class="box_pp">
                     <img class="profile_picture" src="{{$user->profile_pic}}" alt="{{$user->name}} {{$user->name}}'s photo">
                 </div>
@@ -39,7 +39,7 @@
                 </div>
             </div>
 
-            <div class="col-5 show-column professional-info">
+            <div class="col-lg-5 col-xs-12 show-column professional-info">
                 {{-- Contiene informazioni professionali come curriculum, specializzazioni e tariffe(?) --}}
                 <h2>Curriculum</h2>
                 <p class="text-break">
@@ -50,7 +50,7 @@
                 
             </div>
 
-            <div class="col-8 show-column reviews">
+            <div class="col-lg-8 col-xs-12 show-column reviews">
                 <div class="box_review">
                     <h4>Scrivi una recensione</h4>
                     <textarea class="new_review" name="" id="" cols="30" rows="10"></textarea>
@@ -61,8 +61,11 @@
                 {{-- Contiene le recensioni e lo spazio per crearne una --}}
                 <div>
                     <h3>Recensioni</h3>
+                    {{-- Inserire componente per le review --}}
+                    <div class="card-review">
+
+                    </div>
                 </div>
-                {{-- Inserire componente per le review --}}
             </div>
         </div>
         
