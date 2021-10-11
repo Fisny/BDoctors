@@ -28,3 +28,5 @@ Route::resource('users', 'UserController');
 //rotte del MessageController
 Route::get('/messages/user', 'MessageController@showMessages')->name('messages')->middleware('auth');
 Route::delete('/messages/{message}/delete', 'MessageController@destroy')->middleware('auth');
+
+Route::get('/app', 'WebAppController@home');
