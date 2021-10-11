@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('pippo',Api\UserController::class);
+Route::resource('source',Api\UserController::class);

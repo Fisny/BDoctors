@@ -2341,7 +2341,7 @@ __webpack_require__.r(__webpack_exports__);
     getPosts: function getPosts() {
       var _this = this;
 
-      axios.get('http://127.0.0.1:8000/api/pippo/').then(function (response) {
+      axios.get('http://127.0.0.1:8000/api/source/').then(function (response) {
         _this.doctors = response.data;
       });
     },
@@ -38725,7 +38725,7 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
             _c("h5", { staticClass: "card-title" }, [
-              _vm._v(_vm._s(_vm.randomSpecializations()))
+              _vm._v("Specialista in " + _vm._s(_vm.randomSpecializations()))
             ]),
             _vm._v(" "),
             _c("p", { staticClass: "card-text" }, [
@@ -38735,7 +38735,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
-              _vm._v("Go somewhere")
+              _vm._v("Visita il profilo")
             ])
           ])
         ])

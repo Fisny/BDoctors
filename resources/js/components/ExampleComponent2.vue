@@ -6,9 +6,9 @@
             <div class="card">
                 <h5 class="card-header">{{doctor.qualification}} {{doctor.name}} {{doctor.lastname}}</h5>
                 <div class="card-body">
-                    <h5 class="card-title">{{randomSpecializations()}}</h5>
+                    <h5 class="card-title">Specialista in {{randomSpecializations()}}</h5>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="#" class="btn btn-primary">Visita il profilo</a>
                 </div>
             </div>
 
@@ -19,7 +19,6 @@
     export default {
         mounted() {
             this.getPosts();
-          
         },  
         data(){
             return{
@@ -30,7 +29,7 @@
         },
         methods:{
             getPosts(){
-                axios.get('http://127.0.0.1:8000/api/pippo/').then((response)=>{
+                axios.get('http://127.0.0.1:8000/api/source/').then((response)=>{
                     this.doctors=response.data
                 });
             },
@@ -46,6 +45,7 @@
         }
 }
 </script>
+
 <style lang="sass" scooped>
     @import '../../sass/app-vuejs.scss'
 </style>
