@@ -12342,5 +12342,10 @@ a.text-dark:focus {
 
 .rating {
   color: gold;
+  font-size: 20px;
+}
+
+.show-column {
+  border: 2px solid #07beb8;
 }
 
