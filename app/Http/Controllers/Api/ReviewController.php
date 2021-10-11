@@ -21,7 +21,7 @@ class ReviewController extends Controller
             "user_id" => "required"
         ]);
 
-        // //da verificare (fonte:stackoverflow)
+        // //da verificare (fonte:stackoverflow) //
         if ($validator->fails()) {
             // return redirect()->back()
             //     ->withInput($request->all())
