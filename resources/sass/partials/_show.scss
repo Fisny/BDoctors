@@ -1,6 +1,10 @@
+body{
+    background-color: #c4fff9;
+}
+
 .profile_picture{
-    max-width: 200px;
-    max-height:200px;
+    max-width: 150px;
+    max-height:150px;
     border: 2px solid $tiffany;
 }
 
@@ -10,5 +14,29 @@
 }
 
 .show-column{
+    background-color: white;
     border: 2px solid $tiffany;
+    border-radius: 10px;
+}
+
+.reviews{
+    height: 600px;
+}
+
+.box_review{
+    height: 38px;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.new_review{
+    height: 100%;
+    width: 100%;
+    border: 1px solid $tiffany ;
+    transition: all 0.5s ease;
+}
+
+.new_review:focus{
+    height: 6em;
+    border: 1px solid $tiffany ;
 }

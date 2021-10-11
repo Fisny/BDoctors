@@ -15,9 +15,11 @@
             timestamps(optional)
             rating (optional)
         --}}
-        <div class="row flex-nowrap">
-            <div class="col-4 show-column contacts">
-                <img class="profile_picture" src="{{$user->profile_pic}}" alt="{{$user->name}} {{$user->name}}'s photo">
+        <div class="row flex-wrap">
+            <div class="col-3 show-column contacts">
+                <div class="box_pp">
+                    <img class="profile_picture" src="{{$user->profile_pic}}" alt="{{$user->name}} {{$user->name}}'s photo">
+                </div>
                 <h4>{{$user->qualification}} {{$user->name}} {{$user->lastname}}</h4>
                 {{-- Le 5 stelle indicano la media dei voti ricevuti. Magari conviene farlo in Vue? --}}
                 <div class="rating">
@@ -37,7 +39,7 @@
                 </div>
             </div>
 
-            <div class="col-4 show-column professional-info">
+            <div class="col-5 show-column professional-info">
                 {{-- Contiene informazioni professionali come curriculum, specializzazioni e tariffe(?) --}}
                 <h2>Curriculum</h2>
                 <p class="text-break">
@@ -48,9 +50,18 @@
                 
             </div>
 
-            <div class="col-4 show-column reviews">
+            <div class="col-8 show-column reviews">
+                <div class="box_review">
+                    <h4>Scrivi una recensione</h4>
+                    <textarea class="new_review" name="" id="" cols="30" rows="10"></textarea>
+                    <div class="button_review d-flex justify-content-end">
+                        <button>Invia</button>
+                    </div>
+                </div>
                 {{-- Contiene le recensioni e lo spazio per crearne una --}}
-                <h2>Recensioni</h2>
+                <div>
+                    <h3>Recensioni</h3>
+                </div>
                 {{-- Inserire componente per le review --}}
             </div>
         </div>
