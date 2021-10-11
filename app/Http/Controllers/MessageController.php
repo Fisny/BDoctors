@@ -11,8 +11,8 @@ class MessageController extends Controller
     public function showMessages()
     {
         $user = Auth::user();
-        $messages = Message::where('user_id', $user)->reverse();
-        return view('user.messages', compact('messages'));
+        $messages = Message::where('user_id', $user->id)->reverse();
+        return view('messages', compact('messages'));
     }
 
     //funzione per consentire all'utente loggato di eliminare uno dei suoi messaggi

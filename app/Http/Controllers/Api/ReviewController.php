@@ -37,7 +37,7 @@ class ReviewController extends Controller
 
         return response()->json([
             'status' => 'success',
-            'message' => $newReview
+            'review' => $newReview
         ]);
     }
 }
