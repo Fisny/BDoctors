@@ -21,15 +21,8 @@
                     <img class="profile_picture" src="{{$user->profile_pic}}" alt="{{$user->name}} {{$user->name}}'s photo">
                 </div>
                 <h4>{{$user->qualification}} {{$user->name}} {{$user->lastname}}</h4>
-                {{-- Le 5 stelle indicano la media dei voti ricevuti. Magari conviene farlo in Vue? --}}
-                <div class="rating">
-                    {{-- Attualmente è solo un placeholder, le cinque stelle devono riempirsi a seconda della media dei voti --}}
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                </div>
+                {{-- Componente Vue del rating. Come calcolare la media delle recensioni? --}}
+                {{-- <rating-static :vote=""></rating-static> --}}
                 {{-- Il testo di minor_text dovrebbe essere piccolo e in grigio --}}
                 <span class="minor_text">Last updated: {{$user->updated_at}}</span>
                 <h4>Contatti</h4>
@@ -167,7 +160,8 @@
                         <div>
                             <h4>{{$review->user_name}}</h4>
                             {{-- da rimpiazzare con le stelle --}}
-                            <h6>Voto: {{$review->vote}}</h6>
+                            {{-- <h6>Voto: {{$review->vote}}</h6> --}}
+                            <rating-static :vote="{{$review->vote}}"></rating-static>
                             <span class="minor-text">Aggiornato a {{$review->updated_at}}<br></span>
                             <p class="text-break">
                                 {{$review->text}}
