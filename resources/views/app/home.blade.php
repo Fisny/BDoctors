@@ -6,7 +6,7 @@
                    
                 </div>
     <div id='app'>
-      <example-component> sasa</example-component>
+      <home-component> sasa</home-component>
     </div>
 </div>
     
