@@ -101,11 +101,14 @@
                 Did you know that Bootstrap is like a printer? Refuses to work and has a new problem every time!
                 superduperlongwordireallyhopebootstrapbreaksthisoneanddoesntoverflowtotheothercontainercompletelywreckingmybeautifullayout
                 </p>
+                <hr>
+                <h2>Specializzazioni</h2>
+                <span>{{$user->specialization->name}}</span>
                 
             </div>
 
             <div class="col-lg-8 col-xs-12 show-column reviews p-2">
-                <div class="box_review">
+                {{-- <div class="box_review">
                     <h4>Scrivi una recensione</h4>
                     <div>
                         <form action="post">
@@ -114,7 +117,7 @@
                                 <input type="text" class="form-control" id="usernameReviewer" placeholder="Il tuo username">
                             </div>
                             <div class="form-group">
-                                {{-- L'idea sarebbe mettere le 5 stelle qui e dare il voto a seconda di dove clicchi --}}
+                                
                                 <h4>Voto</h4>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -149,7 +152,8 @@
                     </div>
                     
                     
-                </div>
+                </div> --}}
+                <new-review></new-review>
                 {{-- Contiene le recensioni e lo spazio per crearne una --}}
                 <div>
                     <h2>Recensioni</h2>
