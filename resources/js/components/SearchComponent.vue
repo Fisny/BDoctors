@@ -1,13 +1,15 @@
 <template>
     <div class="container">
-       <a href="/search/{15}">Topolino</a>
         <!-- TITOLO -->
         <div class="search-title">
-        Trova il medico perfetto per te<span>.</span>
+          <h2>Et Voilà<span>!</span></h2>
+          <h3>Ecco i professionisti che ti servono<span>.</span></h3>
+          <div class="custom-line"></div>
         </div>
-
+        
         <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE -->
-        <div class="filter-container">
+        <div class="search-filter-container">
+            <div class="filter-title">Filtri:</div>
             <div v-for="specialization in specializations" :key="specialization.id" class="test">
                 <div id="example-2">
                     <button v-on:click="startFilter([specialization.id])">{{ specialization.name }}</button>
