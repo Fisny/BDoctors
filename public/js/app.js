@@ -86,17 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'D:\\test2\\BDoctors\\resources\\js\\app.js'");
-
-/***/ }),
-
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -115,7 +104,7 @@ throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\test2\BDoctors\resources\js\app.js */"./resources/js/app.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'D:\\test2\\BDoctors\\resources\\js\\app.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 module.exports = __webpack_require__(/*! D:\test2\BDoctors\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
