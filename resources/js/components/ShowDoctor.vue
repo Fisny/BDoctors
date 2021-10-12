@@ -175,9 +175,13 @@
 <script>
 import axios from 'axios';
 export default {
+<<<<<<< HEAD
     mounted() {
             console.log('Component mounted.')
         }
+=======
+    
+>>>>>>> e7116b45b774002fee3e3cdd9edf3fe970e1d63e
 }
 </script>
 
