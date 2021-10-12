@@ -103,7 +103,11 @@
                 </p>
                 <hr>
                 <h2>Specializzazioni</h2>
-                <span>{{$user->specialization->name}}</span>
+                <span>
+                    @foreach ($user->specialization as $specialization)
+                        {{$specialization->name}}
+                    @endforeach
+                </span>
                 
             </div>
 

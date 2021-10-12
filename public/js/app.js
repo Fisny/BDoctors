@@ -2365,7 +2365,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     postReview: function postReview() {
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('review/post', {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('http://127.0.0.1:8000/api/review/post', {
         user_name: usernameReviewer,
         vote: starVote,
         text: newReview

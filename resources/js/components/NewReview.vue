@@ -59,7 +59,7 @@ import axios from 'axios';
         },
         methods:{
             postReview(){
-                axios.post('review/post',{user_name: usernameReviewer, vote: starVote, text: newReview})
+                axios.post('http://127.0.0.1:8000/api/review/post',{user_name: usernameReviewer, vote: starVote, text: newReview})
                 .then((response)=>{
                 $('#success').html(response.data.message)
                 })
