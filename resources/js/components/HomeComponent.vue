@@ -10,6 +10,7 @@
         <div class="filter-container">
             <div v-for="specialization in specializations" :key="specialization.id" class="test">
                 <div id="example-2">
+                  <!-- Invio l'id tramite indirizzo sfruttando la funzione su web.php -->
                   <a :href="'/search/'+specialization.id" class="btn btn-primary">{{ specialization.name }}</a>
                 </div>
             </div>
