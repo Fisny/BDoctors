@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-       <a href="/search/{15}">Topolino</a>
         <!-- TITOLO -->
         <div class="search-title">
         Trova il medico perfetto per te<span>.</span>

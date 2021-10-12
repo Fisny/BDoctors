@@ -2302,7 +2302,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.getDoctors(), this.getSpecializations();
@@ -2479,7 +2478,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -38913,8 +38911,6 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _c("a", { attrs: { href: "/search/{15}" } }, [_vm._v("Topolino")]),
-      _vm._v(" "),
       _vm._m(0),
       _vm._v(" "),
       _c(
@@ -39344,8 +39340,6 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _c("a", { attrs: { href: "/search/{15}" } }, [_vm._v("Topolino")]),
-      _vm._v(" "),
       _vm._m(0),
       _vm._v(" "),
       _c(
