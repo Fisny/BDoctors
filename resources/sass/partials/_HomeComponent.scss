@@ -20,13 +20,14 @@
         background-color: #07beb8;
         margin: auto;
         padding: 5px 25px 25px 25px;
-        height: 250px;
+        height: 150px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         flex-wrap: wrap;
         .search-button {
-            background-color: #00ffbb;
+            cursor: pointer;
+            background-color: #057eaa;
             margin: 0 auto;
             color: white;
             text-align: center;
@@ -34,8 +35,12 @@
             width: 100%;
             border-radius: 4px;
             margin: 5px 0;
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
+    // ELENCO DEI MEDICI
     .sponsored-doctor-title {
         margin: 0 auto;
         text-align: center;
@@ -43,25 +48,29 @@
         color: white;
         margin-top: 10px;
     }
-    .test {
-        display: flex;
-        .card {
-            margin-top: 10px;
-            .card-header {
-                background-color: #00ffbb;
-                text-align: center;
-            }
-            .card-body {
-                display: flex;
-                justify-content: space-between;
-                .card-title {
-                    color: #07beb8;
+    .sponsored-doctor-container {
+        .sponsored-doctor {
+            .card {
+                margin-top: 10px;
+                width: 100%;
+                border: none;
+                .card-header {
+                    background-color: #00ffbb;
+                    text-align: center;
+                }
+                .card-body {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .card-title {
+                        color: #07beb8;
+                    }
+                }
+                .btn {
+                    background-color: #07beb8;
+                    border-color: #07beb8;
                 }
             }
-            .btn {
-                background-color: #07beb8;
-                border-color: #07beb8;
-            }  
         }
     }
 }

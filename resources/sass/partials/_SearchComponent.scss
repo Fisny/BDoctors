@@ -16,7 +16,6 @@
             background-color: #00ffbb;
         }
     }
-    
     .search-filter-container {
         background-color: #07beb8;
         margin: auto;
@@ -29,12 +28,14 @@
     .test {
         .card {
             margin-top: 10px;
+            border: none;
             .card-header {
                 background-color: #00ffbb;
                 text-align: center;
             }
             .card-body {
                 display: flex;
+                align-items: center;
                 justify-content: space-between;
                 .card-title {
                     color: #07beb8;
