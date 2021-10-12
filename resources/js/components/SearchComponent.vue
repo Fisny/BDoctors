@@ -34,7 +34,7 @@
 <script>
 export default {
   mounted() {
-    this.getDoctors(), this.getSpecializations();
+    this.startFilter(this.specializationId), this.getSpecializations();
   },
   data() {
     return {
@@ -44,6 +44,7 @@ export default {
       arrayLength: 0,
     };
   },
+  props: ['specializationId'],
   methods: {
     // Stampa lista sponsorizzazioni
     getSpecializations() {

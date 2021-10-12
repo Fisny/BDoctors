@@ -2,11 +2,9 @@
 
 @section('content')
 <div class="container">
-<div class="links">
-                   
-                </div>
+ {{$id}}
     <div id='app'>
-      <example-component> sasa</example-component>
+      <search-component specialization-id="{{ $id }}"> sasa</search-component>
     </div>
 </div>
     

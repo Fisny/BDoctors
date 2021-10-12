@@ -30,3 +30,10 @@ Route::get('/messages/user', 'MessageController@showMessages')->name('messages')
 Route::delete('/messages/{message}/delete', 'MessageController@destroy')->middleware('auth');
 
 Route::get('/app', 'WebAppController@home');
+
+Route::get('/search/{id}', function ($id) {
+    
+    return view('app/search', [
+        "id"=>$id,
+    ]);
+})->name('search');
