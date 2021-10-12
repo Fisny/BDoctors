@@ -3,8 +3,10 @@
 @section('content')
 <div class="container">
     <div id='app'>
-        <example-component> </example-component>
+        <filter-component />
     </div>
 </div>
+
+
 
 @endsection

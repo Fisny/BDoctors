@@ -21,6 +21,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/app', 'WebAppController@home');
+Route::get('/app/home2', 'WebAppController@home2');
+Route::get('/filter/doctors/{id}', 'WebAppController@filter');
 
 //rotte di UserController
 Route::resource('users', 'UserController');
