@@ -23,7 +23,7 @@
                     <div v-for="specialization in doctor.specialization" :key="specialization.id" class="test">
                         <h5 class="card-title">Specialista in {{ specialization.name }}</h5>
                     </div>
-                    <a href="#" class="btn btn-primary">Visita il profilo</a>
+                    <a :href="'/users/'+doctor.id" class="btn btn-primary">Visita il profilo</a>
                 </div>
             </div>
         </div>

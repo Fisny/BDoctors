@@ -38802,7 +38802,10 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "a",
-                  { staticClass: "btn btn-primary", attrs: { href: "#" } },
+                  {
+                    staticClass: "btn btn-primary",
+                    attrs: { href: "/users/" + doctor.id }
+                  },
                   [_vm._v("Visita il profilo")]
                 )
               ],

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <button class="btn btn-primary"><i class=""></i></button>
     <div class="p-1 container">
         {{-- Attributes: 
             name 
