@@ -2410,18 +2410,26 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      newReview: ''
+      newReview: {
+        user_id: window.location.pathname.replace("/users/", ""),
+        user_name: null,
+        vote: null,
+        text: null
+      }
     };
   },
   methods: {
     postReview: function postReview() {
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('http://127.0.0.1:8000/api/review/post', {
-        user_name: usernameReviewer,
-        vote: starVote,
-        text: newReview
-      }).then(function (response) {
-        $('#success').html(response.data.message);
-      });
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/review/post", this.newReview) // .then((response)=>{
+      // $('#success').html(response.data.message)
+      // })
+      ;
+      this.newReview = {
+        user_id: window.location.pathname.replace("/users/", ""),
+        user_name: null,
+        vote: null,
+        text: null
+      };
     }
   }
 });
@@ -38844,13 +38852,244 @@ var render = function() {
     _vm._v(" "),
     _c("div", [
       _c("form", { on: { submit: _vm.postReview } }, [
-        _vm._m(0),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "usernameReviewer" } }, [
+            _vm._v("Username")
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.newReview.user_name,
+                expression: "newReview.user_name"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              id: "usernameReviewer",
+              placeholder: "Il tuo username"
+            },
+            domProps: { value: _vm.newReview.user_name },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.newReview, "user_name", $event.target.value)
+              }
+            }
+          })
+        ]),
         _vm._v(" "),
-        _vm._m(1),
+        _c("div", { staticClass: "form-group" }, [
+          _c("h4", [_vm._v("Voto")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-check form-check-inline" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.newReview.vote,
+                  expression: "newReview.vote"
+                }
+              ],
+              staticClass: "form-check-input",
+              attrs: {
+                type: "radio",
+                name: "newReview.vote",
+                id: "inlineRadio1",
+                value: "1"
+              },
+              domProps: { checked: _vm._q(_vm.newReview.vote, "1") },
+              on: {
+                change: function($event) {
+                  return _vm.$set(_vm.newReview, "vote", "1")
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "form-check-label",
+                attrs: { for: "inlineRadio1" }
+              },
+              [_vm._v("1")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-check form-check-inline" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.newReview.vote,
+                  expression: "newReview.vote"
+                }
+              ],
+              staticClass: "form-check-input",
+              attrs: {
+                type: "radio",
+                name: "newReview.vote",
+                id: "inlineRadio2",
+                value: "2"
+              },
+              domProps: { checked: _vm._q(_vm.newReview.vote, "2") },
+              on: {
+                change: function($event) {
+                  return _vm.$set(_vm.newReview, "vote", "2")
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "form-check-label",
+                attrs: { for: "inlineRadio2" }
+              },
+              [_vm._v("2")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-check form-check-inline" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.newReview.vote,
+                  expression: "newReview.vote"
+                }
+              ],
+              staticClass: "form-check-input",
+              attrs: {
+                type: "radio",
+                name: "newReview.vote",
+                id: "inlineRadio3",
+                value: "3"
+              },
+              domProps: { checked: _vm._q(_vm.newReview.vote, "3") },
+              on: {
+                change: function($event) {
+                  return _vm.$set(_vm.newReview, "vote", "3")
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "form-check-label",
+                attrs: { for: "inlineRadio3" }
+              },
+              [_vm._v("3")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-check form-check-inline" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.newReview.vote,
+                  expression: "newReview.vote"
+                }
+              ],
+              staticClass: "form-check-input",
+              attrs: {
+                type: "radio",
+                name: "newReview.vote",
+                id: "inlineRadio4",
+                value: "4"
+              },
+              domProps: { checked: _vm._q(_vm.newReview.vote, "4") },
+              on: {
+                change: function($event) {
+                  return _vm.$set(_vm.newReview, "vote", "4")
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "form-check-label",
+                attrs: { for: "inlineRadio4" }
+              },
+              [_vm._v("4")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-check form-check-inline" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.newReview.vote,
+                  expression: "newReview.vote"
+                }
+              ],
+              staticClass: "form-check-input",
+              attrs: {
+                type: "radio",
+                name: "newReview.vote",
+                id: "inlineRadio5",
+                value: "5"
+              },
+              domProps: { checked: _vm._q(_vm.newReview.vote, "5") },
+              on: {
+                change: function($event) {
+                  return _vm.$set(_vm.newReview, "vote", "5")
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "form-check-label",
+                attrs: { for: "inlineRadio5" }
+              },
+              [_vm._v("5")]
+            )
+          ])
+        ]),
         _vm._v(" "),
-        _vm._m(2),
+        _c("div", { staticClass: "form-group" }, [
+          _c("h4", [_vm._v("Contenuto recensione")]),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.newReview.text,
+                expression: "newReview.text"
+              }
+            ],
+            staticClass: "new_review",
+            attrs: { name: "", id: "", cols: "30", rows: "10" },
+            domProps: { value: _vm.newReview.text },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.newReview, "text", $event.target.value)
+              }
+            }
+          })
+        ]),
         _vm._v(" "),
-        _vm._m(3)
+        _vm._m(0)
       ])
     ])
   ])
@@ -38860,141 +39099,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", { attrs: { for: "usernameReviewer" } }, [_vm._v("Username")]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: {
-          type: "text",
-          id: "usernameReviewer",
-          placeholder: "Il tuo username"
-        }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("h4", [_vm._v("Voto")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-check form-check-inline" }, [
-        _c("input", {
-          staticClass: "form-check-input",
-          attrs: {
-            type: "radio",
-            name: "starVote",
-            id: "inlineRadio1",
-            value: "option1"
-          }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "form-check-label", attrs: { for: "inlineRadio1" } },
-          [_vm._v("1")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-check form-check-inline" }, [
-        _c("input", {
-          staticClass: "form-check-input",
-          attrs: {
-            type: "radio",
-            name: "starVote",
-            id: "inlineRadio2",
-            value: "option2"
-          }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "form-check-label", attrs: { for: "inlineRadio2" } },
-          [_vm._v("2")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-check form-check-inline" }, [
-        _c("input", {
-          staticClass: "form-check-input",
-          attrs: {
-            type: "radio",
-            name: "starVote",
-            id: "inlineRadio3",
-            value: "option3"
-          }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "form-check-label", attrs: { for: "inlineRadio3" } },
-          [_vm._v("3")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-check form-check-inline" }, [
-        _c("input", {
-          staticClass: "form-check-input",
-          attrs: {
-            type: "radio",
-            name: "starVote",
-            id: "inlineRadio4",
-            value: "option4"
-          }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "form-check-label", attrs: { for: "inlineRadio4" } },
-          [_vm._v("4")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-check form-check-inline" }, [
-        _c("input", {
-          staticClass: "form-check-input",
-          attrs: {
-            type: "radio",
-            name: "starVote",
-            id: "inlineRadio5",
-            value: "option5"
-          }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          { staticClass: "form-check-label", attrs: { for: "inlineRadio5" } },
-          [_vm._v("5")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("h4", [_vm._v("Contenuto recensione")]),
-      _vm._v(" "),
-      _c("textarea", {
-        staticClass: "new_review",
-        attrs: { name: "", id: "", cols: "30", rows: "10" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
       "div",
       { staticClass: "button_review d-flex justify-content-end" },
       [
-        _c("button", { staticClass: "btn btn-primary bdoctor-button" }, [
-          _vm._v("Invia")
-        ])
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary bdoctor-button",
+            attrs: { type: "submit" }
+          },
+          [_vm._v("Invia")]
+        )
       ]
     )
   }

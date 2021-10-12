@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <button class="btn btn-primary"><i class=""></i></button>
     <div class="p-1 container">
         {{-- Attributes: 
             name 
@@ -161,19 +162,18 @@
                 {{-- Contiene le recensioni e lo spazio per crearne una --}}
                 <div>
                     <h2>Recensioni</h2>
-                    {{-- Inserire componente per le review --}}
                     
                     @foreach ($user->reviews as $review)
-                    {{-- Tentativo di implementarlo in Blade only --}}
-                    <div>
-                        <h4>{{$review->user_name}}</h4>
-                        {{-- da rimpiazzare con le stelle --}}
-                        <h6>Voto: {{$review->vote}}</h6>
-                        <span class="minor-text">Aggiornato a {{$review->updated_at}}<br></span>
-                        <p class="text-break">
-                            {{$review->text}}
-                        </p>
-                    </div>
+                        {{-- Tentativo di implementarlo in Blade only --}}
+                        <div>
+                            <h4>{{$review->user_name}}</h4>
+                            {{-- da rimpiazzare con le stelle --}}
+                            <h6>Voto: {{$review->vote}}</h6>
+                            <span class="minor-text">Aggiornato a {{$review->updated_at}}<br></span>
+                            <p class="text-break">
+                                {{$review->text}}
+                            </p>
+                        </div>
                         
                     @endforeach
                 </div>
