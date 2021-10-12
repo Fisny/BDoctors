@@ -21,7 +21,7 @@ class DoctorsController extends Controller
         //medici con sponsorizzazioni attive +(union) medici senza
         $filteredDoctors1 = User::whereHas('specialization', function ($e) use ($id) {
             $e->where('specialization_id', $id);
-        })->has('sponsorship')->union($filteredDoctors2)->paginate(6);
+        })->has('sponsorship')->union($filteredDoctors2)->Paginate(6);
 
         return response()->json($filteredDoctors1);
     }
