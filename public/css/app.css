@@ -12360,12 +12360,7 @@ body {
   margin-right: 10px;
 }
 
-.reviews {
-  height: 600px;
-}
-
 .reviews .box_review {
-  height: 38px;
   width: 100%;
   margin-bottom: 100px;
 }
@@ -12378,7 +12373,11 @@ body {
 }
 
 .reviews .new_review:focus {
-  height: 6em;
   border: 1px solid #07beb8;
+}
+
+.bdoctor-button {
+  background-color: #07beb8;
+  border-color: #07beb8;
 }
 

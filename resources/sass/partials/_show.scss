@@ -27,11 +27,9 @@ body{
 }
 
 .reviews{
-    height: 600px;
 
 
     .box_review{
-        height: 38px;
         width: 100%;
         margin-bottom: 100px;
     }
@@ -44,8 +42,12 @@ body{
     }
     
     .new_review:focus{
-        height: 6em;
         border: 1px solid $tiffany ;
     }
     
+}
+
+.bdoctor-button{
+    background-color: $tiffany;
+    border-color: $tiffany;
 }
