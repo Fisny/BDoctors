@@ -10,8 +10,7 @@
         <div class="filter-container">
             <div v-for="specialization in specializations" :key="specialization.id" class="test">
                 <div id="example-2">
-                  <a :href="'/search/'+specialization.id" class="btn btn-primary">{{ specialization.name }}</a>
-                    <!-- <button v-on:click="startFilter([specialization.id])">{{ specialization.name }}</button> -->
+                    <button v-on:click="startFilter([specialization.id])">{{ specialization.name }}</button>
                 </div>
             </div>
         </div>

@@ -2302,7 +2302,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.getDoctors(), this.getSpecializations();
@@ -2331,15 +2330,15 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("http://127.0.0.1:8000/api/sponsored/").then(function (response) {
         _this2.doctors = response.data;
       });
-    },
-    // Ricerca medici per specializzazione
-    startFilter: function startFilter(id) {
-      var _this3 = this;
+    } // Ricerca medici per specializzazione
+    // startFilter: function (id) {
+    //   axios
+    //     .get("http://127.0.0.1:8000/api/doctors/filter/" + id)
+    //     .then((response) => {
+    //       this.doctors = response.data.data;
+    //     });
+    // },
 
-      axios.get("http://127.0.0.1:8000/api/doctors/filter/" + id).then(function (response) {
-        _this3.doctors = response.data.data;
-      });
-    }
   }
 });
 
@@ -2479,7 +2478,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -39356,10 +39354,13 @@ var render = function() {
           return _c("div", { key: specialization.id, staticClass: "test" }, [
             _c("div", { attrs: { id: "example-2" } }, [
               _c(
-                "a",
+                "button",
                 {
-                  staticClass: "btn btn-primary",
-                  attrs: { href: "/search/" + specialization.id }
+                  on: {
+                    click: function($event) {
+                      return _vm.startFilter([specialization.id])
+                    }
+                  }
                 },
                 [_vm._v(_vm._s(specialization.name))]
               )

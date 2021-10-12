@@ -11,7 +11,6 @@
             <div v-for="specialization in specializations" :key="specialization.id" class="test">
                 <div id="example-2">
                   <a :href="'/search/'+specialization.id" class="btn btn-primary">{{ specialization.name }}</a>
-                    <!-- <button v-on:click="startFilter([specialization.id])">{{ specialization.name }}</button> -->
                 </div>
             </div>
         </div>
@@ -60,13 +59,13 @@ export default {
       });
     },
     // Ricerca medici per specializzazione
-    startFilter: function (id) {
-      axios
-        .get("http://127.0.0.1:8000/api/doctors/filter/" + id)
-        .then((response) => {
-          this.doctors = response.data.data;
-        });
-    },
+    // startFilter: function (id) {
+    //   axios
+    //     .get("http://127.0.0.1:8000/api/doctors/filter/" + id)
+    //     .then((response) => {
+    //       this.doctors = response.data.data;
+    //     });
+    // },
   },
 };
 </script>
