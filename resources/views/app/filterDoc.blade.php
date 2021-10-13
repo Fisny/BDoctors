@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-    <div id='app'>
-        <filter-component />
-    </div>
+
+    <filter-component />
+
 </div>
 
 
