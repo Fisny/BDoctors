@@ -5,7 +5,7 @@
 <div class="container">
 
     <div class="row">
-        <div class="form-group">
+        <div class="form-group animate__animated animate__shakeX">
             <select class="selectpicker mt-4 mb-2" data-show-subtext="false" data-live-search="true" name="specialization" required>
                 <option value="">Cerca lo specialista</option>
                 @foreach ($specializations as $spec)

@@ -91,9 +91,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="specializations" for="exampleFormControlSelect2" class="col-md-4 col-form-label text-md-right">{{ __('Specializations') }}</label>
+                            <label for="specializations" class="col-md-4 col-form-label text-md-right">{{ __('Specializations') }}</label>
 
-                            <div class="form-check col-md-6 mx-4 mt-2">
+                            <div class="form-check col-md-6 mx-3 mt-2">
                                 <!-- <input id="specializations" type="text" class="form-control @error('specializations') is-invalid @enderror" name="specializations" value="{{ old('specializations') }}" required autocomplete="specializations" autofocus>
 
                                 @error('specializations')
