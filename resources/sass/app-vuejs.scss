@@ -7,10 +7,16 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+//Partials
+@import '/partials/_HomeComponent.scss';
+@import '/partials/_SearchComponent.scss';
 
+<<<<<<< HEAD
 //partials
 
 @import 'ExampleComponent';
+=======
+>>>>>>> origin/master
 
 @import '/partials/_show.scss';
 

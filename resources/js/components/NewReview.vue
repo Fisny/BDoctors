@@ -81,6 +81,10 @@ import axios from 'axios';
     }
 </script>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 <style lang="sass" scooped>
     @import '../../sass/app-vuejs.scss'
 </style>
