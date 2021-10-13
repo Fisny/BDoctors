@@ -1,0 +1,50 @@
+.container {
+    .search-title {
+        background-color: #07beb8;
+        margin: auto;
+        padding: 25px;
+        color: #ffff;
+        font-size: 42px;
+        text-align: center;
+        span {
+            color: #00ffbb;
+        }
+        .custom-line {
+            width: 100%;
+            height: 4px;
+            border-radius: 20px;
+            background-color: #00ffbb;
+        }
+    }
+    .search-filter-container {
+        background-color: #07beb8;
+        margin: auto;
+        padding: 10px 25px;
+        height: 150px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    .test {
+        .card {
+            margin-top: 10px;
+            border: none;
+            .card-header {
+                background-color: #00ffbb;
+                text-align: center;
+            }
+            .card-body {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .card-title {
+                    color: #07beb8;
+                }
+            }
+            .btn {
+                background-color: #07beb8;
+                border-color: #07beb8;
+            }  
+        }
+    }
+}
