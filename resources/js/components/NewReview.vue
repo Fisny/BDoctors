@@ -80,3 +80,7 @@ import axios from 'axios';
         }
     }
 </script>
+
+<style lang="sass" scooped>
+    @import '../../sass/app-vuejs.scss'
+</style>
