@@ -15,23 +15,24 @@
             timestamps(optional)
             rating (optional)
         --}}
-        <div class="row flex-wrap">
-            <div class="col-lg-3 col-xs-12 show-column contacts p-2">
-                <div class="box_pp">
+        <div class="row flex-wrap justify-content-center">
+            <div class="col-lg-3 col-xs-12 mr-5 show-column contacts p-3">
+                <div class="box_pp pb-3">
                     <img class="profile_picture" src="{{$user->profile_pic}}" alt="{{$user->name}} {{$user->name}}'s photo">
                 </div>
                 <h4>{{$user->qualification}} {{$user->name}} {{$user->lastname}}</h4>
-                {{-- Componente Vue del rating. Come calcolare la media delle recensioni? --}}
+                {{-- Componente Vue della media delle recensioni --}}
                 
                 <rating-static :vote="{{$avgVote}}"></rating-static>
                 {{-- Il testo di minor_text dovrebbe essere piccolo e in grigio --}}
-                <span class="minor_text">Last updated: {{$user->updated_at}}</span>
-                <h4>Contatti</h4>
+                
+                <span class="minor-text">Profilo aggiornato {{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $user->updated_at)->locale('it_IT')->diffForHumans()}}</span>
+                <h5 class="pt-2">Contatti</h5>
                 <div>
                     <span>Email: {{$user->email}} <br></span>
                     <span>Indirizzo: {{$user->address}} <br></span>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary bdoctor-button" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="btn btn-primary bdoctor-button mt-2" data-toggle="modal" data-target="#exampleModal">
                         Manda un messaggio
                     </button>
                     
@@ -83,12 +84,12 @@
                             </div>
                         </div>
                         </div>
-  </div>
+                    </div>
   
                 </div>
             </div>
 
-            <div class="col-lg-5 col-xs-12 show-column professional-info p-2">
+            <div class="col-lg-6 col-xs-12 ml-5 show-column professional-info p-3">
                 {{-- Contiene informazioni professionali come curriculum, specializzazioni e tariffe(?) --}}
                 <h2>Curriculum</h2>
                 <p class="text-break">
@@ -106,25 +107,26 @@
                 
             </div>
 
-            <div class="col-lg-8 col-xs-12 show-column reviews p-2">
+            <div class="col-lg-10 col-xs-12 show-column reviews p-3">
                 <new-review></new-review>
                 {{-- Contiene le recensioni e lo spazio per crearne una --}}
-                <div>
-                    <h2>Recensioni</h2>
+                
+            </div>
+            <div class="col-lg-10 col-xs-12 show-column reviews p-3">
+                <h2>Recensioni</h2>
+                
+                @foreach ($user->reviews as $review)
+                    {{-- Tentativo di implementarlo in Blade only --}}
+                    <div class="card-review">
+                        <h4>{{$review->user_name}}</h4>
+                        <rating-static :vote="{{$review->vote}}"></rating-static>
+                        <span class="minor-text">Aggiornato {{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $review->updated_at)->locale('it_IT')->diffForHumans()}}<br></span>
+                        <p class="text-break">
+                            {{$review->text}}
+                        </p>
+                    </div>
                     
-                    @foreach ($user->reviews as $review)
-                        {{-- Tentativo di implementarlo in Blade only --}}
-                        <div class="card-review">
-                            <h4>{{$review->user_name}}</h4>
-                            <rating-static :vote="{{$review->vote}}"></rating-static>
-                            <span class="minor-text">Aggiornato a {{$review->updated_at}}<br></span>
-                            <p class="text-break">
-                                {{$review->text}}
-                            </p>
-                        </div>
-                        
-                    @endforeach
-                </div>
+                @endforeach
             </div>
         </div>
         

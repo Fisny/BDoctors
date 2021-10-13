@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 use App\User;
 use App\Specialization;
@@ -79,6 +80,9 @@ class UserController extends Controller
         if ($avgVote == null) {
             $avgVote = 0;
         }
+
+        // $updateDiff= Carbon::createFromFormat('Y-m-d H:i:s', $user->updated_at)->locale('it_IT')->diffForHumans(Carbon::now());
+        // dd($updateDiff);
         return view('users.show', compact('user'), compact('avgVote'));
     }
 

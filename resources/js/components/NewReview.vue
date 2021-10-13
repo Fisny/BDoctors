@@ -32,10 +32,11 @@
                                   </div>
                             </div> -->
                             <div class="form-group">
+                                <label>Voto</label>
                                 <rating-giver @vote="updateNewVote"></rating-giver>
                             </div>
                             <div class="form-group">
-                                <h4>Contenuto recensione</h4>
+                                <label>Contenuto recensione</label>
                                 <textarea class="new_review" name="" id="" cols="30" rows="10" v-model="newReview.text"></textarea>
                             </div>
                             
