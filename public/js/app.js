@@ -2315,6 +2315,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.getDoctors(), this.getSpecializations();
@@ -38940,7 +38959,10 @@ var render = function() {
             }
           ],
           staticClass: "form-control",
-          attrs: { name: "template" },
+          attrs: {
+            name: "template",
+            onchange: "location = /search/ + this.value;"
+          },
           on: {
             change: function($event) {
               var $$selectedVal = Array.prototype.filter
@@ -38959,7 +38981,7 @@ var render = function() {
         },
         [
           _c("option", { attrs: { value: "", disabled: "", selected: "" } }, [
-            _vm._v("Seleziona una Specializzazione")
+            _vm._v("\n        Seleziona una Specializzazione\n      ")
           ]),
           _vm._v(" "),
           _vm._l(_vm.specializations, function(specialization) {
@@ -39016,7 +39038,11 @@ var render = function() {
                     { key: specialization.id, staticClass: "test" },
                     [
                       _c("h5", { staticClass: "card-title" }, [
-                        _vm._v("Specialista in " + _vm._s(specialization.name))
+                        _vm._v(
+                          "\n              Specialista in " +
+                            _vm._s(specialization.name) +
+                            "\n            "
+                        )
                       ])
                     ]
                   )

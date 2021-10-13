@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-
     <!-- TITOLO -->
     <div class="search-title">
       <h1>Cerchi un medico<span>?</span></h1>
@@ -10,14 +9,27 @@
 
     <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE -->
     <div class="filter-container">
-      <select class="form-control" name="template" v-model="selected">
-        <option value="" disabled selected>Seleziona una Specializzazione</option>
-        <option v-for="specialization in specializations" v-bind:value="specialization.id" :key="specialization.id">
+      <select
+        class="form-control"
+        name="template"
+        v-model="selected"
+        onchange="location = /search/ + this.value;"
+      >
+        <option value="" disabled selected>
+          Seleziona una Specializzazione
+        </option>
+        <option
+          v-for="specialization in specializations"
+          v-bind:value="specialization.id"
+          :key="specialization.id"
+        >
           {{ specialization.name }}
         </option>
       </select>
-      <a :href="'/search/' + selected" class="search-button">Effettua la Ricerca</a>
-    </div> 
+      <a :href="'/search/' + selected" class="search-button"
+        >Effettua la Ricerca</a
+      >
+    </div>
 
     <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
     <div class="sponsored-doctor-title">
@@ -30,16 +42,23 @@
           <h5 class="card-header">
             {{ doctor.qualification }} {{ doctor.name }} {{ doctor.lastname }}
           </h5>
-        <div class="card-body">
-          <div v-for="specialization in doctor.specialization" :key="specialization.id" class="test">
-            <h5 class="card-title">Specialista in {{ specialization.name }}</h5>
+          <div class="card-body">
+            <div
+              v-for="specialization in doctor.specialization"
+              :key="specialization.id"
+              class="test"
+            >
+              <h5 class="card-title">
+                Specialista in {{ specialization.name }}
+              </h5>
+            </div>
+            <a :href="'/users/' + doctor.id" class="btn btn-primary"
+              >Dettagli</a
+            >
           </div>
-          <a :href="'/users/' + doctor.id" class="btn btn-primary">Dettagli</a>
         </div>
       </div>
     </div>
-    </div>
-    
   </div>
 </template>
 

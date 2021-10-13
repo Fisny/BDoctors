@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Specialization;
 use App\Message;
+use App\Sponsorship;
 
 
 class UserController extends Controller
@@ -85,8 +86,14 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        $sponsorships = Sponsorship::all();
         $specializations = Specialization::all();
-        return view('users.edit', compact('user', 'specializations'));
+
+        if (Auth::user()->id === $user->id) {
+            return view('users.edit', compact('userr', 'specializations', 'sponsorships'));
+        } else {
+            return redirect()->route("home");
+        }
     }
 
     /**
@@ -118,7 +125,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('users.index');
+        return redirect()->route('home');
     }
 
 
