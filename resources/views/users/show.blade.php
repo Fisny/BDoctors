@@ -157,7 +157,7 @@
                     
                     @foreach ($user->reviews as $review)
                         {{-- Tentativo di implementarlo in Blade only --}}
-                        <div>
+                        <div class="card-review">
                             <h4>{{$review->user_name}}</h4>
                             {{-- da rimpiazzare con le stelle --}}
                             {{-- <h6>Voto: {{$review->vote}}</h6> --}}
