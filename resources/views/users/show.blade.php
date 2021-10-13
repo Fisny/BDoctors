@@ -79,6 +79,7 @@
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-primary bdoctor-button">Invia</button>
+                            
                             </div>
                         </div>
                         </div>
@@ -99,7 +100,7 @@
                 <h2>Specializzazioni</h2>
                 <span>
                     @foreach ($user->specialization as $specialization)
-                        {{$specialization->name}}
+                        <span class="badge badge-info p-2 specialization-badge">{{$specialization->name}}</span>
                     @endforeach
                 </span>
                 
