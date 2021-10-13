@@ -7,8 +7,8 @@
                                 <label for="usernameReviewer">Username</label>
                                 <input type="text" class="form-control" id="usernameReviewer" placeholder="Il tuo username" v-model="newReview.user_name">
                             </div>
-                            <div class="form-group">
-                                <!-- L'idea sarebbe mettere le 5 stelle qui e dare il voto a seconda di dove clicchi -->
+                            <!-- <div class="form-group">
+                                L'idea sarebbe mettere le 5 stelle qui e dare il voto a seconda di dove clicchi 
                                 <h4>Voto</h4>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="newReview.vote" id="inlineRadio1" value="1" v-model="newReview.vote">
@@ -30,6 +30,9 @@
                                     <input class="form-check-input" type="radio" name="newReview.vote" id="inlineRadio5" value="5" v-model="newReview.vote">
                                     <label class="form-check-label" for="inlineRadio5">5</label>
                                   </div>
+                            </div> -->
+                            <div class="form-group">
+                                <rating-giver @vote="updateNewVote"></rating-giver>
                             </div>
                             <div class="form-group">
                                 <h4>Contenuto recensione</h4>
@@ -48,7 +51,9 @@
 
 <script>
 import axios from 'axios';
+import RatingGiver from './RatingGiver.vue';
     export default {
+  components: { RatingGiver },
         mounted() {
             console.log('NewReview mounted.')
         },
@@ -63,6 +68,9 @@ import axios from 'axios';
             }
         },
         methods:{
+            updateNewVote(click){
+                this.newReview.vote = click;
+            },
             postReview(){
                 axios.post("/api/review/post",this.newReview)
                 // .then((response)=>{
@@ -81,10 +89,6 @@ import axios from 'axios';
     }
 </script>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 <style lang="sass" scooped>
     @import '../../sass/app-vuejs.scss'
 </style>

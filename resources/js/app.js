@@ -23,6 +23,7 @@ Vue.component('home-component', require('./components/HomeComponent.vue').defaul
 Vue.component('search-component', require('./components/SearchComponent.vue').default);
 Vue.component('new-review', require('./components/NewReview.vue').default);
 Vue.component('rating-static', require('./components/RatingStatic.vue').default);
+Vue.component('rating-giver', require('./components/RatingGiver.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

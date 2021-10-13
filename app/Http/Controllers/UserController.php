@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Specialization;
 use App\Message;
+use App\Review;
 
 
 class UserController extends Controller
@@ -74,7 +75,11 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        $avgVote = Review::where('user_id', $user->id)->avg('vote');
+        if ($avgVote == null) {
+            $avgVote = 0;
+        }
+        return view('users.show', compact('user'), compact('avgVote'));
     }
 
     /**

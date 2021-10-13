@@ -7,7 +7,10 @@
 <script>
 export default {
     props:{
-        vote: Number,
+        vote: {
+            default: 0,
+            type: Number,
+        }
     },
     data(){
     },

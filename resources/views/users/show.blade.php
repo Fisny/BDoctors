@@ -22,7 +22,8 @@
                 </div>
                 <h4>{{$user->qualification}} {{$user->name}} {{$user->lastname}}</h4>
                 {{-- Componente Vue del rating. Come calcolare la media delle recensioni? --}}
-                {{-- <rating-static :vote=""></rating-static> --}}
+                
+                <rating-static :vote="{{$avgVote}}"></rating-static>
                 {{-- Il testo di minor_text dovrebbe essere piccolo e in grigio --}}
                 <span class="minor_text">Last updated: {{$user->updated_at}}</span>
                 <h4>Contatti</h4>
@@ -105,51 +106,6 @@
             </div>
 
             <div class="col-lg-8 col-xs-12 show-column reviews p-2">
-                {{-- <div class="box_review">
-                    <h4>Scrivi una recensione</h4>
-                    <div>
-                        <form action="post">
-                            <div class="form-group">
-                                <label for="usernameReviewer">Username</label>
-                                <input type="text" class="form-control" id="usernameReviewer" placeholder="Il tuo username">
-                            </div>
-                            <div class="form-group">
-                                
-                                <h4>Voto</h4>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                    <label class="form-check-label" for="inlineRadio1">1</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                    <label class="form-check-label" for="inlineRadio2">2</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                    <label class="form-check-label" for="inlineRadio3">3</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
-                                    <label class="form-check-label" for="inlineRadio4">4</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
-                                    <label class="form-check-label" for="inlineRadio5">5</label>
-                                  </div>
-                            </div>
-                            <div class="form-group">
-                                <h4>Contenuto recensione</h4>
-                                <textarea class="new_review" name="" id="" cols="30" rows="10"></textarea>
-                            </div>
-                            
-                            <div class="button_review d-flex justify-content-end">
-                                <button class="btn btn-primary bdoctor-button">Invia</button>
-                            </div>
-                        </form>
-                    </div>
-                    
-                    
-                </div> --}}
                 <new-review></new-review>
                 {{-- Contiene le recensioni e lo spazio per crearne una --}}
                 <div>
@@ -159,8 +115,6 @@
                         {{-- Tentativo di implementarlo in Blade only --}}
                         <div class="card-review">
                             <h4>{{$review->user_name}}</h4>
-                            {{-- da rimpiazzare con le stelle --}}
-                            {{-- <h6>Voto: {{$review->vote}}</h6> --}}
                             <rating-static :vote="{{$review->vote}}"></rating-static>
                             <span class="minor-text">Aggiornato a {{$review->updated_at}}<br></span>
                             <p class="text-break">
