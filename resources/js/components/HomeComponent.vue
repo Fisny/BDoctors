@@ -7,7 +7,7 @@
       <div class="custom-line"></div>
     </div>
 
-    <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE -->
+    <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE. -->
     <div class="filter-container">
       <select
         class="form-control"
