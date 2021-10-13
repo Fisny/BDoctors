@@ -16,7 +16,9 @@ export default {
     },
     methods:{
         starSwitch(index){
-                if(index <= this.vote){
+                if(this.vote-index <=-0.5 && this.vote-index > -1){
+                    return "bi-star-half";
+                }else if(index <= this.vote){
                     return "bi-star-fill";
                 }   else{
                     return "bi-star";
