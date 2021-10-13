@@ -13,7 +13,7 @@ class DoctorsController extends Controller
     //api get restituisce la lista di medici con la specializzazione selezionata(tramite id)
     public function filter($id)
     {
-        //medici senza sponsorizzazioni attive
+        //medici senza sponsorizzazioni non attive
         $filteredDoctors2 = User::whereHas('specialization', function ($e) use ($id) {
             $e->where('specialization_id', $id);
         })->whereDoesntHave('sponsorship'); //nota bene: se metti il get() non funge
