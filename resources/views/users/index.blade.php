@@ -5,13 +5,15 @@
 <div class="container">
 
     <div class="row">
-        <select class="selectpicker" data-live-search="true" data-live-search-style="startsWith">
-            <option value="">Cerca</option>
-            @foreach ($users as $user)
-            <option value="{{ $user->id }}">{{ $user->name }}</option>
-            @endforeach
-        </select>
+        <div class="form-group">
+            <select class="selectpicker mt-4 mb-2" data-show-subtext="false" data-live-search="true" name="specialization" required>
+                <option value="">Cerca lo specialista</option>
+                @foreach ($specializations as $spec)
+                <option value="{{ $spec->id }}">{{ $spec->name }}</option>
+                @endforeach
+            </select>
 
+        </div>
     </div>
 
 </div>

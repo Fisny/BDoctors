@@ -7,6 +7,14 @@
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
+                @php
+
+                use App\Specialization;
+
+                $specializations = Specialization::all();
+
+                @endphp
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -83,11 +91,28 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="specializations" class="col-md-4 col-form-label text-md-right">{{ __('Specializations') }}</label>
+                            <label for="specializations" for="exampleFormControlSelect2" class="col-md-4 col-form-label text-md-right">{{ __('Specializations') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="specializations" type="text" class="form-control @error('specializations') is-invalid @enderror" name="specializations" value="{{ old('specializations') }}" required autocomplete="specializations" autofocus>
+                            <div class="form-check col-md-6 mx-4 mt-2">
+                                <!-- <input id="specializations" type="text" class="form-control @error('specializations') is-invalid @enderror" name="specializations" value="{{ old('specializations') }}" required autocomplete="specializations" autofocus>
 
+                                @error('specializations')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror -->
+
+
+                                @foreach ($specializations as $specialization)
+
+                                <input name="specializations[]" id="specializations" class="form-check-input d-block @error('specializations') is-invalid @enderror" type="checkbox" value="{{ $specialization->id }}">
+                                <label class="form-check-label d-block" for="specializations">
+
+                                    {{ $specialization->name }}
+
+                                </label>
+
+                                @endforeach
                                 @error('specializations')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
