@@ -99,7 +99,7 @@ class UserController extends Controller
         $specializations = Specialization::all();
 
         if (Auth::user()->id === $user->id) {
-            return view('users.edit', compact('userr', 'specializations', 'sponsorships'));
+            return view('users.edit', compact('user', 'specializations', 'sponsorships'));
         } else {
             return redirect()->route("home");
         }
