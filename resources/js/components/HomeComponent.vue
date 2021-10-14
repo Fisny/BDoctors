@@ -85,12 +85,19 @@ export default {
           this.specializations = response.data;
         });
     },
-    // Stampa dei medici con sponsorizzazione attiva
+   // Stampa dei medici con sponsorizzazione attiva
     getDoctors() {
-      axios.get("http://127.0.0.1:8000/api/sponsored/").then((response) => {
+      axios.get("http://127.0.0.1:8000/api/alldoctors  ").then((response) => {
         this.doctors = response.data;
       });
     },
+
+       // Stampa dei medici con sponsorizzazione attiva
+    // getDoctors() {
+    //   axios.get("http://127.0.0.1:8000/api/sponsored/").then((response) => {
+    //     this.doctors = response.data;
+    //   });
+    // },
     // Ricerca medici per specializzazione
     // startFilter: function (id) {
     //   axios
