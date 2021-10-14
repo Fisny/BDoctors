@@ -15,7 +15,7 @@
         v-model="selected"
         onchange="location = /search/ + this.value;"
       >
-        <option value="" disabled selected>
+        <option >
           Seleziona una Specializzazione
         </option>
         <option
@@ -26,9 +26,9 @@
           {{ specialization.name }}
         </option>
       </select>
-      <a :href="'/search/' + selected" class="search-button"
+      <!-- <a :href="'/search/' + selected" class="search-button"
         >Effettua la Ricerca</a
-      >
+      > -->
     </div>
 
     <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
@@ -70,7 +70,7 @@ export default {
   data() {
     return {
       doctors: [],
-      selected: null,
+      selected: "Seleziona una Specializzazione",
       specializations: [],
       number: 0,
       arrayLength: 0,

@@ -7,10 +7,36 @@
       <div class="custom-line"></div>
     </div>
 
+        <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE. -->
+    <div class="filter-container">
+      <select
+        class="form-control"
+        name="template"
+        v-model="specializationSelected"
+        onchange="location = /search/ + this.value;"
+      >
+        <option value="" disabled selected>
+          Seleziona una Specializzazione
+        </option>
+        <option
+          v-for="specialization in specializations"
+          v-bind:value="specialization.id"
+          :key="specialization.id"
+        >
+          {{ specialization.name }}
+        </option>
+      </select>
+      <!-- <a :href="'/search/' + selected" class="search-button"
+        >Effettua la Ricerca</a
+      > -->
+    </div>
+
     <h5>Puoi affinare la ricerca tramite i filtri<span>.</span></h5>
 
     <div class="filter-item-container">
-      <div class="filter-item">
+
+      
+      <!-- <div class="filter-item">
         <h5>SPECIALIZZAZIONE</h5>
         <select
           class="form-control"
@@ -28,7 +54,7 @@
             {{ specialization.name }}
           </option>
         </select>
-      </div>
+      </div> -->
 
       <div class="filter-item">
         <h5>GRADIMENTO</h5>
@@ -61,7 +87,7 @@
 
     <button class="filter-search-button"
       v-on:click="
-        mazzinga(specializationSelected, starSelected, reviewSelected)
+        mazzinga(starSelected, reviewSelected)
       "
     >
       Filtra
@@ -152,15 +178,10 @@ export default {
           this.doctorsBackup = response.data.data;
         });
     },
-    mazzinga: function (specializationId, stars, reviews) {
-      axios
-        .get("http://127.0.0.1:8000/api/doctors/filter/" + specializationId)
-        .then((response) => {
-          this.doctors = response.data.data;
-          this.doctorsBackup = response.data.data;
+    mazzinga: function (stars, reviews) {
+            //todo if per non controllare con valori uguali a zero
           this.starFilter(stars);
           this.reviewFilter(reviews);
-        });
     },
     // Filtro per media voto
     starFilter: function (star) {
