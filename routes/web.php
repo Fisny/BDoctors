@@ -37,3 +37,9 @@ Route::get('/search/{id}', function ($id) {
         "id"=>$id,
     ]);
 })->name('search');
+
+Route::get('/payment', function() {
+    return view('app.payment');
+});
+
+Route::get('/payment/process', 'PaymentsController@process')->name('payment.process');
