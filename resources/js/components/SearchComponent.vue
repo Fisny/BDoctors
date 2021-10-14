@@ -20,8 +20,8 @@
         </option>
         <option
           v-for="specialization in specializations"
-          v-bind:value="specialization.id"
-          :key="specialization.id"
+          v-bind:value="specialization.name"
+          :key="specialization.name"
         >
           {{ specialization.name }}
         </option>
@@ -35,7 +35,7 @@
 
     <div class="filter-item-container">
 
-      
+
       <!-- <div class="filter-item">
         <h5>SPECIALIZZAZIONE</h5>
         <select
@@ -119,10 +119,11 @@
 <script>
 export default {
   mounted() {
-    this.startFilter(this.specializationId), this.getSpecializations();
+    this.getSpecializations();
   },
   data() {
     return {
+      indexSpec:0,
       specializationSelected: this.specializationId,
       starSelected: 0,
       reviewSelected: 0,
@@ -155,12 +156,24 @@ export default {
   },
   props: ["specializationId"],
   methods: {
+    searchStringInArray (str, strArray) {
+      console.log("prova");
+    for (var j=0; j<strArray.length; j++) {
+      console.log("funzione "+(strArray[j].name)+" "+(strArray[j].id));
+        if (strArray[j].name==(str)) { console.log("risultato "+strArray[j].id);return strArray[j].id;}
+    }
+    return -1;
+},
+
+    
     // Stampa lista sponsorizzazioni
     getSpecializations() {
       axios
         .get("http://127.0.0.1:8000/api/specializations")
         .then((response) => {
           this.specializations = response.data;
+          this.indexSpec= (this.searchStringInArray(this.specializationId,this.specializations));
+          this.startFilter(this.indexSpec);
         });
     },
     // Stampa dei medici con sponsorizzazione attiva
@@ -171,6 +184,7 @@ export default {
     },
     // Ricerca medici per specializzazione
     startFilter: function (id) {
+      console.log("idX "+ id)
       axios
         .get("http://127.0.0.1:8000/api/doctors/filter/" + id)
         .then((response) => {
@@ -192,7 +206,6 @@ export default {
         this.mediaStars = 0;
         doctor.reviews.forEach((review) => {
           this.somma += review.vote;
-          console.log("voto " + review.vote);
         });
         console.log("somma " + this.somma);
         console.log("media " + this.mediaStars);
@@ -205,7 +218,6 @@ export default {
           this.doctorsTmp.push(doctor);
         }
       });
-      console.log(this.doctorsTmp);
       this.doctors = this.doctorsTmp;
       // console.log(this.doctorsTmp[0]);
     },

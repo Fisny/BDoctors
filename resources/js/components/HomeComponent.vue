@@ -20,7 +20,7 @@
         </option>
         <option
           v-for="specialization in specializations"
-          v-bind:value="specialization.id"
+          v-bind:value="specialization.name"
           :key="specialization.id"
         >
           {{ specialization.name }}
