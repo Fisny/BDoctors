@@ -12,6 +12,8 @@
 
     <!-- Scripts -->
     <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
+    {{-- BRAINTREE --}}
+    <script src="https://js.braintreegateway.com/web/dropin/1.32.0/js/dropin.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

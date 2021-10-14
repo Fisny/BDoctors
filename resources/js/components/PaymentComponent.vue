@@ -28,12 +28,11 @@
     </div>
 
     <!-- PAGAMENTI -->
-     <div class="row">
-       <div class="col-md-8 col-md-offset-2">
-         <div id="dropin-container"></div>
-         <button id="submit-button">Metodi di pagamento</button>
-       </div>
+    <div class="payments-container">
+        <div id="dropin-container"></div>
+        <button id="submit-button" class="button button--small button--green">Acquista</button>
     </div>
+    
   
 
 
@@ -41,6 +40,18 @@
 </template>
 
 <script>
+var button = document.querySelector('#submit-button');
+
+braintree.dropin.create({
+  authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b',
+  selector: '#dropin-container'
+}, function (err, instance) {
+  button.addEventListener('click', function () {
+    instance.requestPaymentMethod(function (err, payload) {
+      // Submit payload.nonce to your server
+    });
+  })
+});
 </script>
 
 <style lang="sass" scooped>

@@ -21,6 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('home-component', require('./components/HomeComponent.vue').default);
 Vue.component('search-component', require('./components/SearchComponent.vue').default);
+Vue.component('payment-component', require('./components/PaymentComponent.vue').default);
 Vue.component('new-review', require('./components/NewReview.vue').default);
 Vue.component('rating-static', require('./components/RatingStatic.vue').default);
 Vue.component('rating-giver', require('./components/RatingGiver.vue').default);

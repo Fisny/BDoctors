@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "bootstrap-icons": "^1.5.0",
-        "bootstrap-select": "^1.13.18"
+        "bootstrap-select": "^1.13.18",
+        "braintree": "^3.7.0"
     }
 }
