@@ -50,7 +50,12 @@ $loggedUser = Auth::user();
             <label for="profile_pic" class="col-md-4 col-form-label text-md-right">{{ __('Foto Profilo') }}</label>
 
             <div class="col-md-6">
-                <input id="profile_pic" type="file" class="form-control @error('profile_pic') is-invalid @enderror" name="profile_pic" value="{{ $loggedUser->profile_pic }}" required autocomplete="profile_pic" autofocus>
+                @if ($loggedUser->profile_pic)
+                    
+                    <img width=150 src="{{asset('storage/' . $loggedUser->profile_pic)}}" alt="attuale immagine">
+                    <h6 class="mt-1">Attuale foto del profilo</h6>
+                @endif
+                <input id="profile_pic" type="file" class="form-control @error('profile_pic') is-invalid @enderror" name="profile_pic" autocomplete="profile_pic" autofocus>
 
                 @error('profile_pic')
                 <span class="invalid-feedback" role="alert">
@@ -82,6 +87,25 @@ $loggedUser = Auth::user();
                 <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ $loggedUser->address }}" required autocomplete="address" autofocus>
 
                 @error('address')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="cv" class="col-md-4 col-form-label text-md-right">{{ __('Curriculum Vitae') }}</label>
+
+            <div class="col-md-6">
+                @if ($loggedUser->cv)
+                    
+                    
+                    <h6 class="mt-1"><a href="{{asset('storage/' . $loggedUser->cv)}}" target="_blank" rel="noopener noreferrer">Attuale curriculum</a></h6>
+                @endif
+                <input id="cv" type="file" class="form-control @error('cv') is-invalid @enderror" name="cv" autocomplete="cv" autofocus>
+
+                @error('cv')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>

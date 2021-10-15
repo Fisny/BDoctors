@@ -47,6 +47,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="profile_pic" class="col-md-4 col-form-label text-md-right">{{ __('Foto Profilo') }}</label>
+                
+                            <div class="col-md-6">
+                                <input id="profile_pic" type="file" class="form-control @error('profile_pic') is-invalid @enderror" name="profile_pic" value="{{asset('storage/' . $user->profile_pic)}}" autocomplete="profile_pic" autofocus>
+                
+                                @error('profile_pic')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
