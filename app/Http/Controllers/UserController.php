@@ -144,11 +144,11 @@ class UserController extends Controller
             "name" => "required|string|max:50",
             "lastname" => "required|string|max:50",
             "email" => "required|email",
-            "password" => "required|confirmed|min:6|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'])",
+            "password" => "required|confirmed|min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/",
             "address" => "required|string|min:5",
             "qualification" => "required|string",
-            "profile_pic" => "image",
-            "cv" => "url",
+            "profile_pic" => "nullable|image",
+            "cv" => "nullable|url",
             "specializations" => "required"
         ]);
     }
@@ -161,8 +161,13 @@ class UserController extends Controller
         $user->password = $data['password'];
         $user->address = $data['address'];
         $user->qualification = $data['qualification'];
-        $user->profile_pic = $data['profile_pic'];
-        $user->cv = $data['cv'];
+        if ($user->profile_pic !=null) {
+            $user->profile_pic = $data['profile_pic'];
+        }
+        if ($user->cv !=null) {
+            $user->cv = $data['cv'];
+        }
+        
         $user->save();
     }
 }
