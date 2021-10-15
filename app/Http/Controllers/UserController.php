@@ -147,7 +147,7 @@ class UserController extends Controller
             "password" => "required|confirmed|min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/",
             "address" => "required|string|min:5",
             "qualification" => "required|string",
-            "profile_pic" => "nullable|image",
+            "profile_pic" => "nullable|image|mimes:jpeg,png",
             "cv" => "nullable|url",
             "specializations" => "required"
         ]);
