@@ -9,7 +9,7 @@
                     <ul class="dashboard-links">
                         <li><a href="{{route('users.edit', $loggedUser)}}">Modifica Informazioni</a></li>
                         <li><a href="{{route('messages')}}">Messaggi Ricevuti</a></li>
-                        <li><a href="">Recensioni Ricevute</a></li>
+                        <li><a href="{{route('reviews')}}">Recensioni Ricevute</a></li>
                         <li><a href="">Sponsorizzazione Profilo</a></li>
                         <li><a href="">Statistiche Profilo</a></li>
                     </ul>

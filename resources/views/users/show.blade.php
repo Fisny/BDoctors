@@ -125,7 +125,7 @@
         <div class="col-lg-10 col-xs-12 show-column reviews p-3">
             <h2>Recensioni</h2>
 
-            @foreach ($user->reviews as $review)
+            @foreach ($user->reviews->reverse() as $review)
             {{-- Tentativo di implementarlo in Blade only --}}
             <div class="card-review">
                 <h4>{{$review->user_name}}</h4>
