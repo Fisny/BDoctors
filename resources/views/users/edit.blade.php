@@ -3,17 +3,17 @@
 @section('dashboard')
 @php
 
-    use App\Specialization;
-    use Illuminate\Support\Facades\Auth;
+use App\Specialization;
+use Illuminate\Support\Facades\Auth;
 
-    $specializations = Specialization::all();
-    $loggedUser = Auth::user();
+$specializations = Specialization::all();
+$loggedUser = Auth::user();
 
 @endphp
 
 <div class="card-body">
 
-    <form method="POST" action="{{ route('users.update', $loggedUser) }}" >
+    <form method="POST" action="{{ route('users.update', $loggedUser) }}" enctype="multipart/form-data">
         @method('PUT')
         @csrf
 
@@ -38,6 +38,21 @@
                 <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ $loggedUser->lastname }}" required autocomplete="lastname" autofocus>
 
                 @error('lastname')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="profile_pic" class="col-md-4 col-form-label text-md-right">{{ __('Foto Profilo') }}</label>
+
+            <div class="col-md-6">
+                <input id="profile_pic" type="file" class="form-control @error('profile_pic') is-invalid @enderror" name="profile_pic" value="{{ $loggedUser->profile_pic }}" required autocomplete="profile_pic" autofocus>
+
+                @error('profile_pic')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -101,11 +116,11 @@
                 @enderror -->
                 @foreach ($specializations as $specialization)
                 @if ($loggedUser->specialization->contains($specialization))
-                <input name="specializations[]" id="specializations" class="form-check-input d-block @error('specializations') is-invalid @enderror" type="checkbox" value="{{ $specialization->id }}" checked>           
+                <input name="specializations[]" id="specializations" class="form-check-input d-block @error('specializations') is-invalid @enderror" type="checkbox" value="{{ $specialization->id }}" checked>
                 @else
                 <input name="specializations[]" id="specializations" class="form-check-input d-block @error('specializations') is-invalid @enderror" type="checkbox" value="{{ $specialization->id }}">
                 @endif
-                
+
                 <label class="form-check-label d-block" for="specializations">
 
                     {{ $specialization->name }}
@@ -150,4 +165,4 @@
                 </button>
             </div>
         </div>
-@endsection
+        @endsection

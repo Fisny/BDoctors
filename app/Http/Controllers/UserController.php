@@ -11,7 +11,7 @@ use App\Specialization;
 use App\Message;
 use App\Sponsorship;
 use App\Review;
-
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -161,13 +161,14 @@ class UserController extends Controller
         $user->password = $data['password'];
         $user->address = $data['address'];
         $user->qualification = $data['qualification'];
-        if ($user->profile_pic !=null) {
-            $user->profile_pic = $data['profile_pic'];
-        }
-        if ($user->cv !=null) {
+
+        $picturePath = Storage::put('images', $data['profile_pic']);
+        $user->profile_pic = $picturePath;
+
+        if ($user->cv != null) {
             $user->cv = $data['cv'];
         }
-        
+
         $user->save();
     }
 }

@@ -32,14 +32,14 @@ Route::delete('/messages/{message}/delete', 'MessageController@destroy')->middle
 Route::get('/app', 'WebAppController@home');
 
 Route::get('/search/{id}', function ($id) {
-    
+
     return view('app/search', [
-        "id"=>$id,
+        "id" => $id,
     ]);
 })->name('search');
 
-Route::get('/payment', function() {
-    return view('app.payment');
-});
+// Route::get('/payment', function() {
+//     return view('app.payment');
+// });
 
-Route::get('/payment/process', 'PaymentsController@process')->name('payment.process');
+// Route::get('/payment/process', 'PaymentsController@process')->name('payment.process');
