@@ -72,16 +72,16 @@
 </template>
 
 <script>
+import axios from "axios";
 import CarouselComponent from "./CarouselComponent.vue";
 
 export default {
   components: { CarouselComponent },
   mounted() {
-    this.getDoctors(), this.getSpecializations();
+    this.getSpecializations();
   },
   data() {
     return {
-      doctors: [],
       selected: "Seleziona una Specializzazione",
       specializations: [],
       number: 0,
