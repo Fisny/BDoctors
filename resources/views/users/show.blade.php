@@ -19,12 +19,12 @@
         <div class="col-lg-3 col-xs-12 mr-5 show-column contacts p-3">
             <div class="box_pp pb-3">
                 @php
-                    use Illuminate\Support\Str;
+                use Illuminate\Support\Str;
                 @endphp
                 @if (Str::startsWith($user->profile_pic, 'images/'))
-                    <img class="profile_picture" src="{{asset('storage/' . $user->profile_pic)}}" alt="{{$user->name}} {{$user->name}}'s photo">
+                <img class="profile_picture" src="{{asset('storage/' . $user->profile_pic)}}" alt="{{$user->name}} {{$user->name}}'s photo">
                 @else
-                    <img class="profile_picture" src="https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png" alt="Pfp placeholder">
+                <img class="profile_picture" src="https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png" alt="Pfp placeholder">
                 @endif
 
             </div>
@@ -40,12 +40,12 @@
                 <span>Email: {{$user->email}} <br></span>
                 <span>Indirizzo: {{$user->address}} <br></span>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary bdoctor-button mt-2" data-toggle="modal" data-target="#exampleModal">
+                <!-- <button type="button" class="btn btn-primary bdoctor-button mt-2" data-toggle="modal" data-target="#exampleModal">
                     Manda un messaggio
-                </button>
+                </button> -->
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -92,7 +92,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+                <new-message doctor-name="{{ $user->name }}" doctor-lastname="{{ $user->lastname }}" />
 
             </div>
         </div>
@@ -100,12 +101,12 @@
         <div class="col-lg-6 col-xs-12 ml-5 show-column professional-info p-3">
             {{-- Contiene informazioni professionali come curriculum, specializzazioni e tariffe(?) --}}
             @if ($user->cv !=null)
-                <h2><a href="{{asset('storage/' . $user->cv)}}" target="_blank" rel="noopener noreferrer">Curriculum</a></h2>
+            <h2><a href="{{asset('storage/' . $user->cv)}}" target="_blank" rel="noopener noreferrer">Curriculum</a></h2>
             @else
-                <h2>Curriculum non disponibile</h2>
+            <h2>Curriculum non disponibile</h2>
             @endif
             <p class="text-break">
-                
+
             </p>
             <hr>
             <h2>Specializzazioni</h2>
