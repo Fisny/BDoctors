@@ -1,4 +1,4 @@
-@extends('home')
+@extends('users.home')
 
 @section('dashboard')
     <div class="col-lg-10 col-xs-12 show-column reviews p-3">
