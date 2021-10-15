@@ -18,7 +18,10 @@
     <div class="row flex-wrap justify-content-center">
         <div class="col-lg-3 col-xs-12 mr-5 show-column contacts p-3">
             <div class="box_pp pb-3">
-                @if ($user->profile_pic!=null)
+                @php
+                    use Illuminate\Support\Str;
+                @endphp
+                @if (Str::startsWith($user->profile_pic, 'images/'))
                     <img class="profile_picture" src="{{asset('storage/' . $user->profile_pic)}}" alt="{{$user->name}} {{$user->name}}'s photo">
                 @else
                     <img class="profile_picture" src="https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png" alt="Pfp placeholder">
@@ -96,7 +99,11 @@
 
         <div class="col-lg-6 col-xs-12 ml-5 show-column professional-info p-3">
             {{-- Contiene informazioni professionali come curriculum, specializzazioni e tariffe(?) --}}
-            <h2><a href="{{asset('storage/' . $user->cv)}}" target="_blank" rel="noopener noreferrer">Curriculum</a></h2>
+            @if ($user->cv !=null)
+                <h2><a href="{{asset('storage/' . $user->cv)}}" target="_blank" rel="noopener noreferrer">Curriculum</a></h2>
+            @else
+                <h2>Curriculum non disponibile</h2>
+            @endif
             <p class="text-break">
                 
             </p>
