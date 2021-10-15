@@ -18,7 +18,12 @@
         <div class="row flex-wrap justify-content-center">
             <div class="col-lg-3 col-xs-12 mr-5 show-column contacts p-3">
                 <div class="box_pp pb-3">
-                    <img class="profile_picture" src="{{$user->profile_pic}}" alt="{{$user->name}} {{$user->name}}'s photo">
+                    @if ($user->profile_pic!=null)
+                        <img class="profile_picture" src="{{$user->profile_pic}}" alt="{{$user->name}} {{$user->name}}'s photo">
+                    @else
+                        <img class="profile_picture" src="https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png" alt="Pfp placeholder">
+                    @endif
+                    
                 </div>
                 <h4>{{$user->qualification}} {{$user->name}} {{$user->lastname}}</h4>
                 {{-- Componente Vue della media delle recensioni --}}
