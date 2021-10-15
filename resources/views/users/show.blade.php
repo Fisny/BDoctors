@@ -96,17 +96,15 @@
 
         <div class="col-lg-6 col-xs-12 ml-5 show-column professional-info p-3">
             {{-- Contiene informazioni professionali come curriculum, specializzazioni e tariffe(?) --}}
-            <h2>Curriculum</h2>
+            <h2><a href="{{asset('storage/' . $user->cv)}}" target="_blank" rel="noopener noreferrer">Curriculum</a></h2>
             <p class="text-break">
-                {{$user->cv}}
-                Did you know that Bootstrap is like a printer? Refuses to work and has a new problem every time!
-                superduperlongwordireallyhopebootstrapbreaksthisoneanddoesntoverflowtotheothercontainercompletelywreckingmybeautifullayout
+                
             </p>
             <hr>
             <h2>Specializzazioni</h2>
             <span>
                 @foreach ($user->specialization as $specialization)
-                <span class="badge badge-info p-2 specialization-badge">{{$specialization->name}}</span>
+                <span class="badge badge-info m-1 p-2 specialization-badge">{{$specialization->name}}</span>
                 @endforeach
             </span>
 

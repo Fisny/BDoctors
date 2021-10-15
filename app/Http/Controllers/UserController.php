@@ -147,8 +147,8 @@ class UserController extends Controller
             "password" => "required|confirmed|min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/",
             "address" => "required|string|min:5",
             "qualification" => "required|string",
-            "profile_pic" => "image|mimes:jpeg,png",
-            "cv" => "nullable|url",
+            "profile_pic" => "nullable|image|mimes:jpeg,png",
+            "cv" => "nullable|file|mimes:pdf",
             "specializations" => "required"
         ]);
     }
@@ -168,8 +168,9 @@ class UserController extends Controller
         }
         
 
-        if ($user->cv != null) {
-            $user->cv = $data['cv'];
+        if (isset($data['cv'])) {
+            $curriculumPath = Storage::put('cv', $data['cv']);
+            $user->cv = $curriculumPath;
         }
 
         $user->save();

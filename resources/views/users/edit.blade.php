@@ -95,6 +95,25 @@ $loggedUser = Auth::user();
         </div>
 
         <div class="form-group row">
+            <label for="cv" class="col-md-4 col-form-label text-md-right">{{ __('Curriculum Vitae') }}</label>
+
+            <div class="col-md-6">
+                @if ($loggedUser->cv)
+                    
+                    
+                    <h6 class="mt-1"><a href="{{asset('storage/' . $loggedUser->cv)}}" target="_blank" rel="noopener noreferrer">Attuale curriculum</a></h6>
+                @endif
+                <input id="cv" type="file" class="form-control @error('cv') is-invalid @enderror" name="cv" autocomplete="cv" autofocus>
+
+                @error('cv')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+        </div>
+
+        <div class="form-group row">
             <label for="qualification" class="col-md-4 col-form-label text-md-right">{{ __('Qualifica') }}</label>
 
             <div class="col-md-6">
