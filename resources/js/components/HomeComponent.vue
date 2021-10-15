@@ -37,7 +37,11 @@
     </div>
 
     <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
-    <div class="sponsored-doctor-title">
+    <div>
+      <carousel-component />
+    </div>
+
+    <!-- <div class="sponsored-doctor-title">
       <h4>ELENCO DEI MEDICI PREMIUM</h4>
     </div>
 
@@ -63,12 +67,15 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
+import CarouselComponent from "./CarouselComponent.vue";
+
 export default {
+  components: { CarouselComponent },
   mounted() {
     this.getDoctors(), this.getSpecializations();
   },
@@ -94,11 +101,11 @@ export default {
         });
     },
     // Stampa dei medici con sponsorizzazione attiva
-    getDoctors() {
-      axios.get("http://127.0.0.1:8000/api/alldoctors  ").then((response) => {
-        this.doctors = response.data;
-      });
-    },
+    // getDoctors() {
+    //   axios.get("http://127.0.0.1:8000/api/alldoctors  ").then((response) => {
+    //     this.doctors = response.data;
+    //   });
+    // },
 
     // Stampa dei medici con sponsorizzazione attiva
     // getDoctors() {

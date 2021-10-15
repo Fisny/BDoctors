@@ -39,60 +39,8 @@
             <div>
                 <span>Email: {{$user->email}} <br></span>
                 <span>Indirizzo: {{$user->address}} <br></span>
-                <!-- Button trigger modal -->
-                <!-- <button type="button" class="btn btn-primary bdoctor-button mt-2" data-toggle="modal" data-target="#exampleModal">
-                    Manda un messaggio
-                </button> -->
 
-                <!-- Modal -->
-                <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Messaggio privato</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="post">
-                                    {{--
-                                        nome
-                                        email
-                                        contenuto messaggio
-                                     --}}
-                                    <div class="form-group">
-                                        {{-- nome --}}
-                                        <div class="form-row">
-                                            <div class="col">
-                                                <input type="text" class="form-control" placeholder="Nome">
-                                            </div>
-                                            <div class="col">
-                                                <input type="text" class="form-control" placeholder="Cognome">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        {{-- email --}}
-                                        <label for="exampleInputEmail1">Indirizzo email</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                        <small id="emailHelp" class="form-text text-muted">Solo tu e {{$user->name}} {{$user->lastname}} conoscerete la tua email.</small>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Contenuto messaggio</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary bdoctor-button">Invia</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+                <!-- Componente per l'invio del nuovo messaggio -->
                 <new-message doctor-name="{{ $user->name }}" doctor-lastname="{{ $user->lastname }}" />
 
             </div>
