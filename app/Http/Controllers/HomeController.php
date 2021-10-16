@@ -28,6 +28,6 @@ class HomeController extends Controller
         // c'è un modo migliore per farlo ma è l'unico modo che abbiamo trovato per poter lavorare effettivamente
         // sulla dashboard
         $loggedUser = Auth::user();
-        return view('users.home', compact('loggedUser'));
+        return view('users.dashboard_home', compact('loggedUser'));
     }
 }

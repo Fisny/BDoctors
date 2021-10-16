@@ -20,9 +20,7 @@
                 Specialista in {{ specialization.name }}
               </h5>
             </div>
-            <a :href="'/users/' + doctor.id" class="btn btn-primary"
-              >Dettagli</a
-            >
+            <a :href="'/show/' + doctor.id" class="btn btn-primary">Dettagli</a>
           </div>
         </div>
       </div>

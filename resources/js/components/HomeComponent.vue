@@ -2,10 +2,10 @@
   <div class="container">
     <!-- TITOLO -->
     <div class="search-title">
-      <h1 class="animate__animated animate__bounce">
+      <h1 class="animate__animated animate__fadeInDown">
         Cerchi un medico<span>?</span>
       </h1>
-      <h2 class="animate__animated animate__bounce">
+      <h2 class="animate__animated animate__fadeInDown">
         Fai un click, al resto pensiamo noi<span>.</span>
       </h2>
       <div class="custom-line"></div>
@@ -100,27 +100,6 @@ export default {
           this.specializations = response.data;
         });
     },
-    // Stampa dei medici con sponsorizzazione attiva
-    // getDoctors() {
-    //   axios.get("http://127.0.0.1:8000/api/alldoctors  ").then((response) => {
-    //     this.doctors = response.data;
-    //   });
-    // },
-
-    // Stampa dei medici con sponsorizzazione attiva
-    // getDoctors() {
-    //   axios.get("http://127.0.0.1:8000/api/sponsored/").then((response) => {
-    //     this.doctors = response.data;
-    //   });
-    // },
-    // Ricerca medici per specializzazione
-    // startFilter: function (id) {
-    //   axios
-    //     .get("http://127.0.0.1:8000/api/doctors/filter/" + id)
-    //     .then((response) => {
-    //       this.doctors = response.data.data;
-    //     });
-    // },
   },
 };
 </script>

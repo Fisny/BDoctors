@@ -7,7 +7,7 @@
       <div class="custom-line"></div>
     </div>
 
-        <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE. -->
+    <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE. -->
     <div class="filter-container">
       <select
         class="form-control"
@@ -34,8 +34,6 @@
     <h5>Puoi affinare la ricerca tramite i filtri<span>.</span></h5>
 
     <div class="filter-item-container">
-
-      
       <!-- <div class="filter-item">
         <h5>SPECIALIZZAZIONE</h5>
         <select
@@ -85,10 +83,9 @@
       </div>
     </div>
 
-    <button class="filter-search-button"
-      v-on:click="
-        mazzinga(starSelected, reviewSelected)
-      "
+    <button
+      class="filter-search-button"
+      v-on:click="mazzinga(starSelected, reviewSelected)"
     >
       Filtra
     </button>
@@ -107,7 +104,7 @@
           >
             <h5 class="card-title">Specialista in {{ specialization.name }}</h5>
           </div>
-          <a :href="'/users/' + doctor.id" class="btn btn-primary"
+          <a :href="'/show/' + doctor.id" class="btn btn-primary"
             >Visita il profilo</a
           >
         </div>
@@ -179,9 +176,9 @@ export default {
         });
     },
     mazzinga: function (stars, reviews) {
-            //todo if per non controllare con valori uguali a zero
-          this.starFilter(stars);
-          this.reviewFilter(reviews);
+      //todo if per non controllare con valori uguali a zero
+      this.starFilter(stars);
+      this.reviewFilter(reviews);
     },
     // Filtro per media voto
     starFilter: function (star) {
