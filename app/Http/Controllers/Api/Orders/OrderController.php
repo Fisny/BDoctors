@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Api\Orders;
 use Braintree\Gateway;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Orders\OrderRequest;
 
 class OrderController extends Controller
 {
@@ -21,7 +22,27 @@ class OrderController extends Controller
         // return "generate";
         
     }
-    public function makePayment(Request $request, Gateway $gateway){
-        return "make payment";
+    public function makePayment(OrderRequest $request, Gateway $gateway){
+        $result = $gateway->transaction()->sale([
+            "amount" => "$request->amount", //se metto $request->amount recupero il valore inviato dalla post
+            "paymentMethodNonce" => $request->token //recupero il token che arriva dalla post
+        ]);
+
+        if($result->success){
+            $data= [
+                'success'=> true,
+                'message'=> "Transazione dell'importo di ".$request->amount." eseguita con Successo!"
+            ];
+            return response()->json($data,200);
+        }else{
+            $data= [
+                'success'=> false,
+                'message'=> "Transazione fallita!!"
+            ];
+            return response()->json($data,401);
+        }
+
+        // return "make payment";
     }
 }
+
