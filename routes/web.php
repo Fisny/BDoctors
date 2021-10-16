@@ -14,13 +14,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard_home', 'HomeController@index')->name('home');
 
 //rotte di UserController
 Route::resource('users', 'UserController');
@@ -28,10 +28,11 @@ Route::resource('users', 'UserController');
 //rotte del MessageController
 Route::get('/messages/user', 'MessageController@showMessages')->name('messages')->middleware('auth');
 // Da spostare su controller a parte
-Route::get('/reviews/user', 'MessageController@showReviews')->name('reviews')->middleware('auth'); 
+Route::get('/reviews/user', 'MessageController@showReviews')->name('reviews')->middleware('auth');
 Route::delete('/messages/{message}/delete', 'MessageController@destroy')->name('messages.delete')->middleware('auth');
 
-Route::get('/app', 'WebAppController@home');
+Route::get('/', 'WebAppController@home');
+Route::get('/show/{user}', 'WebAppController@show');
 
 Route::get('/search/{id}', function ($id) {
 

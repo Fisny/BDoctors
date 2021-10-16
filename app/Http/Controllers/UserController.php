@@ -75,17 +75,17 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
-    {
-        $avgVote = Review::where('user_id', $user->id)->avg('vote');
-        if ($avgVote == null) {
-            $avgVote = 0;
-        }
+    // public function show(User $user)
+    // {
+    //     $avgVote = Review::where('user_id', $user->id)->avg('vote');
+    //     if ($avgVote == null) {
+    //         $avgVote = 0;
+    //     }
 
-        // $updateDiff= Carbon::createFromFormat('Y-m-d H:i:s', $user->updated_at)->locale('it_IT')->diffForHumans(Carbon::now());
-        // dd($updateDiff);
-        return view('users.show', compact('user'), compact('avgVote'));
-    }
+    //     // $updateDiff= Carbon::createFromFormat('Y-m-d H:i:s', $user->updated_at)->locale('it_IT')->diffForHumans(Carbon::now());
+    //     // dd($updateDiff);
+    //     return view('users.show', compact('user'), compact('avgVote'));
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -166,7 +166,7 @@ class UserController extends Controller
             $picturePath = Storage::put('images', $data['profile_pic']);
             $user->profile_pic = $picturePath;
         }
-        
+
 
         if (isset($data['cv'])) {
             $curriculumPath = Storage::put('cv', $data['cv']);

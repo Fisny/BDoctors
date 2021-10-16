@@ -22,10 +22,7 @@
                 
               </div>
             </div>
-            
-            <a :href="'/users/' + doctor.id" class=" ml-3 btn btn-primary"
-              >Dettagli</a
-            >
+            <a :href="'/show/' + doctor.id" class="ml-3 btn btn-primary">Dettagli</a>
           </div>
           
         </div>
