@@ -122,7 +122,7 @@ class UserController extends Controller
 
         $user->specialization()->sync($data['specializations']);
 
-        return redirect()->route('users.show', $user);
+        return redirect()->route('profile.show', $user);
     }
 
     /**
