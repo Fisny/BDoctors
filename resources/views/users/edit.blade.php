@@ -1,4 +1,4 @@
-@extends('users.home')
+@extends('users.dashboard_home')
 
 @section('dashboard')
 @php

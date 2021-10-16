@@ -32,7 +32,7 @@ Route::get('/reviews/user', 'MessageController@showReviews')->name('reviews')->m
 Route::delete('/messages/{message}/delete', 'MessageController@destroy')->name('messages.delete')->middleware('auth');
 
 Route::get('/', 'WebAppController@home');
-Route::get('/show/{user}', 'WebAppController@show');
+Route::get('/show/{user}', 'WebAppController@show')->name('profile.show');
 
 Route::get('/search/{id}', function ($id) {
 
