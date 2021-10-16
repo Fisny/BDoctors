@@ -36,4 +36,5 @@ Route::namespace('Api')->group(function () {
 
 Route::get('orders/generate', 'Api\Orders\OrderController@generate');
 Route::post('orders/make/payment', 'Api\Orders\OrderController@makePayment');
+Route::get('products', 'Api\Products\ProductController@index');
 

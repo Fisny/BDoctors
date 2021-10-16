@@ -2,23 +2,14 @@
 
 namespace App\Http\Controllers\Api\Products;
 
-use App\Http\Controllers\Controller;
+use App\Sponsorship;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
-    public function index(Request $request, Gateway $gateway){
-        // dd($gateway->clientToken());
-        $token = $gateway->clientToken()->generate();
-
-        $data= [
-            'success'=> true,
-            'token'=>$token
-        ];
-
-        return response()->json($data,200);
-
-        // return "generate";
-        
+    public function index(Request $request){
+        $sponsorshipsList = Sponsorship::all();
+        return response()->json($sponsorshipsList,200);
     }
 }
