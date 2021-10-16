@@ -11,18 +11,18 @@
             {{ doctor.qualification }} {{ doctor.name }} {{ doctor.lastname }}
           </h5>
           <div class="card-body">
-            <div class="row justify-content-around align-items-center flex-wrap">
+            <div class="row flex-grow-1 justify-content-around align-items-center flex-wrap">
               <div
               v-for="specialization in doctor.specialization"
               :key="specialization.id"
-              class="badge badge-info m-2 p-2 col-2  specialization-badge"
+              class="badge badge-info p-2 col-2 m-2  specialization-badge"
               >
                 
                   {{ specialization.name }}
                 
               </div>
             </div>
-            <a :href="'/show/' + doctor.id" class="ml-3 btn btn-primary">Dettagli</a>
+            <a :href="'/show/' + doctor.id" class=" btn btn-primary">Dettagli</a>
           </div>
           
         </div>
