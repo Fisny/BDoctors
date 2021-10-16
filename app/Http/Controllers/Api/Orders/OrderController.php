@@ -5,6 +5,7 @@ use Braintree\Gateway;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Orders\OrderRequest;
+use App\Sponsorship;
 
 class OrderController extends Controller
 {
@@ -23,21 +24,22 @@ class OrderController extends Controller
         
     }
     public function makePayment(OrderRequest $request, Gateway $gateway){
+        $sponsorship = Sponsorship::find($request->amount);
         $result = $gateway->transaction()->sale([
-            "amount" =>  $request->amount, //se metto $request->amount recupero il valore inviato dalla post
+            "amount" =>  $sponsorship->price, //se metto $request->amount recupero il valore inviato dalla post
             "paymentMethodNonce" => $request->token //recupero il token che arriva dalla post
         ]);
 
         if($result->success){
             $data= [
                 'success'=> true,
-                'message'=> "Transazione eseguita di ".$request->amount." con Successo!"
+                'message'=> "Transazione eseguita di ".$sponsorship->price." con Successo!"
             ];
             return response()->json($data,200);
         }else{
             $data= [
                 'success'=> false,
-                'message'=> "Transazione fallita di ".$request->amount ."!!"
+                'message'=> "Transazione fallita di ".$sponsorship->price ."!!"
             ];
             return response()->json($data,401);
         }

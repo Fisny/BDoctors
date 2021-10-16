@@ -24,6 +24,8 @@ class ValidProduct implements Rule
      * @param  mixed  $value
      * @return bool
      */
+
+     //Verifica la presenza della sponsorizzazione
     public function passes($attribute, $value)
     {
         // $product = Sponsorship::find ($value)
