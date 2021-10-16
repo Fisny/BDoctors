@@ -28,7 +28,7 @@ class ValidProduct implements Rule
      //Verifica la presenza della sponsorizzazione
     public function passes($attribute, $value)
     {
-        // $product = Sponsorship::find ($value)
+        // Verifico se esiste una corrispondenza tra il valore value (l'id passato) e un id del database
         if(Sponsorship::find($value)){
             return true;
         }

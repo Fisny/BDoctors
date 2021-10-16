@@ -28,7 +28,7 @@ class OrderRequest extends FormRequest
             'token'=> 'required',
             'amount'=> [
                 'required',
-                new ValidProduct()
+                new ValidProduct() //valido l'id con la funzione ValidProduct
                 
 
             ]

@@ -26,7 +26,7 @@ class OrderController extends Controller
     public function makePayment(OrderRequest $request, Gateway $gateway){
         $sponsorship = Sponsorship::find($request->amount);
         $result = $gateway->transaction()->sale([
-            "amount" =>  $sponsorship->price, //se metto $request->amount recupero il valore inviato dalla post
+            "amount" =>  $sponsorship->price, //Recupero il prezzo della sponsorizzazione attraverso il model collegato al database
             "paymentMethodNonce" => $request->token //recupero il token che arriva dalla post
         ]);
 
