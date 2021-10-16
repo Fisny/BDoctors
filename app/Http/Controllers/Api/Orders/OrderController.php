@@ -24,20 +24,20 @@ class OrderController extends Controller
     }
     public function makePayment(OrderRequest $request, Gateway $gateway){
         $result = $gateway->transaction()->sale([
-            "amount" => "$request->amount", //se metto $request->amount recupero il valore inviato dalla post
+            "amount" =>  $request->amount, //se metto $request->amount recupero il valore inviato dalla post
             "paymentMethodNonce" => $request->token //recupero il token che arriva dalla post
         ]);
 
         if($result->success){
             $data= [
                 'success'=> true,
-                'message'=> "Transazione dell'importo di ".$request->amount." eseguita con Successo!"
+                'message'=> "Transazione eseguita di ".$request->amount." con Successo!"
             ];
             return response()->json($data,200);
         }else{
             $data= [
                 'success'=> false,
-                'message'=> "Transazione fallita!!"
+                'message'=> "Transazione fallita di ".$request->amount ."!!"
             ];
             return response()->json($data,401);
         }
