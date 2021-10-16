@@ -19,7 +19,7 @@
         </div>
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header"><a href="{{route('home')}}">Dashboard di {{$loggedUser->name}} {{$loggedUser->lastname}}</a></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -28,7 +28,6 @@
                             
                         </div>
                     @endif
-                    <h2>Pagina personale di {{$loggedUser->name}} {{$loggedUser->lastname}}</h2>
                     @yield('dashboard')
                 </div>
             </div>

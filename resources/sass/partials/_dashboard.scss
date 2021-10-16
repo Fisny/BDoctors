@@ -1,3 +1,24 @@
 .dashboard-links{
     list-style-type: none;
 }
+
+.message-email{
+    color: black;
+    font-size: 16px;
+    text-align: left;
+    display: block;
+}
+
+.delete-message{
+    text-align: right;
+}
+
+.card-message{
+    border: 1px solid $strongblue;
+    border-radius: 12px;
+}
+
+.message-preview{
+    max-height: 5vh;
+    overflow-y:hidden;
+}

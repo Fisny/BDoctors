@@ -54,6 +54,8 @@ $loggedUser = Auth::user();
                     
                     <img width=150 src="{{asset('storage/' . $loggedUser->profile_pic)}}" alt="attuale immagine">
                     <h6 class="mt-1">Attuale foto del profilo</h6>
+                @else 
+                    <span class="minor-text">Inserisci una foto del profilo</span>
                 @endif
                 <input id="profile_pic" type="file" class="form-control @error('profile_pic') is-invalid @enderror" name="profile_pic" autocomplete="profile_pic" autofocus>
 
@@ -102,8 +104,11 @@ $loggedUser = Auth::user();
                     
                     
                     <h6 class="mt-1"><a href="{{asset('storage/' . $loggedUser->cv)}}" target="_blank" rel="noopener noreferrer">Attuale curriculum</a></h6>
+                @else 
+                    <span class="minor-text">Inserisci una foto del profilo</span>
                 @endif
                 <input id="cv" type="file" class="form-control @error('cv') is-invalid @enderror" name="cv" autocomplete="cv" autofocus>
+                
 
                 @error('cv')
                 <span class="invalid-feedback" role="alert">

@@ -2,19 +2,7 @@
 
 @section('content')
 <div class="p-1 container">
-    {{-- Attributes: 
-            name 
-            lastname
-            email
-            address
-            qualification
-            specialization
-            profile_pic
-            cv (add later)
 
-            timestamps(optional)
-            rating (optional)
-        --}}
     <div class="row flex-wrap justify-content-center">
         <div class="col-lg-3 col-xs-12 mr-5 show-column contacts p-3">
             <div class="box_pp pb-3">
@@ -22,9 +10,9 @@
                 use Illuminate\Support\Str;
                 @endphp
                 @if (Str::startsWith($user->profile_pic, 'images/'))
-                <img class="profile_picture" src="{{asset('storage/' . $user->profile_pic)}}" alt="{{$user->name}} {{$user->name}}'s photo">
+                    <img class="profile_picture" src="{{asset('storage/' . $user->profile_pic)}}" alt="{{$user->name}} {{$user->name}}'s photo">
                 @else
-                <img class="profile_picture" src="https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png" alt="Pfp placeholder">
+                    <img class="profile_picture" src="https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png" alt="Pfp placeholder">
                 @endif
 
             </div>

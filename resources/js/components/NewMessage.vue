@@ -20,9 +20,9 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
+              <h4 class="modal-title" id="exampleModalLabel">
                 Messaggio privato
-              </h5>
+              </h4>
               <button
                 type="button"
                 class="close"

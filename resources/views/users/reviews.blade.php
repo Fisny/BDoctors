@@ -1,7 +1,7 @@
 @extends('users.home')
 
 @section('dashboard')
-    <div class="col-lg-10 col-xs-12 show-column reviews p-3">
+    <div class="col-lg-12 col-xs-12 show-column reviews p-3">
         <h2>Recensioni</h2>
 
         @foreach ($loggedUser->reviews->reverse() as $review)
