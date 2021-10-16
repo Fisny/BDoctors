@@ -31,7 +31,7 @@ class MessageController extends Controller
 
         if ($user->id === $message->user_id) {
             $message->delete();
-            return redirect()->route('users.messages');
+            return redirect()->route('messages');
         }
     }
 }
