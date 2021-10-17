@@ -19,14 +19,11 @@ class OrderController extends Controller
         ];
 
         return response()->json($data,200);
-
-        // return "generate";
-        
     }
     public function makePayment(OrderRequest $request, Gateway $gateway){
-        $sponsorship = Sponsorship::find($request->amount);
+        $sponsorship = Sponsorship::find($request->id);//recupero la sponsorizzazione tramite l'id attraverso il model collegato al database
         $result = $gateway->transaction()->sale([
-            "amount" =>  $sponsorship->price, //Recupero il prezzo della sponsorizzazione attraverso il model collegato al database
+            "amount" =>  $sponsorship->price, //Recupero il prezzo della sponsorizzazione da db
             "paymentMethodNonce" => $request->token //recupero il token che arriva dalla post
         ]);
 
@@ -41,10 +38,9 @@ class OrderController extends Controller
                 'success'=> false,
                 'message'=> "Transazione fallita di ".$sponsorship->price ."!!"
             ];
+
             return response()->json($data,401);
         }
-
-        // return "make payment";
     }
 }
 
