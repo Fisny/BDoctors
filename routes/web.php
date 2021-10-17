@@ -41,3 +41,9 @@ Route::get('/search/{id}', function ($id) {
         "id"=>$id,
     ]);
 })->name('search');
+
+Route::get('/checkout/{id}', function ($id) {
+    return view('app/checkout', [
+        "id"=>$id,
+    ]);
+})->name('checkout');

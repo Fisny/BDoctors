@@ -6,7 +6,7 @@
 
     </div>
 
-    <home-component> test </home-component>
+    <home-component></home-component>
 
 </div>
 
