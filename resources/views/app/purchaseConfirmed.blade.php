@@ -8,7 +8,7 @@
         <h5>Complimenti, hai accesso al piano {{$sponsorship->name}}.</h5>
         <br>
         <div class="comeback-button">
-            <h6><a href="{{ url('/app')}}">Ritorna alla home</h6>
+            <h6><a href="{{ url('/app')}}">HOME</h6>
         </div>
     </div>
 
