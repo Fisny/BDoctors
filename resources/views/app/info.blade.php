@@ -7,10 +7,7 @@
         <div class="infobox-container">
             <div class="infobox-text">
                 <div class="info-title">
-                    <i class="bi bi-emoji-wink-fill"></i>
-                    <div class="btn">
-                        <h2>Chi siamo noi ?</h2>
-                    </div>
+                    <h1>Chi? Cosa? Come?</h1>
                 </div>
                 <p>Prima di presentarci, lasciaci spiegare velocemente cos'è BDOCTORS.<br> Si tratta di una web app che permette
                     la ricerca di medici specializzati sul territorio. Se sei un medico, puoi creare un profilo ed accedere
