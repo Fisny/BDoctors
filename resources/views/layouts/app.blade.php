@@ -13,7 +13,7 @@
     <!-- Scripts -->
     <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
     <!-- <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script> -->
-    <script src="https://js.braintreegateway.com/web/dropin/1.32.0/js/dropin.js"></script>
+    <!-- <script src="https://js.braintreegateway.com/web/dropin/1.32.0/js/dropin.js"></script> -->
     <!-- <script src="{{ asset('js/braintree.js') }}"></script> -->
  
     <!-- Fonts -->

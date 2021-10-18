@@ -29,9 +29,9 @@ class AppServiceProvider extends ServiceProvider
             return new Gateway(
                 [
                 'environment'=>'sandbox',
-                'merchantId'=>'585rh353b9hhbm6m',
-                'publicKey'=>'nz5wfxvny7vpqc66',
-                'privateKey'=>'7b2eec3dd7912e698e8d372f4e755e2c'
+                'merchantId'=>'vx22mx9b68pqx286',
+                'publicKey'=>'94gk4m2mdgkxskrc',
+                'privateKey'=>'d015bce9cfa55ef52b55108a257a7627'
                 ]
                 );
         });
