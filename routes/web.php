@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
+
 | contains the "web" middleware group. Now create something great!
 |
 */
@@ -69,6 +70,7 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
 
     $amount = $sponsorship->price;
     $nonce = $request->payment_method_nonce;
+    $sponsorshipName=$sponsorship->name;
     // dd($nonce );
 
     $result = $gateway->transaction()->sale([
@@ -86,7 +88,7 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
       if($result->success){
         $transaction = $result->transaction;
         dd($transaction );
-        // return view('admin.sponsorships.thankyou', compact('transaction', 'duration', 'amount'));
+       return view('purchaseConfirmed', ['sponsorship'=>$sponsorship]);
       } else {
         $errorString ="";
         foreach($result->errors->deepAll() as $error){
@@ -96,10 +98,11 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
         return back()->withErrors('An error occurred with the message: ' .  $result->message);
       }
   });
-// Route::post('/payment', "OrderController@makePayment");
 
 
-// ROTTA POST-ACQUISTO 
 Route::get('/purchase-confirmed', function () {
   return view('/app/purchaseConfirmed');
 });
+// Route::post('/payment', "OrderController@makePayment");
+
+// return view('purchaseConfirmed', compact('transaction', 'duration', 'amount'));

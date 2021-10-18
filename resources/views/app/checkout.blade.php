@@ -23,7 +23,7 @@
         <div class="bt-drop-in-wrapper">
           <div id="bt-dropin"></div>
         </div>
-        <input type="text" name="payment_method_nonce"  value="45" id="nonce">
+        <input type="text" name="payment_method_nonce"  value="fake-valid-visa-nonce" id="nonce">
         </section>  
     <div class="d-flex w-100 justify-content-between align-item-baseline">
       <button class="button btn btn-success" type="submit"><span>ACQUISTA</span></button>
