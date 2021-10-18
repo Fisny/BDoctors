@@ -19,6 +19,6 @@ class DataController extends Controller
     public function sponsorshipsList()
     {
         $sponsorshipsList = Sponsorship::all();
-        return response()->json($sponsorshipsList);
+        return response()->json($sponsorshipsList,200);
     }
 }

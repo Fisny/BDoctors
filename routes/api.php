@@ -32,3 +32,9 @@ Route::namespace('Api')->group(function () {
     Route::post('review/post', 'ReviewController@store');
     Route::delete('message/{id}', 'MessageController@destroy');
 });
+
+
+Route::get('orders/generate', 'Api\Orders\OrderController@generate');
+Route::post('orders/make/payment', 'Api\Orders\OrderController@makePayment');
+Route::get('products', 'Api\Products\ProductController@index');
+

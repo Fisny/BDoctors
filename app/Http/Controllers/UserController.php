@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 use App\User;
 use App\Specialization;
 use App\Message;
+use App\Sponsorship;
+use App\Review;
 
 
 class UserController extends Controller
@@ -74,7 +77,14 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        $avgVote = Review::where('user_id', $user->id)->avg('vote');
+        if ($avgVote == null) {
+            $avgVote = 0;
+        }
+
+        // $updateDiff= Carbon::createFromFormat('Y-m-d H:i:s', $user->updated_at)->locale('it_IT')->diffForHumans(Carbon::now());
+        // dd($updateDiff);
+        return view('users.show', compact('user'), compact('avgVote'));
     }
 
     /**
@@ -85,8 +95,14 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        $sponsorships = Sponsorship::all();
         $specializations = Specialization::all();
-        return view('users.edit', compact('user', 'specializations'));
+
+        if (Auth::user()->id === $user->id) {
+            return view('users.edit', compact('userr', 'specializations', 'sponsorships'));
+        } else {
+            return redirect()->route("home");
+        }
     }
 
     /**
@@ -118,7 +134,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('users.index');
+        return redirect()->route('home');
     }
 
 

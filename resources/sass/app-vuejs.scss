@@ -7,8 +7,14 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+//Partials
+@import '/partials/_HomeComponent.scss';
+@import '/partials/_SearchComponent.scss';
+@import '/partials/_CheckoutComponent.scss';
+@import '/partials/_PaymantComponent.scss';
 
-@import 'ExampleComponent';
+
+@import '/partials/_show.scss';
 
 
 

@@ -1,0 +1,73 @@
+// body{
+//     background-color: $celeste;
+// }
+
+
+.show-column{
+    background-color: white;
+    border: 2px solid $medium2;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+
+    .profile_picture{
+        max-width: 150px;
+        max-height:150px;
+        border: 2px solid $medium2;
+    }
+
+    .rating{
+        color: gold;
+        font-size: 20px;
+    }
+}
+
+// .contacts{
+//     margin-right: 10px;
+// }
+
+.minor-text{
+    font-size: 14px;
+    font-style: oblique;
+    color: $tiffany;
+}
+.reviews{
+
+
+    .box_review{
+        width: 100%;
+    }
+    
+    .new_review{
+        height: 50px;
+        width: 100%;
+        border: 1px solid $medium2 ;
+        transition: all 0.5s ease;
+    }
+    
+    .new_review:focus{
+        border: 1px solid $medium2 ;
+        height: 200px;
+    }
+    
+}
+
+.bdoctor-button{
+    background-color: $tiffany;
+    border-color: $tiffany;
+}
+
+.card-review{
+    padding-top: 10px;
+    border-top: 1px solid #68d8d6;
+}
+
+.click-border{
+    border: 2px solid black;
+};
+
+.specialization-badge{
+    background-color: $strongblue;
+    color: white;
+    font-size: 16px;
+}
