@@ -28,12 +28,12 @@
         </div>
       </div>
     </div> -->
-    <div class="row">
+    <div class="row row-fade-out">
       <div class="scroll">
         <div
           v-for="doctor in doctors"
           :key="doctor.id"
-          class="col-lg-4 col-xs-12 mr-5 show-column contacts doctors-card p-3"
+          class="col-lg-5 col-xs-12 mr-5 show-column contacts doctors-card p-3"
         >
           <div
             v-if="`${doctor.profile_pic}`.startsWith('images/')"
