@@ -10,53 +10,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                .btn {
-                    height: 45px;
-                    margin: 10px 0;
-                    background: none;
-                    color: rgb(44,44,44);
-                    border: none;
-                    cursor: pointer;
-                    font-weight: 700;
-                    border-radius: 50px;
-                    background: #ffff;
-                    box-shadow: 20px 20px 60px #d9d9d9, -20px -20x 60px #ffff;
-                    position: relative;
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        top: -10%;
-                        left: -5%;
-                        width: 110%;
-                        height: 120%;
-                        border-radius: 50px;
-                        z-index: -1;
-                        background: linear-gradient(45deg, #e832c0, #750cf2, #0cbcf2);
-                        transform: scale(0.8);
-                        transition: transform .4s;
-                    }
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        z-index: -2;
-                        filter: blur(10px);
-                        background: linear-gradient(45deg, #e832c0, #750cf2, #0cbcf2);
-                        transform: scale(0.5);
-                        transition: transform .4s;
-                    }
-                    &:hover::before, &:hover::after {
-                        transform: scale(1);
-                    }
-                    h2 {
-                        color: #04688c;
-                    }
-                }
-                i {
-                    font-size: 25px;
+                h1 {
                     color: #ffff;
                 }
                 
@@ -64,6 +18,7 @@
             p {
                 color: #ffff;
                 text-align: center;
+                font-size: 1rem;
                 a {
                     color: #04688c;
                     text-decoration: none;
@@ -98,7 +53,6 @@
                 box-shadow: 0 0 30px rgba(0, 0, 0, 0.055);
                 transition: all 0.4s;
                 h4 {
-                    font-weight: bold;
                     margin-top: 5px;
                 }
                 p {
@@ -129,31 +83,31 @@
                             left: 0;
                             width: 100%;
                             height: 100%;
-                            background: #e832c0;
+                            background: #ffff;
                             border-radius: 50%;
                             transform: scale(1.1);
                             z-index: -1;
                             transition: all 0.4s;
                         }
                         &:nth-child(2)::before {
-                            background: #e832c0;
+                            background: #ffff;
                         }
                         &:hover::before {
                             transform: translateY(10px) scaleX(0.6) scaleY(0.8);
                             filter: blur(10px);
                         }
                         &:hover:nth-child(1) {
-                            color: #e832c0;
+                            color: #ffff;
                         }
                         &:hover:nth-child(2) {
-                            color: #e832c0;
-                            text-shadow: 0 0 30px #e832c0;
+                            color: #ffff;
+                            text-shadow: 0 0 30px #B721FF;
                         }
                     }
                 }
             }
             &:hover .content {
-                color: rgb(36, 36, 36);
+                color: #ffff;
             }
             &::before,
             &::after {
@@ -164,7 +118,7 @@
                 background: #04688c;
                 border-radius: 8px;
                 z-index: -20;
-                transition: all 0.4s;
+                transition: all .2s;
             }
             &::before {
                 top: 0;
@@ -173,7 +127,7 @@
             &::after {
                 bottom: 0;
                 left: 0;
-                background: #E100FF;
+                background: #07beb8;
             }
             &:hover::before {
                 width: 50px;

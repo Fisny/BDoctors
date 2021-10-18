@@ -54,6 +54,10 @@ Route::get('/checkout/{id}', function ($id,Gateway $gateway) {
     ]);
 })->name('checkout');
 
+Route::get('/sponsorship', function () {
+  return view('/app/sponsorship');
+});
+
 
 Route::post('/payment', function (Request $request, Gateway $gateway) {
     // dd($request->payment_method_nonce );
