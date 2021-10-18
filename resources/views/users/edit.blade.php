@@ -194,4 +194,7 @@ $loggedUser = Auth::user();
                 </button>
             </div>
         </div>
-        @endsection
+
+
+    </form>
+@endsection

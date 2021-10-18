@@ -3,21 +3,69 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <ul class="dashboard-links">
-                        <li><a href="{{route('users.edit', $loggedUser)}}">Modifica Informazioni</a></li>
-                        <li><a href="{{route('messages')}}">Messaggi Ricevuti</a></li>
-                        <li><a href="{{route('reviews')}}">Recensioni Ricevute</a></li>
-                        <li><a href="">Sponsorizzazione Profilo</a></li>
-                        <li><a href="">Statistiche Profilo</a></li>
-                    </ul>
+        
+        <div class="col-md-2">
+            <div class="card cards-profile">
+                <div class="card-body cards-menu">
+                    <div class="dashboard-links">
+                        <h6>
+                            <a href="{{route('users.edit', $loggedUser)}}">Modifica Profilo <div><i class="bi bi-pencil-square"></i></div></a>
+                        </h6>
+                    </div>    
                 </div>
             </div>
-            
         </div>
-        <div class="col-md-8">
+        <div class="col-md-2">
+            <div class="card cards-profile">   
+                <div class="card-body cards-menu">
+                    <div class="dashboard-links">
+                        <h6>
+                            <a href="{{route('messages')}}">Messaggi <div><i class="bi bi-chat-left-dots"></i></div></a>
+                        </h6>
+                    </div>    
+                </div>
+            </div>  
+        </div>   
+
+        <div class="col-md-2">
+            <div class="card cards-profile">
+                <div class="card-body cards-menu">
+                    <div class="dashboard-links">
+                        <h6>
+                            <a href="{{route('reviews')}}">Recensioni <div><i class="bi bi-card-text"></i></div></a>
+                        </h6>
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="card cards-profile">
+                <div class="card-body cards-menu">
+                    <div class="dashboard-links">
+                        <h6>
+                            <a href="">Sponsorizzazione <div><i class="bi bi-cart-plus"></i></div></a>
+                        </h6>
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="card cards-profile">
+                <div class="card-body cards-menu">
+                    <div class="dashboard-links">
+                        <h6>
+                            <a href="">Statistiche <div><i class="bi bi-bar-chart-line"></i></div></a>
+                        </h6>
+                    </div>    
+                </div>
+            </div>
+        </div>
+                
+
+
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header"><a href="{{route('home')}}">Dashboard di {{$loggedUser->name}} {{$loggedUser->lastname}}</a></div>
 
@@ -32,6 +80,11 @@
                 </div>
             </div>
         </div>
+               
+            
+        
+        
     </div>
 </div>
 @endsection
+
