@@ -60,6 +60,9 @@ Route::get('/sponsorship', function () {
   return view('/app/sponsorship');
 });
 
+Route::get('/purchaseconfirmed', function () {
+  return view('/app/purchaseconfirmed');
+});
 
 // ROTTA PER PAGINA PAGAMENTI
 Route::post('/payment', function (Request $request, Gateway $gateway) {
@@ -87,8 +90,8 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
 
       if($result->success){
         $transaction = $result->transaction;
-        dd($transaction );
-       return view('purchaseConfirmed', ['sponsorship'=>$sponsorship]);
+        // dd($transaction );
+       return view('/app/purchaseconfirmed', ['sponsorship'=>$sponsorship]);
       } else {
         $errorString ="";
         foreach($result->errors->deepAll() as $error){
@@ -100,9 +103,7 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
   });
 
 
-Route::get('/purchase-confirmed', function () {
-  return view('/app/purchaseConfirmed');
-});
+
 // Route::post('/payment', "OrderController@makePayment");
 
 // return view('purchaseConfirmed', compact('transaction', 'duration', 'amount'));

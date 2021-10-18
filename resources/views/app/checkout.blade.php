@@ -3,27 +3,31 @@
 @section('content')
 
 
+<h2>Stai per acquistare la sponsorizzazione {{$sponsorship->name}} al prezzo di {{$sponsorship->price}}
+Il tuo annuncio avrà una visibilità maggiore per altre {{$sponsorship->duration}} ore. </h2>
+
+
 {{-- CHECKOUT FORM --}}
     <form method="post" id="payment-form" action="/payment">
       @csrf
       <section>
         <label for="amount">
           <div class="input-wrapper amount-wrapper">
-            <input type="number" id="amount" name="amount" min="1" placeholder="amount" value="{{ $sponsorship->price }}" readonly >  
+            <input type="hidden" id="amount" name="amount" min="1" placeholder="amount" value="{{ $sponsorship->price }}" readonly >  
           </div>  
         </label> 
         
         {{-- sponsorship id --}}
-        <input type="text" name="id" value="{{ $id }}" >
+        <input type="hidden" name="id" value="{{ $id }}" >
 
       
-        <input type="text" name="token" value="{{ $token }}" >
+        <input type="hidden" name="token" value="{{ $token }}" >
 
 
         <div class="bt-drop-in-wrapper">
           <div id="bt-dropin"></div>
         </div>
-        <input type="text" name="payment_method_nonce"  value="fake-valid-visa-nonce" id="nonce">
+        <input type="hidden" name="payment_method_nonce"  value="fake-valid-visa-nonce" id="nonce">
         </section>  
     <div class="d-flex w-100 justify-content-between align-item-baseline">
       <button class="button btn btn-success" type="submit"><span>ACQUISTA</span></button>
