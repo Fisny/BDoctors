@@ -12,7 +12,10 @@
 
     <!-- Scripts -->
     <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
-
+    <!-- <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script> -->
+    <script src="https://js.braintreegateway.com/web/dropin/1.32.0/js/dropin.js"></script>
+    <!-- <script src="{{ asset('js/braintree.js') }}"></script> -->
+ 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -101,7 +104,13 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <!-- <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+>
+
+
+
+
 
 </body>
 

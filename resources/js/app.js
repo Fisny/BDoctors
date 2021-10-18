@@ -6,6 +6,8 @@
 
 require('./bootstrap');
 
+
+
 window.Vue = require('vue');
 
 /**
@@ -22,6 +24,7 @@ window.Vue = require('vue');
 Vue.component('home-component', require('./components/HomeComponent.vue').default);
 Vue.component('search-component', require('./components/SearchComponent.vue').default);
 Vue.component('checkout-component', require('./components/CheckoutComponent.vue').default);
+Vue.component('paymant-component', require('./components/PaymantComponent.vue').default);
 Vue.component('new-review', require('./components/NewReview.vue').default);
 Vue.component('rating-static', require('./components/RatingStatic.vue').default);
 Vue.component('rating-giver', require('./components/RatingGiver.vue').default);

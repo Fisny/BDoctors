@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\Orders;
+namespace App\Http\Controllers;
+
+use App\Sponsorship;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\Orders\OrderRequest;
-use App\Sponsorship;
 
 class OrderController extends Controller
 {

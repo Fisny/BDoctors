@@ -1,23 +1,33 @@
 <template>
- <h1>Nuclear Stricke {{sponsorshipId}}</h1>
- 
+  <div class="generic">
+    {{token}}
+    <br>
+    {{sponsorshipId}}
+
+<v-braintree 
+    authorization="token"
+    @success="onSuccess"
+    @error="onError"
+></v-braintree>
+
+  
+ </div>
 </template>
 
 <script>
 export default {
-  mounted() {
-    this.getSpecializations();
-  },
-  data() {
-    return {
-      indexSpec:0,
-    };
-  },
-  props: ["sponsorshipId"],
+    props: ["sponsorshipId","token"],
   methods: {
-    
-  },
-};
+    onSuccess (payload) {
+      let nonce = payload.nonce;
+      // Do something great with the nonce...
+    },
+    onError (error) {
+      let message = error.message;
+      // Whoops, an error has occured while trying to get the nonce
+    }
+  }
+}
 </script>
 
 <style lang="sass" scooped>
