@@ -28,6 +28,7 @@ Route::namespace('Api')->group(function () {
     Route::get('doctors/filter/{id}/', 'DoctorsController@filter');
     Route::get('specializations', 'DataController@specializationsList');
     Route::get('sponsorship', 'DataController@sponsorshipsList');
+    Route::get('reviews', 'DataController@reviewsList');
     Route::post('message/send', 'MessageController@store');
     Route::post('review/post', 'ReviewController@store');
     Route::delete('message/{id}', 'MessageController@destroy');

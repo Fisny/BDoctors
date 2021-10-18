@@ -1,8 +1,54 @@
 .carousel-container{
 
-.scroll{
-    display: flex;
-    overflow-x: scroll;
-}
+    .scroll{
+        display: flex;
+        overflow-x: scroll;
+    }
 
+    .doctors-card{
+        position: relative;
+        height: 55vh;
+        overflow-y: hidden;
+        
+    }
+    
+    .doctors-premium-card{
+        background-color: $celeste;
+    }
+
+    .box_pp{
+        text-align: center;
+    }
+
+    .carousel-pfp{
+        width: 100px;
+        height: 100px;
+    }
+    .doctors-carousel-title{
+        height: 8vh;
+    }
+    .doctors-carousel-name{
+        text-align: center;
+    }
+    .doctors-carousel-stars{
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .doctors-carousel-details{
+        position: absolute;
+        bottom: 2vh;
+        text-align: center;
+        font-size: 22px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .specialization-carousel-badge{
+        font-family: sans-serif;
+        background-color: $strongblue;
+        width: 145px;
+        color: white;
+        font-size: 16px;
+    }
 }
