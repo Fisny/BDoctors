@@ -60,7 +60,7 @@
           <option value="" disabled selected>
             Filtra per indice di gradimento
           </option>
-          <option v-for="star in stars" v-bind:value="star[0]">
+          <option v-for="star in stars" v-bind:key="star[0]">
             {{ star[1] }}
           </option>
         </select>
@@ -76,7 +76,7 @@
           <option value="" disabled selected>
             Filtra per numero di recensioni
           </option>
-          <option v-for="review in reviewRange" v-bind:value="review[0]">
+          <option v-for="review in reviewRange" v-bind:key="review[0]">
             {{ review[1] }}
           </option>
         </select>
@@ -89,7 +89,7 @@
     >
       Filtra
     </button>
-
+    <img src="https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png" alt="TEST SOURCE">
     <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
     <!-- <div v-for="doctor in doctors" :key="doctor.id" class="test">
       <div class="card">
@@ -123,36 +123,36 @@
             class="box_pp pb-3"
           >
             <img
-              class="carousel-pfp"
+              class="profile_picture"
               :src="`storage/${doctor.profile_pic}`"
-              alt="Pfp placeholder"
+              alt="Pfp"
             />
           </div>
 
           <div v-else-if="`${doctor.name}`.endsWith('a')" class="box_pp pb-3">
             <img
-              class="carousel-pfp"
+              class="profile_picture"
               src="img/d.ssa_avatar.jpg"
-              alt="Pfp placeholder"
+              alt="Pfp placeholder (F)"
             />
           </div>
 
           <div v-else class="box_pp pb-3">
             <img
-              class="carousel-pfp"
+              class="profile_picture"
               src="img/avatar-doc-m.jpg"
-              alt="Pfp placeholder"
+              alt="Pfp placeholder (M)"
             />
           </div>
 
-          <div class="doctors-carousel-title">
-            <h3 class="doctors-carousel-name">
+          <div class="doctors-title">
+            <h3 class="doctors-name">
             {{ doctor.qualification }} {{ doctor.name }} {{ doctor.lastname }}
             </h3>
           </div>
           
 
-          <rating-static class="doctors-carousel-stars" :vote="avgVote(doctor)"></rating-static>
+          <rating-static class="doctors-stars" :vote="avgVote(doctor)"></rating-static>
 
           <div class="card-body">
             <div
@@ -176,19 +176,19 @@
                 v-for="(specialization, count) in doctor.specialization"
                 :key="specialization.id"
                 v-show="count<3"
-                class="badge badge-info p-2 m-2 specialization-carousel-badge"
+                class="badge badge-info p-2 m-2 specialization-badge"
               >
                 {{ specialization.name }}
               </div>
               <div 
                 v-if="doctor.specialization.length > 3"
-                class="badge badge-info p-2 pl-3 pr-3 m-2 specialization-carousel-badge"
+                class="badge badge-info p-2 pl-3 pr-3 m-2 specialization-badge"
               >
                 . . .
               </div>
 
             </div>
-            <a :href="'/show/' + doctor.id" class="btn btn-primary doctors-carousel-details">Dettagli</a>
+            <a :href="'/show/' + doctor.id" class="btn btn-primary doctors-details">Dettagli</a>
           </div>
         </div>
       </div>
@@ -330,6 +330,6 @@ export default {
 };
 </script>
 
-<style lang="sass" scooped>
+<style lang="sass" scoped>
   @import '../../sass/app-vuejs.scss'
 </style>

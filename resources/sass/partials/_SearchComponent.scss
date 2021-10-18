@@ -65,6 +65,40 @@
                 .card-title {
                     color: #07beb8;
                 }
+
+                .pfp{
+                    width: 100px;
+                    height: 100px;
+                }
+                .doctors-title{
+                    height: 8vh;
+                }
+                .doctors-name{
+                    text-align: center;
+                }
+                .doctors-stars{
+                    text-align: center;
+                    font-size: 24px;
+                }
+                .doctors-card{
+                    text-align: center;
+                }
+                .doctors-details{
+                    position: absolute;
+                    bottom: 2vh;
+                    text-align: center;
+                    font-size: 22px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                .specialization-badge{
+                    font-family: sans-serif;
+                    background-color: $strongblue;
+                    width: 145px;
+                    color: white;
+                    font-size: 16px;
+                }
             }
             .btn {
                 background-color: #07beb8;
