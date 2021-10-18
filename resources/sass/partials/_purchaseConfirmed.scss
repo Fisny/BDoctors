@@ -1,0 +1,45 @@
+.container {
+    .purchase-message-container {
+        background-color: #ffff;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #057eaa;
+        text-align: center;
+        padding: 10px;
+        i {
+            font-size: 1.5rem;
+        }
+        h5 {
+            color: #057eaa;
+        }
+        .comeback-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 130px;
+            height: 40px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            background: #057eaa;
+            border: none;
+            transition: all .4s;
+            border-radius: 8px;
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 7px 0 -2px #68d8d6,
+                0 15px 0 -4px #39a2db,
+                0 16px 10px -3px #39a2db;
+            }
+            h6 {
+                a {
+                    text-decoration: none;
+                    color: #ffff;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

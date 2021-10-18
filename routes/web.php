@@ -54,11 +54,13 @@ Route::get('/checkout/{id}', function ($id,Gateway $gateway) {
     ]);
 })->name('checkout');
 
+// ROTTA PER PAGINA DI ACQUISTO SPONSORIZZAZIONI
 Route::get('/sponsorship', function () {
   return view('/app/sponsorship');
 });
 
 
+// ROTTA PER PAGINA PAGAMENTI
 Route::post('/payment', function (Request $request, Gateway $gateway) {
     // dd($request->payment_method_nonce );
     // $user = User::find(Auth::id());
@@ -95,3 +97,9 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
       }
   });
 // Route::post('/payment', "OrderController@makePayment");
+
+
+// ROTTA POST-ACQUISTO 
+Route::get('/purchase-confirmed', function () {
+  return view('/app/purchaseConfirmed');
+});
