@@ -4,7 +4,7 @@
       <h4>ELENCO DEI MEDICI PREMIUM</h4>
     </div>
 
-    <div class="sponsored-doctor-container">
+    <!-- <div class="sponsored-doctor-container">
       <div v-for="doctor in doctors" :key="doctor.id" class="sponsored-doctor">
         <div class="card">
           <h5 class="card-header">
@@ -25,6 +25,66 @@
             <a :href="'/show/' + doctor.id" class=" btn btn-primary">Dettagli</a>
           </div>
           
+        </div>
+      </div>
+    </div> -->
+    <div class="row">
+      <div class="scroll">
+        <div
+          v-for="doctor in doctors"
+          :key="doctor.id"
+          class="col-lg-3 col-xs-12 mr-5 show-column contacts p-3"
+        >
+          <div
+            v-if="`${doctor.profile_pic}`.startsWith('images/')"
+            class="box_pp pb-3"
+          >
+            <img
+              class="profile_picture"
+              :src="`storage/${doctor.profile_pic}`"
+              alt="Pfp placeholder"
+            />
+          </div>
+
+          <div v-else-if="`${doctor.name}`.endsWith('a')" class="box_pp pb-3">
+            <img
+              class="profile_picture"
+              src="img/d.ssa_avatar.jpg"
+              alt="Pfp placeholder"
+            />
+          </div>
+
+          <div v-else class="box_pp pb-3">
+            <img
+              class="profile_picture"
+              src="img/avatar-doc-m.jpg"
+              alt="Pfp placeholder"
+            />
+          </div>
+
+          <h4>
+            {{ doctor.qualification }} {{ doctor.name }} {{ doctor.lastname }}
+          </h4>
+          <div class="card-body">
+            <div
+              class="
+                row
+                flex-grow-1
+                justify-content-around
+                align-items-center
+                flex-wrap
+              "
+            >
+              <div
+                v-for="specialization in doctor.specialization"
+                :key="specialization.id"
+                class="badge badge-info p-2 m-2 specialization-badge"
+              >
+                {{ specialization.name }}
+              </div>
+            </div>
+            <a :href="'/show/' + doctor.id" class="btn btn-primary">Dettagli</a>
+          </div>
         </div>
       </div>
     </div>
