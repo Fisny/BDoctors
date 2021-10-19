@@ -69,7 +69,7 @@
                 <div class="card cards-profile">
                     <div class="card-body cards-menu">
                         <div class="dashboard-links">                           
-                            <a href=""><i class="bi bi-cart-plus"></i></a>
+                            <a href="{{route('sponsorship')}}"><i class="bi bi-cart-plus"></i></a>
                             <div class="on-hover-icon">Shop</div>
                         </div>    
                     </div>

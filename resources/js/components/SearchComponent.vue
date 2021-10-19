@@ -89,7 +89,7 @@
     >
       Filtra
     </button>
-    <img src="https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png" alt="TEST SOURCE">
+  
     <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
     <!-- <div v-for="doctor in doctors" :key="doctor.id" class="test">
       <div class="card">

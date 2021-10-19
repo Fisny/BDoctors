@@ -61,7 +61,7 @@ Route::get('/checkout/{id}', function ($id,Gateway $gateway) {
 // ROTTA PER PAGINA DI ACQUISTO SPONSORIZZAZIONI
 Route::get('/sponsorship', function () {
   return view('/app/sponsorship');
-});
+})->name('sponsorship');
 
 Route::get('/purchaseconfirmed', function () {
   return view('/app/purchaseconfirmed');
@@ -100,7 +100,7 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
         foreach($result->errors->deepAll() as $error){
           $errorString .= 'Errore' . $error->code . ':' . $error->message . '\n';
         }
-        dd($result->message );
+        // dd($result->message );
         return back()->withErrors('An error occurred with the message: ' .  $result->message);
       }
   });
