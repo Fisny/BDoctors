@@ -28,6 +28,8 @@ Vue.component('rating-static', require('./components/RatingStatic.vue').default)
 Vue.component('rating-giver', require('./components/RatingGiver.vue').default);
 Vue.component('new-message', require('./components/NewMessage.vue').default);
 Vue.component('carousel-component', require('./components/CarouselComponent.vue').default);
+Vue.component('year-table', require('./components/YearTable.vue').default);
+Vue.component('month-table', require('./components/MonthTable.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

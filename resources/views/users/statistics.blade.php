@@ -10,6 +10,8 @@
             numero di messaggi e recensioni ricevute per mese/anno
             grafico a barre fasce di voto ricevuti per mese/anno
         </p>
+        <year-table class="col-5"/>
+        <month-table class="col-5"/>
     </div>
     <div>
         <canvas id="myChart"></canvas>
