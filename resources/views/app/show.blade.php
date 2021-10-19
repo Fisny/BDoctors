@@ -54,11 +54,18 @@
 
         </div>
 
-        <div class="col-lg-10 col-xs-12 show-column reviews p-3">
-            <new-review></new-review>
             {{-- Contiene le recensioni e lo spazio per crearne una --}}
-
-        </div>
+            
+            @php
+            use Illuminate\Support\Facades\Auth;
+            $loggedUser= Auth::user();
+            @endphp
+            @if($loggedUser !=  $user)
+            <div class="col-lg-10 col-xs-12 show-column reviews p-3">
+                <new-review></new-review>
+            </div>
+            @endif           
+            
         <div class="col-lg-10 col-xs-12 show-column reviews p-3">
             <h2>Recensioni</h2>
 
