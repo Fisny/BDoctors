@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // Abbiamo cambiato la view restituita da 'home' a 'dashboard.info', sicuramente
+        // c'è un modo migliore per farlo ma è l'unico modo che abbiamo trovato per poter lavorare effettivamente
+        // sulla dashboard
+        $loggedUser = Auth::user();
+        return view('users.dashboard_home', compact('loggedUser'));
     }
 }

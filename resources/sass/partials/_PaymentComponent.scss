@@ -1,0 +1,93 @@
+.container {
+    .payment-search-title {
+        background-color: #07beb8;
+        padding: 10px 25px;
+        color: #ffff;
+        font-size: 42px;
+        text-align: center;
+        span {
+            color: #00ffbb;
+        }
+        .sponsorship-custom-line {
+            width: 100%;
+            height: 4px;
+            margin: 8px auto;
+            border-radius: 20px;
+            background-color: #00ffbb;
+        }
+    }
+    .sponsorship-plan-description {
+        .row {
+            background-color: #07beb8;
+            border: 1px solid #07beb8;
+            border-radius: 4px;
+            padding: 4px;
+            .sponsorship-item {
+                background-color: #057eaa;
+                border: 1px solid #07beb8;
+                border-radius: 4px;
+                .sponsorship-title {
+                    font-size: 20px;
+                    text-align: center;
+                    font-weight: bold;
+                    color: #ffff;
+                }
+                .sponsorship-description {
+                    text-align: center;
+                    color: #ffff;
+                    #bronze {
+                        color: #f99f3d;
+                    }
+                    #silver {
+                        color: #c8d0d9;
+                    }
+                    #gold {
+                        color: #ffd500;
+                    }
+                }
+            }
+        }
+        .sponsorship-custom-line {
+            width: 100%;
+            height: 4px;
+            margin: 8px auto;
+            border-radius: 20px;
+            background-color: #00ffbb;
+        }
+    }
+    .payments-container {
+        .button {
+            cursor: pointer;
+            font-weight: 500;
+            left: 3px;
+            line-height: inherit;
+            position: relative;
+            text-decoration: none;
+            text-align: center;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 3px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            display: inline-block;
+          }
+          
+          .button--small {
+            padding: 10px 20px;
+            font-size: 0.875rem;
+          }
+          
+          .button--green {
+            outline: none;
+            background-color: #64d18a;
+            border-color: #64d18a;
+            color: white;
+            transition: all 200ms ease;
+          }
+          
+          .button--green:hover {
+            background-color: #8bdda8;
+            color: white;
+          }
+    }
+}

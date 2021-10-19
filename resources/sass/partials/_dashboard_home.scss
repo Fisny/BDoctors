@@ -1,0 +1,92 @@
+
+
+.dash-background{
+    position: relative;
+    background-image: url(../img/dash_screen.jpg);
+    height: 250px;
+    background-size: cover;
+    background-position: left;
+    background-position: bottom;
+    border-radius: 5px;
+}
+
+.dash-title{
+    
+    position: absolute;
+    left: 10px;
+    bottom: 50px;
+
+    h1{
+
+        font-weight: 800;
+        font-size: 42px;
+        color: rgb(255, 255, 255);
+    }
+}
+
+.card-body{
+
+    i{
+        font-size: 30px;
+    }
+}
+
+.dashboard-links{
+    list-style-type: none;
+    text-align: center;   
+}
+
+.message-email{
+    color: black;
+    font-size: 16px;
+    text-align: left;
+    display: block;
+}
+
+.delete-message{
+    text-align: right;
+}
+
+.card-message{
+    border: 1px solid $strongblue;
+    border-radius: 12px;
+}
+
+.message-preview{
+    max-height: 5vh;
+    overflow-y:hidden;
+}
+
+.cards-profile{
+    height: 110px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    
+
+    :hover{
+        
+        font-weight: 900;
+        background-color: rgb(238, 241, 18);
+    }
+
+    .card-body-dash{
+        color: black;
+    }
+}
+
+.card-body-dash{
+    min-height: 0px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.on-hover-icon{
+    visibility: hidden;
+}
+
+.dashboard-links:hover .on-hover-icon{
+    visibility: visible;
+}
+
+//-----------------------------------
+

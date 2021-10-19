@@ -28,6 +28,8 @@ Vue.component('paymant-component', require('./components/PaymantComponent.vue').
 Vue.component('new-review', require('./components/NewReview.vue').default);
 Vue.component('rating-static', require('./components/RatingStatic.vue').default);
 Vue.component('rating-giver', require('./components/RatingGiver.vue').default);
+Vue.component('new-message', require('./components/NewMessage.vue').default);
+Vue.component('carousel-component', require('./components/CarouselComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

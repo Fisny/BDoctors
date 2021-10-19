@@ -1,0 +1,83 @@
+.carousel-container{
+
+    .scroll{
+        
+        display: flex;
+        overflow-x: scroll;
+    }
+
+    .row-fade-out{
+        position:relative;
+    }
+
+    .doctors-card{
+        position: relative;
+        height: 55vh;
+        overflow-y: hidden;
+        
+    }
+    
+    .doctors-premium-card{
+        background-color: $celeste;
+    }
+
+    .box_pp{
+        text-align: center;
+    }
+
+    .carousel-pfp{
+        width: 100px;
+        height: 100px;
+    }
+    .doctors-carousel-title{
+        height: 8vh;
+    }
+    .doctors-carousel-name{
+        text-align: center;
+    }
+    .doctors-carousel-stars{
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .doctors-carousel-details{
+        position: absolute;
+        bottom: 2vh;
+        text-align: center;
+        font-size: 22px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .specialization-carousel-badge{
+        font-family: sans-serif;
+        background-color: $strongblue;
+        width: 145px;
+        color: white;
+        font-size: 16px;
+    }
+
+    .row-fade-out:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: -25px;
+        bottom: 20px;
+        pointer-events: none;
+        background: linear-gradient(270deg, rgba(2,0,36,0) 0%, rgba(56,151,148,1) 35%);
+        width: 5%;
+      }
+
+    .row-fade-out:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: -25px;
+        bottom: 20px;
+        pointer-events: none;
+        background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(56,151,148,1) 35%);
+        width: 5%;
+      }
+}

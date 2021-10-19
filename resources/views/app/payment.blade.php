@@ -2,9 +2,6 @@
 
 @section('content')
 <div class="container">
-
-    <home-component></home-component>
-
+    <payment-component> </payment-component>
 </div>
-
 @endsection
