@@ -111,14 +111,14 @@
       </div>
     </div> -->
 
-    <div class="row align-items-center justify-content-around flex-wrap">
-      <div class="d-flex flex-wrap p-3">
+    <div class="row align-items-center justify-content-around flex-wrap flex-grow-1">
+      <div class="d-flex flex-wrap flex-grow-1 p-3">
         <div
           v-for="doctor in doctors"
           :key="doctor.id"
           class="col-lg-4 col-xs-12 mr-5 show-column contacts doctors-card p-3"
         >
-          <div
+          <!-- <div
             v-if="`${doctor.profile_pic}`.startsWith('images/')"
             class="box_pp pb-3"
           >
@@ -143,7 +143,7 @@
               src="img/avatar-doc-m.jpg"
               alt="Pfp placeholder (M)"
             />
-          </div>
+          </div> -->
 
           <div class="doctors-title">
             <h3 class="doctors-name">
