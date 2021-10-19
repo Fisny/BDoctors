@@ -38,7 +38,7 @@ import RatingGiver from './RatingGiver.vue';
         data(){
             return {
                 newReview: {
-                    user_id: window.location.pathname.replace("/users/", ""),
+                    user_id: window.location.pathname.replace("/show/", ""),
                     user_name: null,
                     vote: null,
                     text: null,
@@ -57,7 +57,7 @@ import RatingGiver from './RatingGiver.vue';
                 ;
 
                 this.newReview = {
-                    user_id: window.location.pathname.replace("/users/", ""),
+                    user_id: window.location.pathname.replace("/show/", ""),
                     user_name: null,
                     vote: null,
                     text: null,
