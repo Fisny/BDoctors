@@ -78,7 +78,7 @@ import CarouselComponent from "./CarouselComponent.vue";
 export default {
   components: { CarouselComponent },
   mounted() {
-    this.getSpecializations();
+    this.getDoctors();
   },
   data() {
     return {
@@ -93,9 +93,9 @@ export default {
   },
   methods: {
     // Stampa lista sponsorizzazioni
-    getSpecializations() {
+    getDoctors() {
       axios
-        .get("http://127.0.0.1:8000/api/specializations")
+        .get("http://127.0.0.1:8000/api/sponsored/")
         .then((response) => {
           this.specializations = response.data;
         });

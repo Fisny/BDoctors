@@ -131,7 +131,7 @@ export default {
   methods: {
     // Stampa dei medici con sponsorizzazione attiva
     getDoctors() {
-      axios.get("http://127.0.0.1:8000/api/alldoctors  ").then((response) => {
+      axios.get("http://127.0.0.1:8000/api/sponsored/  ").then((response) => {
         this.doctors = response.data;
       });
     },

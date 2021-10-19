@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Carbon\Carbon;
 use App\Sponsorship;
 use Braintree\Gateway;
@@ -70,8 +71,19 @@ Route::get('/purchaseconfirmed', function () {
 // ROTTA PER PAGINA PAGAMENTI
 Route::post('/payment', function (Request $request, Gateway $gateway) {
     // dd($request->payment_method_nonce );
-    // $user = User::find(Auth::id());
-    $sponsorship = Sponsorship::find($request->id);
+    $sponsorshipId=$request->id;
+    $sponsorship = Sponsorship::find($sponsorshipId);
+    $user = User::find(Auth::id());
+    $sponsorshipActiv= ($user::has('sponsorship')->get())->count(); 
+    $uId= $user->id;
+
+    $userSponsorship = $user->sponsorship[count($user->sponsorship)-1]->id;
+  
+
+    dd($userSponsorship);
+    
+ 
+   
 
 
     $amount = $sponsorship->price;
@@ -87,13 +99,27 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
       ]
       ]);
 
-    //   /* attach user-sponsorship */
-    //   $due_date = Carbon::now()->addHour($duration + 2);
-    //   $user->sponsorships()->attach($sponsorship_id, ['due_date' => $due_date]);
+      $transaction = $result->transaction;
+      // $sponsorshipChosen = Sponsorship::where('id', $sponsorshipId)->first();
+      // $date_end = Carbon::now()->addHour($sponsorshipChosen->duration);
+      // $doctorObject->sponsorship()->attach($sponsorshipId, [
+      //     'date_end' => $date_end,
+
 
       if($result->success){
-        $transaction = $result->transaction;
-        // dd($transaction );
+        if($sponsorshipActiv==0){
+          $date_end = Carbon::now()->addHour($sponsorship->duration);
+            $user->sponsorship()->attach($sponsorshipId, [
+                'date_end' => $date_end,
+            ]);
+        }
+        
+
+     
+   
+                  
+                  
+                
        return view('/app/purchaseconfirmed', ['sponsorship'=>$sponsorship]);
       } else {
         $errorString ="";
