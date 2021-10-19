@@ -162,6 +162,6 @@ export default {
 };
 </script>
 
-<style lang="sass" scooped>
+<style lang="sass" scoped>
 @import '../../sass/app-vuejs.scss'
 </style>
