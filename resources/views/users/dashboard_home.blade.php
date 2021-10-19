@@ -80,7 +80,7 @@
                 <div class="card cards-profile">
                     <div class="card-body cards-menu">
                         <div class="dashboard-links">
-                            <a href=""><i class="bi bi-bar-chart-line"></i></a>
+                            <a href="{{route('statistics')}}"><i class="bi bi-bar-chart-line"></i></a>
                             <div class="on-hover-icon">Statistiche</div>
                         </div>    
                     </div>

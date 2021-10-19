@@ -30,4 +30,11 @@ class HomeController extends Controller
         $loggedUser = Auth::user();
         return view('users.dashboard_home', compact('loggedUser'));
     }
+
+    // Per mostrare le statistiche, soluzione molto probabilmente temporanea
+    // Le statistiche potrebbero richiedere il proprio controller se diventano troppo complesse
+    public function statistics(){
+        $loggedUser = Auth::user();
+        return view('users.statistics', compact('loggedUser'));
+    }
 }

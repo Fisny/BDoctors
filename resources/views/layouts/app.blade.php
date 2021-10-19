@@ -15,6 +15,7 @@
     <!-- <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script> -->
     <!-- <script src="https://js.braintreegateway.com/web/dropin/1.32.0/js/dropin.js"></script> -->
     <!-- <script src="{{ asset('js/braintree.js') }}"></script> -->
+    @yield('statistics')
  
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

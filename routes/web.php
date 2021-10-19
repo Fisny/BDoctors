@@ -109,4 +109,6 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
 
 // Route::post('/payment', "OrderController@makePayment");
 
+//ROTTA PER PAGINA STATISTICHE
+Route::get('/statistics', 'HomeController@statistics')->name('statistics')->middleware('auth');
 // return view('purchaseConfirmed', compact('transaction', 'duration', 'amount'));
