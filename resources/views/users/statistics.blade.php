@@ -10,9 +10,16 @@
             numero di messaggi e recensioni ricevute per mese/anno
             grafico a barre fasce di voto ricevuti per mese/anno
         </p>
-        <year-table class="col-5"/>
-        <month-table class="col-5"/>
     </div>
+    <div class="row flex-column">
+        <div class="statistics-table col-5">
+            <year-table :yearsarray="{{json_encode($yearsArray)}}" :loggeduserid="{{$loggedUser->id}}"/>
+        </div>
+        <div class="statistics-table col-5">
+            <month-table/>
+        </div>
+    </div>
+    
     <div>
         <canvas id="myChart"></canvas>
     </div>

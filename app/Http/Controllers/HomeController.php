@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -35,6 +36,14 @@ class HomeController extends Controller
     // Le statistiche potrebbero richiedere il proprio controller se diventano troppo complesse
     public function statistics(){
         $loggedUser = Auth::user();
-        return view('users.statistics', compact('loggedUser'));
+
+        $yearsRegistered= Carbon::now()->diffInYears($loggedUser->created_at) + 1;
+        $yearsArray=[];
+        for($i=0; $i<$yearsRegistered; $i++){
+            $currentYear= Carbon::now()->year;
+            array_push($yearsArray, $currentYear-$i);
+        }
+        // dd($yearsArray);
+        return view('users.statistics', compact('loggedUser'), compact('yearsArray'));
     }
 }

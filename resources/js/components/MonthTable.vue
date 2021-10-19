@@ -2,21 +2,57 @@
     <table class="table table-sm table-hover">
     <thead>
         <tr>
-        <th scope="col">Anno</th>
+        <th scope="col">Mese</th>
         <th scope="col">N° Recensioni</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-        <td>2021</td>
+        <td>Gennaio</td>
         <td>(37)</td>
         </tr>
         <tr>
-        <td>2020</td>
+        <td>Febbraio</td>
         <td>(60)</td>
         </tr>
         <tr>
-        <td>2019</td>
+        <td>Marzo</td>
+        <td>(24)</td>
+        </tr>
+        <tr>
+        <td>Aprile</td>
+        <td>(37)</td>
+        </tr>
+        <tr>
+        <td>Maggio</td>
+        <td>(60)</td>
+        </tr>
+        <tr>
+        <td>Giugno</td>
+        <td>(24)</td>
+        </tr>
+        <tr>
+        <td>Luglio</td>
+        <td>(37)</td>
+        </tr>
+        <tr>
+        <td>Agosto</td>
+        <td>(60)</td>
+        </tr>
+        <tr>
+        <td>Settembre</td>
+        <td>(24)</td>
+        </tr>
+        <tr>
+        <td>Ottobre</td>
+        <td>(37)</td>
+        </tr>
+        <tr>
+        <td>Novembre</td>
+        <td>(60)</td>
+        </tr>
+        <tr>
+        <td>Dicembre</td>
         <td>(24)</td>
         </tr>
     </tbody>
