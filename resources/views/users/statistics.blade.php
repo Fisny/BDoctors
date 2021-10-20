@@ -20,7 +20,12 @@
         </div>
     </div>
     
-    <div>
-        <canvas id="myChart"></canvas>
+    <div class="row flex-column">
+        <div class="statistics-graph col-5">
+            <year-graph></year-graph>
+        </div>
+        <div class="statistics-graph col-5">
+            
+        </div>
     </div>
 @endsection

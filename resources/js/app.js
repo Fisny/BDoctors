@@ -30,6 +30,7 @@ Vue.component('new-message', require('./components/NewMessage.vue').default);
 Vue.component('carousel-component', require('./components/CarouselComponent.vue').default);
 Vue.component('year-table', require('./components/YearTable.vue').default);
 Vue.component('month-table', require('./components/MonthTable.vue').default);
+Vue.component('year-graph', require('./components/YearGraph.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
