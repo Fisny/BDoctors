@@ -22,7 +22,7 @@ class User extends Authenticatable
     {
         //wherePivot definisce come predefinita per la funzione sponsorship la query che filtra le sponsorship attive
         $currentDate = Carbon::now();
-        return $this->belongsToMany('App\Sponsorship')->withTimestamps()->wherePivot('date_end', '>=', $currentDate);
+        return $this->belongsToMany('App\Sponsorship')->withPivot('date_end')->withTimestamps()->wherePivot('date_end', '>=', $currentDate);
     }
 
     public function reviews()
