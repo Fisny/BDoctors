@@ -2,8 +2,11 @@
 
 @section('dashboard')
 <div class="col-lg-12 col-xs-12 show-column reviews p-3">
-    <h2>Recensioni</h2>
 
+@if (count($loggedUser->reviews) <= 0) <span class="minor-text">Nessuna recensione ricevuta.</span>
+
+    @else
+    <h2>Recensioni</h2>
     @foreach ($loggedUser->reviews->reverse() as $review)
     {{-- Tentativo di implementarlo in Blade only --}}
     <div class="card-review">
@@ -16,5 +19,6 @@
     </div>
 
     @endforeach
+@endif
 </div>
 @endsection

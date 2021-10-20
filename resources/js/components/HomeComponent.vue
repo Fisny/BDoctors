@@ -1,7 +1,10 @@
 <template>
-  <div class="container">
+  <div class="cc">
     <!-- TITOLO -->
-    <div class="search-title">
+    <div class="row box-img">
+      
+
+      <div class=" col-12 search-title">
       <h1 class="animate__animated animate__fadeInDown">
         Cerchi un medico<span>?</span>
       </h1>
@@ -12,7 +15,7 @@
     </div>
 
     <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE. -->
-    <div class="filter-container">
+    <div class=" col-6 filter-container">
       <select
         class="selectpicker form-control"
         data-live-search="true"
@@ -35,6 +38,8 @@
         >Effettua la Ricerca</a
       > -->
     </div>
+  </div>
+    
 
     <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
     <div>

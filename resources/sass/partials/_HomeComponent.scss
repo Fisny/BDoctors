@@ -1,14 +1,31 @@
+
 .container {
 
+    .box-img{
 
+        background-image: url(/img/dash_screen.jpg);
+        //background-color: #389794;
+        background-size: cover;
+        background-position: top left;
+        height: 400px;
+        border-radius: 8px;
+    }
 
     .search-title {
-        background-color: #07beb8;
+        //background-image: url(/img/dash_screen.jpg);
         margin: auto;
+        text-align: center;
         padding: 25px;
         color: #ffff;
-        font-size: 42px;
-        text-align: center;
+        
+
+        h1{
+
+            font-weight: 800;
+            font-size: 42px;
+            color: rgb(255, 255, 255);
+        }
+
         span {
             color: #00ffbb;
         }
@@ -20,7 +37,7 @@
         }
     }
     .filter-container {
-        background-color: #07beb8;
+        //background-image: url(/img/dash_screen.jpg);
         margin: auto;
         padding: 5px 25px 25px 25px;
         height: 150px;

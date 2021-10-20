@@ -3,7 +3,7 @@
 @section('content')
 <div class="p-1 container">
 
-    <div class="row flex-wrap justify-content-center">
+    <div class="row flex-wrap justify-content-center box-back">
         <div class="col-lg-3 col-xs-12 mr-5 show-column contacts p-3">
             <div class="box_pp pb-3">
                 @php
