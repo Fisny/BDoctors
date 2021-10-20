@@ -1,150 +1,85 @@
 <template>
   <div class="container search-container">
-    <!-- TITOLO -->
-    <div class="search-title">
-      <h2>Et Voilà<span>!</span></h2>
-      <h3>Ecco i professionisti che ti servono<span>.</span></h3>
-      <div class="custom-line"></div>
-    </div>
+    <div class="search-header">
+      <!-- TITOLO -->
+      <div class="search-title">
+        <h2>Et Voilà<span>!</span></h2>
+        <h3>Ecco i professionisti che ti servono<span>.</span></h3>
+        <div class="custom-line"></div>
+      </div>
 
-    <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE. -->
-    <div class="filter-container">
-      <select
-        class="form-control"
-        name="template"
-        v-model="specializationSelected"
-        onchange="location = /search/ + this.value;"
-      >
-        <option value="" disabled selected>
-          Seleziona una Specializzazione
-        </option>
-        <option
-          v-for="specialization in specializations"
-          v-bind:value="specialization.name"
-          :key="specialization.name"
-        >
-          {{ specialization.name }}
-        </option>
-      </select>
-      <!-- <a :href="'/search/' + selected" class="search-button"
-        >Effettua la Ricerca</a
-      > -->
-    </div>
-
-    <h5>Puoi affinare la ricerca tramite i filtri<span>.</span></h5>
-
-    <div class="filter-item-container">
-      <!-- <div class="filter-item">
-        <h5>SPECIALIZZAZIONE</h5>
+      <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE. -->
+      <div class="filter-container">
         <select
           class="form-control"
           name="template"
           v-model="specializationSelected"
+          onchange="location = /search/ + this.value;"
         >
           <option value="" disabled selected>
             Seleziona una Specializzazione
           </option>
           <option
             v-for="specialization in specializations"
-            v-bind:value="specialization.id"
-            :key="specialization.id"
+            v-bind:value="specialization.name"
+            :key="specialization.name"
           >
             {{ specialization.name }}
           </option>
         </select>
-      </div> -->
-
-      <div class="filter-item">
-        <h5>GRADIMENTO</h5>
-        <select class="form-control" name="starTemplate" v-model="starSelected">
-          <option value="" disabled selected>
-            Filtra per indice di gradimento
-          </option>
-          <option v-for="star in stars" v-bind:key="star[0]">
-            {{ star[1] }}
-          </option>
-        </select>
       </div>
 
-      <div class="filter-item">
-        <h5>RECENSIONI</h5>
-        <select
-          class="form-control"
-          name="reviewTemplate"
-          v-model="reviewSelected"
-        >
-          <option value="" disabled selected>
-            Filtra per numero di recensioni
-          </option>
-          <option v-for="review in reviewRange" v-bind:key="review[0]">
-            {{ review[1] }}
-          </option>
-        </select>
-      </div>
-    </div>
+      
+        <h5 class="pt-2">Puoi affinare la ricerca tramite i filtri<span>.</span></h5>
+      
+      
 
-    <button
-      class="filter-search-button"
-      v-on:click="mazzinga(starSelected, reviewSelected)"
-    >
-      Filtra
-    </button>
-  
-    <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
-    <!-- <div v-for="doctor in doctors" :key="doctor.id" class="test">
-      <div class="card">
-        <h5 class="card-header">
-          {{ doctor.qualification }} {{ doctor.name }} {{ doctor.lastname }}
-        </h5>
-        <div class="card-body">
-          <div
-            v-for="specialization in doctor.specialization"
-            :key="specialization.id"
-            class="test"
+      <div class="filter-item-container">
+
+        <div class="filter-item">
+          <h5>GRADIMENTO</h5>
+          <select class="form-control" name="starTemplate" v-model="starSelected">
+            <option value="" disabled selected>
+              Filtra per indice di gradimento
+            </option>
+            <option v-for="star in stars" v-bind:key="star[0]">
+              {{ star[1] }}
+            </option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <h5>RECENSIONI</h5>
+          <select
+            class="form-control"
+            name="reviewTemplate"
+            v-model="reviewSelected"
           >
-            <h5 class="card-title">Specialista in {{ specialization.name }}</h5>
-          </div>
-          <a :href="'/show/' + doctor.id" class="btn btn-primary"
-            >Visita il profilo</a
-          >
+            <option value="" disabled selected>
+              Filtra per numero di recensioni
+            </option>
+            <option v-for="review in reviewRange" v-bind:key="review[0]">
+              {{ review[1] }}
+            </option>
+          </select>
         </div>
       </div>
-    </div> -->
 
-    <div class="row align-items-center justify-content-around flex-wrap flex-grow-1">
-      <div class="d-flex flex-wrap flex-grow-1 p-3">
+      <button
+        class="filter-search-button"
+        v-on:click="mazzinga(starSelected, reviewSelected)"
+      >
+        Filtra
+      </button>
+    </div>
+
+    <div class="row align-items-center flex-grow-1 justify-content-center">
+      <div class="d-flex flex-wrap flex-grow-1 justify-content-around p-3">
         <div
           v-for="doctor in doctors"
           :key="doctor.id"
-          class="col-lg-4 col-xs-12 mr-5 show-column contacts doctors-card p-3"
+          class="col-lg-3 col-xs-12 mx-2 show-column flex-grow-1 contacts card doctors-card p-3"
         >
-          <!-- <div
-            v-if="`${doctor.profile_pic}`.startsWith('images/')"
-            class="box_pp pb-3"
-          >
-            <img
-              class="profile_picture"
-              :src="`storage/${doctor.profile_pic}`"
-              alt="Pfp"
-            />
-          </div>
-
-          <div v-else-if="`${doctor.name}`.endsWith('a')" class="box_pp pb-3">
-            <img
-              class="profile_picture"
-              src="img/d.ssa_avatar.jpg"
-              alt="Pfp placeholder (F)"
-            />
-          </div>
-
-          <div v-else class="box_pp pb-3">
-            <img
-              class="profile_picture"
-              src="img/avatar-doc-m.jpg"
-              alt="Pfp placeholder (M)"
-            />
-          </div> -->
-
           <div class="doctors-title">
             <h3 class="doctors-name">
             {{ doctor.qualification }} {{ doctor.name }} {{ doctor.lastname }}
@@ -159,18 +94,11 @@
               class="
                 row
                 flex-grow-1
-                justify-content-around
+                flex-column
+                justify-content-start
                 align-items-center
-                flex-wrap
               "
             >
-              <!-- <div
-                v-for="specialization in doctor.specialization"
-                :key="specialization.id"
-                class="badge badge-info p-2 m-2 specialization-badge"
-              >
-                {{ specialization.name }}
-              </div> -->
 
               <div
                 v-for="(specialization, count) in doctor.specialization"
@@ -342,6 +270,6 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
   @import '../../sass/app-vuejs.scss'
 </style>

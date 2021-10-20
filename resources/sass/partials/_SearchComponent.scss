@@ -1,4 +1,7 @@
 .search-container {
+    .search-header{
+        background-color: #07beb8;
+    }
     .search-title {
         background-color: #07beb8;
         margin: auto;
@@ -16,7 +19,9 @@
             background-color: #00ffbb;
         }
     }
+    
     h5 {
+        
         color: white;
         text-align: center;
         span {
@@ -26,7 +31,7 @@
     .filter-item-container {
         background-color: #07beb8;
         padding: 10px 25px;
-        height: 100px;
+        // height: 100px;
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
@@ -45,7 +50,6 @@
         font-size: 20px;
         width: 100%;
         border-radius: 4px;
-        margin-bottom: 5px;
         &:hover {
             text-decoration: none;
         }
@@ -54,14 +58,20 @@
         .card {
             margin-top: 10px;
             border: none;
-            .card-header {
-                background-color: #00ffbb;
-                text-align: center;
+            text-align: center;
+            height: 430px;
+            .doctors-title{
+                    height: 65px;
+                    text-align: center;
             }
+            .doctors-stars{
+                    text-align: center;
+                    font-size: 24px;
+            }
+           
             .card-body {
                 display: flex;
-                align-items: center;
-                justify-content: space-between;
+                position:relative;
                 .card-title {
                     color: #07beb8;
                 }
@@ -70,22 +80,11 @@
                     width: 100px;
                     height: 100px;
                 }
-                .doctors-title{
-                    height: 8vh;
-                }
-                .doctors-name{
-                    text-align: center;
-                }
-                .doctors-stars{
-                    text-align: center;
-                    font-size: 24px;
-                }
-                .doctors-card{
-                    text-align: center;
-                }
+                
+                
                 .doctors-details{
                     position: absolute;
-                    bottom: 2vh;
+                    bottom: 15px;
                     text-align: center;
                     font-size: 22px;
                     left: 50%;
@@ -97,7 +96,7 @@
                     background-color: $strongblue;
                     width: 145px;
                     color: white;
-                    font-size: 16px;
+                    font-size: 14px;
                 }
             }
             .btn {
