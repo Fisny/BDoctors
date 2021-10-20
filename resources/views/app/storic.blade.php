@@ -9,11 +9,11 @@
 
         <div class="last-sponsorship-container">
             <div class="last-sponsorship-item">
-                <h3>Ultima sponsorizzazione acquistata: {{ $user->sponsorship[$indexLastSponsorship]->name }}</h3>
+                <h3>Ultima sponsorizzazione acquistata: {{ $user->sponsorship[0]->name }}</h3>
                 <h6>Dettagli:</h6>
                 <ul>
-                    <li>Durata: {{ $user->sponsorship[$indexLastSponsorship]->duration }}</li>
-                    <li>Data di scadenza: {{ $user->sponsorship[$indexLastSponsorship]->pivot->date_end }}</li>
+                    <li>Durata: {{ $user->sponsorship[0]->duration }}</li>
+                    <li>Data di scadenza: {{ $user->sponsorship[0]->pivot->date_end }}</li>
                 </ul>
                 <div class="comeback-button-v2">
                     <h6><a href="{{ route('sponsorship') }}">Acquista una nuova sponsorizzazione</a></h6>

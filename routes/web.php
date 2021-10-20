@@ -134,8 +134,9 @@ Route::get('/storic', function () {
   $user = User::find(Auth::id());
   $sponsorships = $user->sponsorship;
   // dd($sponsorship);
-  $Sponsorships = $user->sponsorship->last()->pivot->take(4)->get()->reverse();
+  // $Sponsorships = $user->sponsorship->last()->pivot->take(4)->get()->reverse();
   $indexLastSponsorship= (($user->sponsorship->count())-1);
+  // dd($user->sponsorship);
   if($indexLastSponsorship>=5){
     $startIndex= $indexLastSponsorship -5;
   } else {
