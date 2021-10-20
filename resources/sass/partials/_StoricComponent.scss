@@ -1,0 +1,76 @@
+.container {
+    .page-title {
+        text-align: center;
+        color: white;
+        margin-bottom: 10px;
+    }
+    .last-sponsorship-container {
+        .last-sponsorship-item {
+            background-color: #ffff;
+            border-radius: 8px;
+            margin: 0 auto;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+            h3,
+            h6 {
+                text-align: center;
+                color: #057eaa;
+            }
+            ul {
+                margin: 0;
+                list-style: none;
+            }
+            .comeback-button-v2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px auto;
+                font-size: 1.1rem;
+                cursor: pointer;
+                background: #057eaa;
+                border: none;
+                transition: all 0.4s;
+                border-radius: 8px;
+                padding: 5px;
+                &:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 7px 0 -2px #68d8d6, 0 15px 0 -4px #39a2db, 0 16px 10px -3px #39a2db;
+                }
+                h6 {
+                    a {
+                        text-decoration: none;
+                        color: #ffff;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .last-five {
+            color: #ffff;
+            text-align: center;
+            margin: 15px auto;
+            .last-five-item {
+                background-color: #ffff;
+                border-radius: 8px;
+                margin: 15px auto;
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 10px;
+                h4,
+                h6 {
+                    text-align: center;
+                    color: #057eaa;
+                }
+                ul {
+                    margin: 0;
+                    list-style: none;
+                }
+            }
+        }
+    }
+}
