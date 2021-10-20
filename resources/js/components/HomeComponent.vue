@@ -1,20 +1,21 @@
 <template>
   <div class="container">
-    <!-- TITOLO -->
-    <div class="search-title">
-      <h1 class="animate__animated animate__fadeInDown">
-        Cerchi un medico<span>?</span>
-      </h1>
-      <h2 class="animate__animated animate__fadeInDown">
-        Fai un click, al resto pensiamo noi<span>.</span>
-      </h2>
-      <div class="custom-line"></div>
-    </div>
+    <div class="row">
+      <div class="col-12">
+        <!-- TITOLO -->
+        <div class="search-title">
+          <h1 class="animate__animated animate__fadeInDown">
+            Cerchi un medico<span>?</span>
+          </h1>
+          <h2 class="animate__animated animate__fadeInDown">
+            Fai un click, al resto pensiamo noi<span>.</span>
+          </h2>
+        </div>
 
-    <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE. -->
-    <div class="filter-container">
+        <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE FIGO. -->
+        <!-- <div class="filter-container">
       <select
-        class="selectpicker form-control"
+        class="form-control animate__animated animate__wobble"
         data-live-search="true"
         name="template"
         v-model="selected"
@@ -22,7 +23,7 @@
         id="stateSelect"
         onchange="location = /search/ + this.value;"
       >
-        <option>Seleziona una Specializzazione</option>
+        <option class="option-starter">Seleziona una Specializzazione</option>
         <option
           v-for="specialization in specializations"
           v-bind:value="specialization.name"
@@ -31,14 +32,36 @@
           {{ specialization.name }}
         </option>
       </select>
-      <!-- <a :href="'/search/' + selected" class="search-button"
-        >Effettua la Ricerca</a
-      > -->
-    </div>
 
-    <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
-    <div>
-      <carousel-component />
+    </div> -->
+
+        <!-- SEZIONE DI RICERCA MENO FIGA -->
+        <div class="filter-container">
+          <select
+            class="form-control animate__animated animate__headShake"
+            name="template"
+            v-model="specializationSelected"
+            onchange="location = /search/ + this.value;"
+          >
+            <option value="" disabled selected>
+              Seleziona una Specializzazione
+            </option>
+            <option
+              v-for="specialization in specializations"
+              v-bind:value="specialization.name"
+              :key="specialization.name"
+            >
+              {{ specialization.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-12">
+        <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
+        <div>
+          <carousel-component />
+        </div>
+      </div>
     </div>
 
     <!-- <div class="sponsored-doctor-title">

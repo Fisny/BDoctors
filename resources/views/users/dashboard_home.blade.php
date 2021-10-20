@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <div class="dash-background">
                 <div class="dash-title">
-                    <h1>Benvenuto nella tua Dashboard</h1> 
+                    <h1>Benvenuto nella Dashboard</h1> 
                 </div>
             </div> 
         </div>
@@ -21,24 +21,12 @@
 
     <div class="container">
         <div class="row justify-content-center">
-
-            <div class=" col-lg-2 col-md-6 col-sm-6">
-                <div class="card cards-profile">
-                    <div class="card-body  cards-menu">
-                        <div class="dashboard-links">                                                       
-                            <a href="{{route('home')}}"><i class="bi bi-list"></i></a>
-                            <div class="on-hover-icon">Menu</div>
-                        </div> 
-                    </div>
-                </div>
-            </div>
-
             <div class=" col-lg-2 col-md-6 col-sm-6 cards-profile-col">
                 <div class="card cards-profile">
                     <div class="card-body cards-menu">
                         <div class="dashboard-links">                            
                             <a href="{{route('users.edit', $loggedUser)}}"><i class="bi bi-pencil-square"></i></a>
-                            <div class="on-hover-icon">Edit</div>
+                            <div class="on-hover-icon">Modifica</div>
                         </div>    
                     </div>
                 </div>
@@ -75,19 +63,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-2 col-md-6 col-sm-6 cards-profile-col">
-                <div class="card cards-profile">
-                    <div class="card-body cards-menu">
-                        <div class="dashboard-links">
-                            <a href=""><i class="bi bi-bar-chart-line"></i></a>
-                            <div class="on-hover-icon">Statistiche</div>
-                        </div>    
-                    </div>
-                </div>
-            </div>
-                    
-
 
             <div class="col-md-12">
             

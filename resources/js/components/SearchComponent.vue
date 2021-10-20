@@ -1,7 +1,7 @@
 <template>
   <div class="container search-container">
     <!-- TITOLO -->
-    <div class="search-title">
+    <div class="search-title animate__animated animate__heartBeat">
       <h2>Et Voilà<span>!</span></h2>
       <h3>Ecco i professionisti che ti servono<span>.</span></h3>
       <div class="custom-line"></div>
@@ -31,29 +31,9 @@
       > -->
     </div>
 
-    <h5>Puoi affinare la ricerca tramite i filtri<span>.</span></h5>
+    <h5>Migliora la tua ricerca grazie ai filtri<span>.</span></h5>
 
     <div class="filter-item-container">
-      <!-- <div class="filter-item">
-        <h5>SPECIALIZZAZIONE</h5>
-        <select
-          class="form-control"
-          name="template"
-          v-model="specializationSelected"
-        >
-          <option value="" disabled selected>
-            Seleziona una Specializzazione
-          </option>
-          <option
-            v-for="specialization in specializations"
-            v-bind:value="specialization.id"
-            :key="specialization.id"
-          >
-            {{ specialization.name }}
-          </option>
-        </select>
-      </div> -->
-
       <div class="filter-item">
         <h5>GRADIMENTO</h5>
         <select class="form-control" name="starTemplate" v-model="starSelected">
@@ -83,117 +63,47 @@
       </div>
     </div>
 
-    <button
-      class="filter-search-button"
+    <div
+      class="comeback-button-v2"
       v-on:click="mazzinga(starSelected, reviewSelected)"
     >
-      Filtra
-    </button>
-  
-    <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
-    <!-- <div v-for="doctor in doctors" :key="doctor.id" class="test">
-      <div class="card">
-        <h5 class="card-header">
-          {{ doctor.qualification }} {{ doctor.name }} {{ doctor.lastname }}
-        </h5>
-        <div class="card-body">
-          <div
-            v-for="specialization in doctor.specialization"
-            :key="specialization.id"
-            class="test"
-          >
-            <h5 class="card-title">Specialista in {{ specialization.name }}</h5>
-          </div>
-          <a :href="'/show/' + doctor.id" class="btn btn-primary"
-            >Visita il profilo</a
-          >
-        </div>
-      </div>
-    </div> -->
+      <h6>Filtra</h6>
+    </div>
 
-    <div class="row align-items-center justify-content-around flex-wrap flex-grow-1">
-      <div class="d-flex flex-wrap flex-grow-1 p-3">
-        <div
-          v-for="doctor in doctors"
-          :key="doctor.id"
-          class="col-lg-4 col-xs-12 mr-5 show-column contacts doctors-card p-3"
-        >
-          <!-- <div
-            v-if="`${doctor.profile_pic}`.startsWith('images/')"
-            class="box_pp pb-3"
-          >
-            <img
-              class="profile_picture"
-              :src="`storage/${doctor.profile_pic}`"
-              alt="Pfp"
-            />
-          </div>
-
-          <div v-else-if="`${doctor.name}`.endsWith('a')" class="box_pp pb-3">
-            <img
-              class="profile_picture"
-              src="img/d.ssa_avatar.jpg"
-              alt="Pfp placeholder (F)"
-            />
-          </div>
-
-          <div v-else class="box_pp pb-3">
-            <img
-              class="profile_picture"
-              src="img/avatar-doc-m.jpg"
-              alt="Pfp placeholder (M)"
-            />
-          </div> -->
-
-          <div class="doctors-title">
-            <h3 class="doctors-name">
+    <div
+      class="sponsored-doctor-container animate__animated animate__fadeInDown"
+    >
+      <div v-for="doctor in doctors" :key="doctor.id" class="sponsored-doctor">
+        <div class="premium-card">
+          <div class="premium-name">
             {{ doctor.qualification }} {{ doctor.name }} {{ doctor.lastname }}
-            </h3>
           </div>
-          
-
-          <rating-static class="doctors-stars" :vote="avgVote(doctor)"></rating-static>
-
-          <div class="card-body">
-            <div
-              class="
-                row
-                flex-grow-1
-                justify-content-around
-                align-items-center
-                flex-wrap
-              "
-            >
-              <!-- <div
-                v-for="specialization in doctor.specialization"
-                :key="specialization.id"
-                class="badge badge-info p-2 m-2 specialization-badge"
-              >
-                {{ specialization.name }}
-              </div> -->
-
-              <div
-                v-for="(specialization, count) in doctor.specialization"
-                :key="specialization.id"
-                v-show="count<3"
-                class="badge badge-info p-2 m-2 specialization-badge"
-              >
-                {{ specialization.name }}
+          <div class="premium-card-body">
+            <div class="row">
+              <div class="col-xs-12 col-md-6 specializations">
+                <div
+                  v-for="specialization in doctor.specialization"
+                  :key="specialization.id"
+                  class="specialization-item-v2"
+                >
+                  {{ specialization.name }}
+                </div>
               </div>
-              <div 
-                v-if="doctor.specialization.length > 3"
-                class="badge badge-info p-2 pl-3 pr-3 m-2 specialization-badge"
-              >
-                . . .
+              <div class="col-xs-12 col-md-6 details">
+                RATING
+                <rating-static
+                  class="doctors-stars"
+                  :vote="avgVote(doctor)"
+                ></rating-static>
               </div>
-
             </div>
-            <a :href="'/show/' + doctor.id" class="btn btn-primary doctors-details">Dettagli</a>
+            <a :href="'/show/' + doctor.id" class="sponsored-doctor-info"
+              ><i class="bi bi-info-circle"></i
+            ></a>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -205,7 +115,7 @@ export default {
   },
   data() {
     return {
-      indexSpec:0,
+      indexSpec: 0,
       specializationSelected: this.specializationId,
       starSelected: 0,
       reviewSelected: 0,
@@ -239,23 +149,28 @@ export default {
   },
   props: ["specializationId"],
   methods: {
-    searchStringInArray (str, strArray) {
+    searchStringInArray(str, strArray) {
       console.log("prova");
-    for (var j=0; j<strArray.length; j++) {
-      console.log("funzione "+(strArray[j].name)+" "+(strArray[j].id));
-        if (strArray[j].name==(str)) { console.log("risultato "+strArray[j].id);return strArray[j].id;}
-    }
-    return -1;
-},
+      for (var j = 0; j < strArray.length; j++) {
+        console.log("funzione " + strArray[j].name + " " + strArray[j].id);
+        if (strArray[j].name == str) {
+          console.log("risultato " + strArray[j].id);
+          return strArray[j].id;
+        }
+      }
+      return -1;
+    },
 
-    
     // Stampa lista sponsorizzazioni
     getSpecializations() {
       axios
         .get("http://127.0.0.1:8000/api/specializations")
         .then((response) => {
           this.specializations = response.data;
-          this.indexSpec= (this.searchStringInArray(this.specializationId,this.specializations));
+          this.indexSpec = this.searchStringInArray(
+            this.specializationId,
+            this.specializations
+          );
           this.startFilter(this.indexSpec);
         });
     },
@@ -271,20 +186,20 @@ export default {
         this.reviews = response.data;
       });
     },
-    avgVote(doctor){
+    avgVote(doctor) {
       var totalVote = 0;
       var count = 0;
-      this.reviews.forEach(review=>{
-        if(review.user_id==doctor.id){
-          totalVote+=review.vote;
+      this.reviews.forEach((review) => {
+        if (review.user_id == doctor.id) {
+          totalVote += review.vote;
           count++;
         }
       });
-      return totalVote/count;
+      return totalVote / count;
     },
     // Ricerca medici per specializzazione
     startFilter: function (id) {
-      console.log("idX "+ id)
+      console.log("idX " + id);
       axios
         .get("http://127.0.0.1:8000/api/doctors/filter/" + id)
         .then((response) => {
@@ -343,5 +258,5 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import '../../sass/app-vuejs.scss'
+@import '../../sass/app-vuejs.scss'
 </style>
