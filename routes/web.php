@@ -128,7 +128,7 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
 });
 
 
-Route::get('/storico', function () {
+Route::get('/storic', function () {
 
   //utente logato
   $user = User::find(Auth::id());
@@ -144,7 +144,7 @@ Route::get('/storico', function () {
   // dd($startIndex);
 
   return view('app/storic', compact("user","indexLastSponsorship", "startIndex"));
-})->name('storico');
+})->name('storic');
 
 
 // Route::post('/payment', "OrderController@makePayment");
