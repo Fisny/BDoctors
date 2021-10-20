@@ -21,7 +21,7 @@
         </tr> -->
         <tr v-for="(year, yearKey) in yearsarray" v-bind:key="yearKey">
             <td>{{year}}</td>
-            <td>{{reviewsPerYear[yearKey]}}</td>
+            <td>{{ reviewsPerYear[yearKey] }}</td>
         </tr>
     </tbody>
     </table>
@@ -30,7 +30,7 @@
 <script>
 export default {
     mounted(){
-        this.pushMonthlyReviews();
+        this.pushYearlyReviews();
     },
     props:{
         yearsarray: {
@@ -42,31 +42,34 @@ export default {
         return{
             yearsArray: this.yearsarray,
             loggedId: this.loggeduserid,
-            reviewsPerYear:[],
-            totalReviews:[],
+            reviewsPerYear:[
+                {
+                    year: 2021,
+                    count: 20,
+                },
+                {
+                    year: 2020,
+                    count: 14,
+                },
+            ],
             userReviews:[],
         }
     },
     methods:{
-        pushMonthlyReviews(){
+        pushYearlyReviews(){
             this.getReviews();
-            this.yearsArray.forEach((year, yearIndex)=>{
-                this.totalReviews.forEach(review=>{
-                    if(parseInt(review.created_at.substring(0,4)) == year){
-                        this.reviewsPerYear[yearIndex]++;
-                    }
-                });
-            });
+            
+            
         },
         getReviews() {
             axios.get("http://127.0.0.1:8000/api/reviews").then((response) => {
-                this.totalReviews = response.data;
+                this.userReviews = response.data.filter(review=> review.user_id==this.loggedId);
             });
-            this.totalReviews.forEach(review=>{
-                if(review.user_id == this.loggedId){
-                    this.userReviews.push(review);
-                }
-            });
+            // this.totalReviews.forEach(review=>{
+            //     if(review.user_id == this.loggedId){
+            //         this.userReviews.push(review);
+            //     }
+            // });
         },
     }
 }
