@@ -165,6 +165,11 @@ $loggedUser = Auth::user();
             </div>
         </div>
 
+        <div class="row py-3">
+            <div class="col-md-4"></div>
+            <button class="btn btn-primary mx-3 align-items-center"><a class="button-link d-flex align-items-center" href="{{route('sponsorship')}}"><i class="bi bi-cart-plus pr-2"></i>Acquista sponsorizzazione</a></button>
+        </div>
+
         <div class="form-group row">
             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
