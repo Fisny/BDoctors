@@ -1,7 +1,7 @@
 <template>
   <div class="carousel-container">
     <div class="sponsored-doctor-title">
-      <h4>ELENCO DEI MEDICI PREMIUM</h4>
+      <h3>I NOSTRI MEDICI PREMIUM</h3>
     </div>
 
     <!-- <div class="sponsored-doctor-container">
@@ -33,11 +33,11 @@
         <div
           v-for="doctor in doctors"
           :key="doctor.id"
-          class="col-lg-5 col-md-5 col-sm-12 col-12 mr-5 show-column contacts doctors-card p-3"
+          class="col-lg-4 col-md-4 col-sm-12 col-12 mr-5 show-column contacts doctors-card p-3"
         >
           <div
             v-if="`${doctor.profile_pic}`.startsWith('images/')"
-            class="box_pp pb-3"
+            class="box_pp box_pp2 pb-3"
           >
             <img
               class="carousel-pfp"

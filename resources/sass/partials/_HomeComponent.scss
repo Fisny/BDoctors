@@ -1,5 +1,8 @@
 
-.container {
+.cc {
+
+    padding-bottom: 50px;
+
 
     .box-img{
 
@@ -7,8 +10,8 @@
         //background-color: #389794;
         background-size: cover;
         background-position: top left;
-        height: 400px;
-        border-radius: 8px;
+        height: 450px;
+        padding-bottom: 25px;
     }
 
     .search-title {
@@ -96,3 +99,63 @@
         }
     }
 }
+
+//---------------------------------------------//
+
+.section{
+    padding-bottom: 50px;
+}
+
+
+.bau{
+    border: 2px solid black;
+}
+
+.mau{
+    border: 2px solid red;
+}
+
+.main-content{
+    
+
+    .box-mini-games{
+        border-radius: 20px;
+        border: 2px #fff solid;
+        overflow: hidden;
+        margin-bottom: 15px;
+        cursor: pointer;
+    }
+    
+    .box-mini-games:hover{
+        border: 2px rgb(0, 0, 255, 0.5) solid;
+    }
+    
+    .box-mini-games-inner{
+        border: 2px #fff solid;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+    
+    .box-mini-games-inner>img{
+        width: 100%;
+    }
+    
+    #blue-text{
+        color: #0072ce;
+    }
+
+
+    .medium-title{
+        padding-bottom: 15px;
+        
+        h3{
+            font-weight:bold;
+        }
+
+    }
+
+    .medium-paragraph{
+        font-size: 16px;
+    }
+}
+

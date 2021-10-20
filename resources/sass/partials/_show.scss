@@ -30,6 +30,15 @@
     }
 }
 
+.column-left{
+    margin-right: 49px;
+}
+
+
+.column-right{
+    margin-left: 49px;
+}
+
 // .contacts{
 //     margin-right: 10px;
 // }
@@ -81,4 +90,20 @@
     background-color: $strongblue;
     color: white;
     font-size: 16px;
+}
+
+
+//-----------------------------MEDIA------------------------
+
+@media only screen and (min-width: 0) and (max-width: 991px){
+
+    .column-left{
+        margin-right: 0px;
+    }
+    
+    
+    .column-right{
+        margin-left: 0px;
+    }
+
 }

@@ -1,5 +1,14 @@
 .carousel-container{
 
+    .sponsored-doctor-title{
+
+        h3{
+
+            font-size: 32px;
+        }
+        
+    }
+
     .scroll{
         
         display: flex;
@@ -12,7 +21,7 @@
 
     .doctors-card{
         position: relative;
-        height: 55vh;
+        height: 450px;
         overflow-y: hidden;
         
     }
@@ -21,14 +30,21 @@
         background-color: $celeste;
     }
 
+    
+
     .box_pp{
         text-align: center;
-    }
+       
 
-    .carousel-pfp{
-        width: 100px;
-        height: 100px;
-    }
+        .carousel-pfp{
+            width: 100px;
+            height: 100px;
+            
+        }
+
+    }   
+            
+
     .doctors-carousel-title{
         height: 8vh;
     }
@@ -52,9 +68,9 @@
     .specialization-carousel-badge{
         font-family: sans-serif;
         background-color: $strongblue;
-        width: 145px;
+        width: 150px;
         color: white;
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .row-fade-out:before {

@@ -4,7 +4,7 @@
 <div class="p-1 container">
 
     <div class="row flex-wrap justify-content-center box-back">
-        <div class="col-lg-3 col-xs-12 mr-5 show-column contacts p-3">
+        <div class="col-lg-3 col-md-12 col-xs-12 show-column column-left contacts p-3">
             <div class="box_pp pb-3">
                 @php
                 use Illuminate\Support\Str;
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <div class="col-lg-6 col-xs-12 ml-5 show-column professional-info p-3">
+        <div class="col-lg-6 col-md-12 col-xs-12 show-column column-right professional-info p-3">
             {{-- Contiene informazioni professionali come curriculum, specializzazioni e tariffe(?) --}}
             @if ($user->cv !=null)
             <h2><a href="{{asset('storage/' . $user->cv)}}" target="_blank" rel="noopener noreferrer">Curriculum</a></h2>
