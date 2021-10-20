@@ -33,7 +33,7 @@
         <div
           v-for="doctor in doctors"
           :key="doctor.id"
-          class="col-lg-5 col-xs-12 mr-5 show-column contacts doctors-card p-3"
+          class="col-lg-5 col-md-5 col-sm-12 col-12 mr-5 show-column contacts doctors-card p-3"
         >
           <div
             v-if="`${doctor.profile_pic}`.startsWith('images/')"
