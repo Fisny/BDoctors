@@ -33,7 +33,7 @@
 
 .dashboard-links{
     list-style-type: none;
-    text-align: center;   
+    text-align: center;
 }
 
 .message-email{
@@ -62,11 +62,10 @@
     margin-top: 20px;
     margin-bottom: 15px;
     
-
+    
     :hover{
-        
-        font-weight: 900;
-        background-color: rgb(238, 241, 18);
+        font-weight: bold;
+        background-color: rgb(218, 214, 214);
     }
 
     .card-body-dash{

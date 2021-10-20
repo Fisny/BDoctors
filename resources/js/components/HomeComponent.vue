@@ -11,7 +11,7 @@
           Cerchi un medico<span>?</span>
         </h1>
         <h2 class="animate__animated animate__fadeInDown">
-          Fai un click, al resto pensiamo noi<span>.</span>
+          Fai un click, al resto pensiamo noi
         </h2>
         <div class="custom-line"></div>
       

@@ -50,11 +50,15 @@
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">
+                                <button type="button" class="btn btn-warning login-button">Accedi</button>
+                            </a>
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">
+                                <button type="button" class="btn btn-success register-button">Sei un dottore? Registrati</button>
+                            </a>
                         </li>
                         @endif
                         @else
@@ -65,8 +69,9 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('home') }}">
-                                    {{ __('Profilo') }}
+                                    {{ __('Dashboard') }}
                                 </a>
+                                
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
@@ -101,6 +106,12 @@
         <main>
             @yield('content')
         </main>
+
+        <footer>
+            <div class="section-footer">
+
+            </div>
+        </footer>
     </div>
 
     <!-- Latest compiled and minified JavaScript -->
