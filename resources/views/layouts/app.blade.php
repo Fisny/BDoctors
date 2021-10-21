@@ -105,11 +105,6 @@
             @extends('layouts.footer')
         </main>
 
-        <footer>
-            <div class="container">
-                <div class="footer-custom">Made with <i class="bi bi-heart-fill"></i> by <a href="/info" class="siamounasquadrafortissimi">Team3</a></div>
-            </div>
-        </footer>
     </div>
 
     <!-- Latest compiled and minified JavaScript -->
