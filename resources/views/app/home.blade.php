@@ -45,6 +45,9 @@
                         <img src="../img/doctor1home.png" alt="" class="navbardi-logo">
                     </div>
                 </div>
+                <div class="wrapper-button">
+                    <a href="/search/Chirurgia"><span>Prenota</span></a>
+                </div>
             </div>
         </div>
 
@@ -75,6 +78,9 @@
                             da
                             mobile, 24 ore su 24, quando vuoi e quando ne hai bisogno. Trovare pazienti non é mai stato più
                             semplice di cosi. E se hai bisogno di aiuto, trovi le informazioni di tutti i developers che hanno realizzato questa web app. Bella vero? Noi siamo decisamente soddisfatti.</p>
+                        <div class="wrapper-button">
+                            <a href="/register"><span>Iscriviti</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
