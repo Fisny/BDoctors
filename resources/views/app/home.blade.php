@@ -8,6 +8,10 @@
             <home-component></home-component>
         </div>
         
+         <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
+         <div>
+            <carousel-component />
+        </div>
 
         {{-- INFO 1 --}}
         <div class="container portfolio animate__animated animate__fadeIn">
@@ -76,10 +80,7 @@
             </div>
         </div>
 
-        <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
-        <div>
-            <carousel-component />
-        </div>
+       
 
     </div>
 
