@@ -32,7 +32,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    BDoctors
+                    <img src="../img/azzurro.png" alt="" class="img-logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -97,8 +97,10 @@
             </div>
         </nav>
 
+
         <main class="py-4">
-            @yield('content')
+            @extends('layouts.navbardi')
+            @yield('content') 
         </main>
     </div>
 
@@ -107,7 +109,18 @@
     <!-- <script src="https://js.braintreegateway.com/web/dropin/1.24.0/js/dropin.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 
+    <style>
+        .img-logo{
+            width: 90px;
+            transition: 600ms;
+        }
+        .img-logo:hover{
+            width: 100px;
+            padding-left: 10px;
+            border-left: 2px solid #00ffbb;
+        }
 
+    </style>
 
 
 
