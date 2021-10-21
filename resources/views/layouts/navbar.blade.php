@@ -184,7 +184,7 @@
 
             /* hover */
             .fa-primary {
-                color: #00FFBB;
+                color: #00aeff;
             }
             
             .fa-secondary {
