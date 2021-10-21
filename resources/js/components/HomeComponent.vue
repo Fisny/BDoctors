@@ -1,5 +1,5 @@
-<template>
-<div  v-if="mounted">
+<template v-show="flag">
+<div>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -61,7 +61,7 @@ export default {
       specializations: [],
       number: 0,
       arrayLength: 0,
-      mounted:false,
+      flag:false,
     };
   },
   updated() {
