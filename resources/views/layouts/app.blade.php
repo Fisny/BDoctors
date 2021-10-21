@@ -116,7 +116,42 @@
         </main>
 
         <footer>
-            <div class="section-footer">
+            <div class="section-footer container">
+                <div class="row align-item-center ">
+                    <div class="col-lg-4 col-md-4 col-sm-12  ">
+                        <div>
+                            <h3>2021 BDOCTORS</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4" >
+                        <div class="">
+                            IMMAGINE LOGO
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <ul>
+                           <li><a class="a-footer" href="">Supporto</a></li>
+                           <li><a class="a-footer" href="">Informativa</a></li>
+                           <li><a class="a-footer" href="">Termini di utilizzo</a></li>
+                           <li><a class="a-footer" href="">Scopri di più</a></li>
+                           <li><a class="a-footer" href="">Termini legali</a></li>
+                        </ul>    
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-2">
+                       <ul>
+                           <li><a class="a-footer" href="">Facebook</a></li>
+                           <li><a class="a-footer" href="">Twitter</a></li>
+                           <li><a class="a-footer" href="">Instagram</a></li>
+                           <li><a class="a-footer" href="">Youtube</a></li>
+                       </ul>
+                    </div>
+
+                </div>
+
+                
 
             </div>
         </footer>

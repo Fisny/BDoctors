@@ -18,15 +18,24 @@
 @import '/partials/_navbar.scss';
 
 
+//--------------------------------
 
-
-.footer{
+footer{
     padding-top: 50px;
+    height: 200px;
 }
 
 .section-footer{
-
-    height: 300px;
-    background-color: $tiffanny;
+    padding-top: 25px;
+    color: black;
 }
+
+.a-footer{
+    color: black;
+}
+
+li{
+    list-style: none;
+}
+
 

@@ -76,19 +76,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-2 col-md-6 col-sm-6 cards-profile-col">
-                <div class="card cards-profile">
-                    <div class="card-body cards-menu">
-                        <div class="dashboard-links">
-                            <a href="{{route('statistics')}}"><i class="bi bi-bar-chart-line"></i></a>
-                            <div class="on-hover-icon">Statistiche</div>
-                        </div>    
-                    </div>
-                </div>
-            </div>
-                    
-
-
+            
             <div class="col-md-12">
             
                     <div class="card-body-dash">
