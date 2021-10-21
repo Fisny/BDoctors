@@ -22,35 +22,25 @@
                                 @php
                                 use Illuminate\Support\Str;
                                 @endphp
-                                @if(Str::startsWith($user->profile_pic, 'images/'))
-                                    <div
-                                        class="box_pp pb-3"
-                                    >
-                                        <img
-                                        class="carousel-pfp"
-                                        src="storage/{{$user->profile_pic}}"
-                                        alt="Pfp placeholder"
-                                        />
-                                    </div>
+                                @if (Str::startsWith($user->profile_pic, 'images/'))
+                                    <img class="profile_picture" src="{{asset('storage/' . $user->profile_pic)}}" alt="{{$user->name}} {{$user->name}}'s photo">
+                                
                                 @elseif(Str::endsWith($user->name,'a'))
 
-                                    <div  class="box_pp pb-3">
-                                        <img
-                                        class="carousel-pfp"
-                                        src="img/d.ssa_avatar.jpg"
-                                        alt="Pfp placeholder"
-                                        />
+                                    <div class="box_pp pb-3">
+                                        <img class="profile_picture" src="/img/avatar-dottoressa.png" alt="Pfp placeholder">
                                     </div>
-
-                                @else
+                
+                                @else(Str::endsWith($user->name,'o'))
 
                                     <div class="box_pp pb-3">
                                         <img
                                         class="carousel-pfp"
-                                        src="img/avatar-doc-m.jpg"
+                                        src="/img/avatar-doc-m.jpg"
                                         alt="Pfp placeholder"
                                         />
                                     </div>
+    
                                 @endif
                                 </div>
                             </div>
