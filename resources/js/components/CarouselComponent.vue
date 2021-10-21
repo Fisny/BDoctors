@@ -12,7 +12,7 @@
       <div v-for="doctor in doctors" :key="doctor.id" class="sponsored-doctor">
         <div class="premium-card">
           <div class="premium-name">
-            {{ doctor.qualification }} {{ doctor.name }} {{ doctor.lastname }}
+            <a :href="'/show/' + doctor.id" style="color:white">{{ doctor.qualification }} {{ doctor.name }} {{ doctor.lastname }}</a>
           </div>
           <div class="premium-card-body">
             <div class="row">
