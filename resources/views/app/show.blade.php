@@ -9,7 +9,7 @@
                 <div class="col-md-12">
                     <div class="heading">
                         <img src="https://image.ibb.co/cbCMvA/logo.png" />
-                        <div class="heading-title">Profilo</div>
+                    <div class="heading-title">Profilo</div>
                     </div>
                 </div>
             </div>
@@ -19,16 +19,39 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="bio-image">
-                                    @php
-                                        use Illuminate\Support\Str;
-                                    @endphp
-                                    @if (Str::startsWith($user->profile_pic, 'images/'))
-                                        <img src="{{ asset('storage/' . $user->profile_pic) }}"
-                                            alt="{{ $user->name }} {{ $user->name }}'s photo">
-                                    @else
-                                        <img src="https://aispt.it/wp-content/themes/gwangi/assets/images/avatars/user-avatar.png"
-                                            alt="Pfp placeholder">
-                                    @endif
+                                @php
+                                use Illuminate\Support\Str;
+                                @endphp
+                                @if(Str::startsWith($user->profile_pic, 'images/'))
+                                    <div
+                                        class="box_pp pb-3"
+                                    >
+                                        <img
+                                        class="carousel-pfp"
+                                        src="storage/{{$user->profile_pic}}"
+                                        alt="Pfp placeholder"
+                                        />
+                                    </div>
+                                @elseif(Str::endsWith($user->name,'a'))
+
+                                    <div  class="box_pp pb-3">
+                                        <img
+                                        class="carousel-pfp"
+                                        src="img/d.ssa_avatar.jpg"
+                                        alt="Pfp placeholder"
+                                        />
+                                    </div>
+
+                                @else
+
+                                    <div class="box_pp pb-3">
+                                        <img
+                                        class="carousel-pfp"
+                                        src="img/avatar-doc-m.jpg"
+                                        alt="Pfp placeholder"
+                                        />
+                                    </div>
+                                @endif
                                 </div>
                             </div>
                         </div>
