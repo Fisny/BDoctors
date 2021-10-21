@@ -23,6 +23,20 @@
             {{-- Il testo di minor_text dovrebbe essere piccolo e in grigio --}}
 
             <span class="minor-text">Profilo aggiornato {{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $user->updated_at)->locale('it_IT')->diffForHumans()}}</span>
+
+            @php
+            use Illuminate\Support\Facades\Auth;
+            $loggedUser= Auth::user();
+            @endphp
+
+            @if ($user->id == $loggedUser->id)
+                <div class="my-1">
+                    <a href="{{url('users/'.$user->id.'/edit')}}">
+                        <button class="btn btn-secondary"><i class="bi bi-pencil-square mr-2"></i> Modifica Profilo</button>
+                    </a>
+                </div>
+            @endif
+
             <h5 class="pt-2">Contatti</h5>
             <div>
                 <span>Email: {{$user->email}} <br></span>
@@ -32,6 +46,7 @@
                 <new-message doctor-name="{{ $user->name }}" doctor-lastname="{{ $user->lastname }}" />
 
             </div>
+            
         </div>
 
         <div class="col-lg-6 col-md-12 col-xs-12 show-column column-right professional-info p-3">
@@ -56,10 +71,7 @@
 
             {{-- Contiene le recensioni e lo spazio per crearne una --}}
             
-            @php
-            use Illuminate\Support\Facades\Auth;
-            $loggedUser= Auth::user();
-            @endphp
+            
             @if($loggedUser !=  $user)
             <div class="col-lg-10 col-xs-12 show-column reviews p-3">
                 <new-review></new-review>
