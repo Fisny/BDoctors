@@ -131,20 +131,36 @@
                 font-size: 12px;
             }
 
-            .fa-arrow-right:before{
+            .fa-arrow-right{
                 font-size: 12px;
             }
-            .fa-facebook-square:before{
+            .fa-facebook-square{
                 font-size: 12px;
+                transition: var(--transition-speed);
             }
-            .fa-linkedin:before{
-                font-size: 12px;
+            .fa-facebook-square:hover{
+                padding-right: 30px;
             }
-            .fa-instagram:before{
+            .fa-linkedin{
                 font-size: 12px;
+                transition: var(--transition-speed);
             }
-            .fa-youtube:before{
+            .fa-linkedin:hover{
+                padding-right: 30px;
+            }
+            .fa-instagram{
                 font-size: 12px;
+                transition: var(--transition-speed);
+            }
+            .fa-instagram:hover{
+                padding-right: 30px;
+            }
+            .fa-youtube{
+                font-size: 12px;
+                transition: var(--transition-speed);
+            }
+            .fa-youtube:hover{
+                padding-right: 30px;
             }
             .fa-map-marker-alt:before{
                 font-size: 12px;
