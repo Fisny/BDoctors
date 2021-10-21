@@ -84,13 +84,12 @@
          {{ specialization.name }}
           </div>
           </div>
-                      <div class="col-xs-12 col-md-6 details">
-                <a :href="'/users/' + doctor.id" class="btn btn-primary"
-            >Visita il profilo</a
-          >
+              <div class="col-xs-12 col-md-6 details">
+                <a :href="'/show/' + doctor.id" class="btn btn-primary">
+                  Visita il profilo
+                </a>     
               </div>
-      
-        </div>
+          </div>
           </div>
       </div>
       </div>
