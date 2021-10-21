@@ -18,13 +18,16 @@
             <div class="row">
               <div class="col specializations">
                 <h6>Specialista in</h6>
-                <div
+                <div class="specialization-badges">
+                  <div
                   v-for="specialization in doctor.specialization"
                   :key="specialization.id"
                   class="specialization-item"
                 >
                   {{ specialization.name }}
                 </div>
+                </div>
+                
               </div>
             </div>
             <a :href="'/show/' + doctor.id" class="sponsored-doctor-info"><i class="bi bi-info-circle"></i></a>
