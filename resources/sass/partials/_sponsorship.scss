@@ -1,7 +1,10 @@
 .container {
     .sponsorship-title {
         text-align: center;
-        color: black;
+        h2 {
+            color: $strongblue;
+            font-weight: bold;
+        }
     }
     .sponsorship-list-container {
         display: flex;
@@ -19,25 +22,36 @@
             height: 300px;
             color: white;
             margin: 20px 30px;
-            background-color: #21D4FD;
+            background-color: #21d4fd;
             padding: 5px;
             border-radius: 8px;
-            background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-         
-            transition: all .4s;
+            box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+            &:nth-child(1) {
+                background-image: linear-gradient(19deg, #b16404 0%, #a97409 100%);
+            }
+            &:nth-child(2) {
+                background-image: linear-gradient(19deg, #7e8080 0%, #bcbcbc 100%);
+            }
+            &:nth-child(3) {
+                background-image: linear-gradient(19deg, gold 0%, rgb(198, 137, 6) 100%);
+            }
+
+            transition: all 0.4s;
             &:hover {
                 transform: translateY(-10px);
             }
             h1 {
                 text-align: center;
                 font-size: 2rem;
-                transition: all .2s;
+                transition: all 0.2s;
+                
             }
             &:hover h1 {
                 font-size: 2.3rem;
             }
             i {
                 font-size: 2rem;
+                margin-bottom: 15px;
             }
             p {
                 font-size: 0.8rem;
@@ -45,12 +59,13 @@
             }
 
             .sponsorship-button {
+                background-color: #05a95c;
+                box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 130px;
                 height: 40px;
-                background-color: #ffff;
                 text-decoration: none;
                 outline: none;
                 cursor: pointer;
@@ -61,10 +76,10 @@
                 border: none;
                 border-radius: 8px;
                 h5 {
-                    color: #057eaa;
-                    margin-bottom: 0; 
+                    color: #ffff;
+                    margin-bottom: 0;
                     i {
-                        color: #057eaa;
+                        color: #ffff;
                         font-size: 1.2rem;
                     }
                 }
