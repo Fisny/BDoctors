@@ -4,7 +4,6 @@
 
     <div class="container">
 
-
         <div class="container portfolio animate__animated animate__bounce">
             <div class="row">
                 <div class="col-md-12">
@@ -15,53 +14,47 @@
                 </div>
             </div>
             <div class="bio-info">
-                
+
                 <div class="checkout-description">
                     <i class="fas fa-cash-register"></i>
                     <h3>Hai scelto il piano {{ $sponsorship->name }}</h3>
-                    <p>Stai per acquistare il piano di sponsorizzazione "{{ $sponsorship->name }}" al prezzo di {{ $sponsorship->price }}€.<br>
-                      Il tuo profilo avrà una visibilità maggiore per {{ $sponsorship->duration }} ore.<br>
-                      Completa l'acquisto inserendo i dati di pagamento qua sotto, poi clicca su "acquista" per completare il procedimento.
-                    </p> 
-                  </div>
-
-                  {{-- CHECKOUT FORM --}}
-        <form method="post" id="payment-form" action="/payment">
-            @csrf
-            <section>
-                <label for="amount">
-                    <div class="input-wrapper amount-wrapper">
-                        <input type="hidden" id="amount" name="amount" min="1" placeholder="amount"
-                            value="{{ $sponsorship->price }}" readonly>
-                    </div>
-                </label>
-
-                {{-- sponsorship id --}}
-                <input type="hidden" name="id" value="{{ $id }}">
-
-
-                <input type="hidden" name="token" value="{{ $token }}">
-
-
-                <div class="bt-drop-in-wrapper">
-                    <div id="bt-dropin"></div>
+                    <p>Stai per acquistare il piano di sponsorizzazione "{{ $sponsorship->name }}" al prezzo di
+                        {{ $sponsorship->price }}€.<br>
+                        Il tuo profilo avrà una visibilità maggiore per {{ $sponsorship->duration }} ore.<br>
+                        Completa l'acquisto inserendo i dati di pagamento qua sotto, poi clicca su "acquista" per completare
+                        il procedimento.
+                    </p>
                 </div>
-                <input type="hidden" name="payment_method_nonce" value="fake-valid-visa-nonce" id="nonce">
-            </section>
-            <div class="d-flex w-100 justify-content-between align-item-baseline">
-                <button class="button btn btn-success" type="submit"><span>ACQUISTA</span></button>
+
+                {{-- CHECKOUT FORM --}}
+                <form method="post" id="payment-form" action="/payment">
+                    @csrf
+                    <section>
+                        <label for="amount">
+                            <div class="input-wrapper amount-wrapper">
+                                <input type="hidden" id="amount" name="amount" min="1" placeholder="amount"
+                                    value="{{ $sponsorship->price }}" readonly>
+                            </div>
+                        </label>
+
+                        {{-- sponsorship id --}}
+                        <input type="hidden" name="id" value="{{ $id }}">
+
+
+                        <input type="hidden" name="token" value="{{ $token }}">
+
+
+                        <div class="bt-drop-in-wrapper">
+                            <div id="bt-dropin"></div>
+                        </div>
+                        <input type="hidden" name="payment_method_nonce" value="fake-valid-visa-nonce" id="nonce">
+                    </section>
+                    <div class="d-flex w-100 justify-content-between align-item-baseline">
+                        <button class="button btn btn-success" type="submit"><span>ACQUISTA</span></button>
+                    </div>
+                </form>
             </div>
-
-        </form>
-
-            </div>
-
         </div>
-
-
-      
-
-        
     </div>
 
 
