@@ -3,14 +3,29 @@
 @section('content')
 
     <div class="container">
-      <div class="checkout-description">
-        <i class="bi bi-cash-coin"></i>
-        <h3>{{ $sponsorship->name }}</h3>
-        <p>Stai per acquistare il piano di sponsorizzazione "{{ $sponsorship->name }}" al prezzo di {{ $sponsorship->price }}€.<br>
-          Il tuo profilo avrà una visibilità maggiore per {{ $sponsorship->duration }} ore.</p> 
-      </div>
 
-        {{-- CHECKOUT FORM --}}
+
+        <div class="container portfolio animate__animated animate__bounce">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <img src="https://image.ibb.co/cbCMvA/logo.png" />
+                        <div class="heading-title">Checkout</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bio-info">
+                
+                <div class="checkout-description">
+                    <i class="fas fa-cash-register"></i>
+                    <h3>Hai scelto il piano {{ $sponsorship->name }}</h3>
+                    <p>Stai per acquistare il piano di sponsorizzazione "{{ $sponsorship->name }}" al prezzo di {{ $sponsorship->price }}€.<br>
+                      Il tuo profilo avrà una visibilità maggiore per {{ $sponsorship->duration }} ore.<br>
+                      Completa l'acquisto inserendo i dati di pagamento qua sotto, poi clicca su "acquista" per completare il procedimento.
+                    </p> 
+                  </div>
+
+                  {{-- CHECKOUT FORM --}}
         <form method="post" id="payment-form" action="/payment">
             @csrf
             <section>
@@ -38,6 +53,15 @@
             </div>
 
         </form>
+
+            </div>
+
+        </div>
+
+
+      
+
+        
     </div>
 
 
