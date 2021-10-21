@@ -108,7 +108,7 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
       $user->sponsorship()->attach($sponsorshipId, [
         'date_end' => $dateEnd,
       ]);
-      dd("nessuna sponsorizzazione precedente" . $dateEnd);
+      // dd("nessuna sponsorizzazione precedente" . $dateEnd);
     } else {
       //scadenza ultima sponsorizzazione
       $dateEndLastSponsorship = $user->sponsorship->last()->pivot->date_end;
@@ -116,7 +116,7 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
       $user->sponsorship()->attach($sponsorshipId, [
         'date_end' => $lastDateEnd,
       ]);
-      dd("una o + sponsorizzazioni precedenti" . $lastDateEnd . " Dati trans. " );
+      // dd("una o + sponsorizzazioni precedenti" . $lastDateEnd . " Dati trans. " );
     }
     return view('/app/purchaseconfirmed', ['sponsorship' => $sponsorship]);
   } else {
