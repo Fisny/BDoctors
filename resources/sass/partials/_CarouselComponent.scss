@@ -31,13 +31,17 @@
                             color: #ffff;
                             text-align: center;
                         }
-                        .specialization-item {
-                            color: #ffff;
-                            padding: 5px;
-                            background-color: $strongblue;
-                            border-radius: 5px;
-                            margin: 0 auto;
+                        .specialization-badges{
+                            display: flex;
+                            .specialization-item {
+                                color: #ffff;
+                                padding: 5px;
+                                background-color: $strongblue;
+                                border-radius: 5px;
+                                margin: 10px;
+                            }
                         }
+                        
                     }
                 }
                 .sponsored-doctor-info {
