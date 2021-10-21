@@ -101,7 +101,6 @@
             }
 
             a{
-                
                 transition: var(--transition-speed);
             }
             
@@ -128,7 +127,7 @@
             }
 
             i{
-                color: turquoise;
+                /* color: turquoise; */
                 font-size: 12px;
             }
 
@@ -188,6 +187,12 @@
                     transition: var(--transition-speed);
                     border-left: 0px;
                 }
+                .contain{
+                background-color: #2c292f;
+                width: 100%;
+                margin-top: 50px;
+                padding-left: 0px;
+            }
             }
 
     </style>
