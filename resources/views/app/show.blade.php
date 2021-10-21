@@ -2,7 +2,10 @@
 
 @section('content')
     <div class="container">
-
+        @php
+                    use Illuminate\Support\Facades\Auth;
+                    $loggedUser = Auth::user();
+        @endphp
         {{-- SEZIONE PRINCIPALE - PROFILO --}}
         <div class="container portfolio animate__animated animate__bounceInDown">
             <div class="row">
@@ -57,8 +60,16 @@
                             </h6>
                             <rating-static :vote="{{ $avgVote }}"></rating-static>
 
-                            <span class="minor-text"><i><i class="bi minibi bi-broadcast"></i> Profilo aggiornato
-                                {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $user->updated_at)->locale('it_IT')->diffForHumans() }}</i></span>
+                            <span class="minor-text"><i class="bi minibi bi-broadcast"></i> Profilo aggiornato
+                                {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $user->updated_at)->locale('it_IT')->diffForHumans() }}</span>
+                            
+                            @if ($loggedUser == $user)
+                                <div class="my-1 d-flex align-items-center" style="font-size:14px">
+                                    <a class="d-flex align-items-center" href="{{url('users/'.$user->id.'/edit')}}">
+                                        <button class="btn btn-primary"><i class="bi bi-pencil-square mr-2" style="font-size:14px"></i> Modifica Profilo</button>
+                                    </a>
+                                </div>
+                            @endif
 
                             @if ($user->cv != null)
                                 <h5><a href="{{ asset('storage/' . $user->cv) }}" target="_blank"
@@ -89,10 +100,7 @@
         {{-- Invia Recensioni --}}
         <div class="container review-container animate__animated animate__fadeIn">
             <div class="review-container-inside">
-                @php
-                use Illuminate\Support\Facades\Auth;
-                $loggedUser = Auth::user();
-            @endphp
+                
             @if ($loggedUser != $user)
                 <div class="review">
                     <new-review></new-review>
