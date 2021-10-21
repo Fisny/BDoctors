@@ -76,7 +76,8 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
   //utente logato
   $user = User::find(Auth::id());
   //flag verifica sponsorizzazione attiva
-  $sponsorshipActiv = ($user::has('sponsorship')->get())->count();
+  $sponsorshipActiv = $user->sponsorship->count() ;
+
 
 
 
