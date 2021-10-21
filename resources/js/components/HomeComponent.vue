@@ -1,4 +1,5 @@
 <template>
+<div  v-if="mounted">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -12,28 +13,6 @@
           </h2>
         </div>
 
-        <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE FIGO. -->
-        <!-- <div class="filter-container">
-      <select
-        class="form-control animate__animated animate__wobble"
-        data-live-search="true"
-        name="template"
-        v-model="selected"
-        ref="stateSelect"
-        id="stateSelect"
-        onchange="location = /search/ + this.value;"
-      >
-        <option class="option-starter">Seleziona una Specializzazione</option>
-        <option
-          v-for="specialization in specializations"
-          v-bind:value="specialization.name"
-          :key="specialization.id"
-        >
-          {{ specialization.name }}
-        </option>
-      </select>
-
-    </div> -->
 
         <!-- SEZIONE DI RICERCA MENO FIGA -->
         <div class="filter-container">
@@ -58,34 +37,13 @@
       </div>
     </div>
 
-    <!-- <div class="sponsored-doctor-title">
-      <h4>ELENCO DEI MEDICI PREMIUM</h4>
-    </div>
 
-    <div class="sponsored-doctor-container">
-      <div v-for="doctor in doctors" :key="doctor.id" class="sponsored-doctor">
-        <div class="card">
-          <h5 class="card-header">
-            {{ doctor.qualification }} {{ doctor.name }} {{ doctor.lastname }}
-          </h5>
-          <div class="card-body">
-            <div
-              v-for="specialization in doctor.specialization"
-              :key="specialization.id"
-              class="test"
-            >
-              <h5 class="card-title">
-                Specialista in {{ specialization.name }}
-              </h5>
-            </div>
-            <a :href="'/users/' + doctor.id" class="btn btn-primary"
-              >Dettagli</a
-            >
-          </div>
-        </div>
-      </div>
-    </div> -->
   </div>
+
+
+
+</div>
+
 </template>
 
 <script>
@@ -103,6 +61,7 @@ export default {
       specializations: [],
       number: 0,
       arrayLength: 0,
+      mounted:false,
     };
   },
   updated() {
@@ -115,6 +74,7 @@ export default {
         .get("http://127.0.0.1:8000/api/specializations/")
         .then((response) => {
           this.specializations = response.data;
+          // this.mounted = true;
         });
     },
   },
