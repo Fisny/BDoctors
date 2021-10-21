@@ -115,7 +115,7 @@
             .fa-arrow-right:hover{
                 padding-left: 30px;
             }
-
+            
             .white{
                 color: white;
                 
