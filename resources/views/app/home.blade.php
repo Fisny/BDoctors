@@ -8,7 +8,7 @@
 </div>
 
 <div class="main-content section">
-    <div class="container-minigames container section">
+    <div class="container-content-home container section">
         <div class="row align-items-center">
 
 
@@ -23,8 +23,8 @@
             </div>
 
             <div class=" col-6 col-sm-4 col-md-4 col-lg-5  ">
-                <div class="box-mini-games">
-                    <div class="box-mini-games-inner">
+                <div class="box-img-home">
+                    <div class="box-img-home-inner">
                         <img src="/images/itemHome.jpg" alt="returnal-small-game">
                     </div>
                 </div>
@@ -35,12 +35,12 @@
         </div>
     </div>
 
-    <div class="container-minigames container">
+    <div class="container-content-home container">
         <div class="row align-items-center">
 
             <div class=" col-6 col-sm-4 col-md-4 col-lg-5  ">
-                <div class="box-mini-games">
-                    <div class="box-mini-games-inner">
+                <div class="box-img-home">
+                    <div class="box-img-home-inner">
                         <img src="/images/itemHome.jpg" alt="returnal-small-game">
                     </div>
                 </div>

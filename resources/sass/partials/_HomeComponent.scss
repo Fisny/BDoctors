@@ -119,7 +119,7 @@
 .main-content{
     
 
-    .box-mini-games{
+    .box-img-home{
         border-radius: 20px;
         border: 2px #fff solid;
         overflow: hidden;
@@ -127,17 +127,17 @@
         cursor: pointer;
     }
     
-    .box-mini-games:hover{
+    .box-img-home:hover{
         border: 2px rgb(0, 0, 255, 0.5) solid;
     }
     
-    .box-mini-games-inner{
+    .box-img-home-inner{
         border: 2px #fff solid;
         overflow: hidden;
         border-radius: 20px;
     }
     
-    .box-mini-games-inner>img{
+    .box-img-home-inner>img{
         width: 100%;
     }
     
