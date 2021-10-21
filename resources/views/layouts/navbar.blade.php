@@ -46,7 +46,7 @@
             <li class="navbardi-item">
                 <a href="{{ url('/dashboard_home') }}" class="navbardi-link">
                 <i class="fas fa-clinic-medical"></i>
-                <span class="link-text"><b>Home</b></span>
+                <span class="link-text"><b>Dashboard</b></span>
                 </a>
             </li>
 
@@ -63,13 +63,18 @@
                 <span class="link-text"><b>About us</b></span>
                 </a>
             </li>
-
+            @php
+            use Illuminate\Support\Facades\Auth;
+            $loggedUser = Auth::id();
+            @endphp
+            @if (Auth::check())
             <li class="navbardi-item">
-                <a href="{{ route('home') }}" class="navbardi-link">
-                <i class="fas fa-info"></i>
-                <span class="link-text"><b>About us</b></span>
+                <a href="{{ url('show/'.$loggedUser) }}" class="navbardi-link">
+                <i class="fas fa-user"></i>
+                <span class="link-text"><b>Profilo</b></span>
                 </a>
             </li>
+            @endif
 
 
 
