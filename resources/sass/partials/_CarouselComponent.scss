@@ -33,6 +33,7 @@
                         }
                         .specialization-badges{
                             display: flex;
+                            flex-wrap: wrap;
                             .specialization-item {
                                 color: #ffff;
                                 padding: 5px;
