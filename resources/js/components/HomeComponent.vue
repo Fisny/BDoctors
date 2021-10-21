@@ -1,5 +1,4 @@
 <template>
-
   <div v-if="mounted">
     <div class="container">
       <div class="row">
@@ -116,10 +115,10 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-
-  <img src="https://i.pinimg.com/originals/7f/9b/1e/7f9b1ec18c89928dde13115784165329.jpg" />
-
+          <div class="col-md-6 imgcontainer">
+            <img
+              src="https://i.pinimg.com/originals/7f/9b/1e/7f9b1ec18c89928dde13115784165329.jpg"
+            />
           </div>
         </div>
         <div class="wrapper-button">
@@ -142,7 +141,9 @@
           <div class="col-md-6 imgcontainer">
             <div class="row">
               <div class="col-md-12">
-           <img src="https://i.pinimg.com/originals/61/c7/a2/61c7a28bbb12ee7d75064e9dba23305e.png" />
+                <img
+                  src="https://i.pinimg.com/originals/61/c7/a2/61c7a28bbb12ee7d75064e9dba23305e.png"
+                />
               </div>
             </div>
           </div>
@@ -183,7 +184,7 @@ export default {
       specializations: [],
       number: 0,
       arrayLength: 0,
-      mounted:false,
+      mounted: false,
       doctors: [],
       reviews: [],
       number: 0,
@@ -196,7 +197,6 @@ export default {
         .get("http://127.0.0.1:8000/api/specializations/")
         .then((response) => {
           this.specializations = response.data;
-          
         });
     },
     getDoctors() {
