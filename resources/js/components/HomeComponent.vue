@@ -56,12 +56,6 @@
           </select>
         </div>
       </div>
-      <div class="col-12">
-        <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
-        <div>
-          <carousel-component />
-        </div>
-      </div>
     </div>
 
     <!-- <div class="sponsored-doctor-title">
