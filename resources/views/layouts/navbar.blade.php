@@ -65,7 +65,7 @@
             </li>
 
             <li class="navbardi-item">
-                <a href="{{ route('users.show') }}" class="navbardi-link">
+                <a href="{{ route('home') }}" class="navbardi-link">
                 <i class="fas fa-info"></i>
                 <span class="link-text"><b>About us</b></span>
                 </a>
