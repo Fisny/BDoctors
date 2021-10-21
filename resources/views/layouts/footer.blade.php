@@ -178,7 +178,7 @@
             
             .cp{
                 margin-top: 15px;
-                margin-bottom: 120px;
+                margin-bottom: 95px;
                 text-align: center;
             }
 
