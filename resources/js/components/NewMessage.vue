@@ -7,7 +7,7 @@
       data-toggle="modal"
       data-target="#exampleModal"
     >
-      Manda un messaggio
+    Contatta 
     </button>
     <div>
       <div

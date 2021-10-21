@@ -75,9 +75,10 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
   $sponsorship = Sponsorship::find($sponsorshipId);
   //utente logato
   $user = User::find(Auth::id());
+  
   //flag verifica sponsorizzazione attiva
-  $sponsorshipActiv = ($user::has('sponsorship')->get())->count();
-
+  // $sponsorshipActiv = ($user::has('sponsorship')->get())->count();
+  $sponsorshipActiv = $user->sponsorship->count() ;
 
 
 
@@ -101,7 +102,7 @@ Route::post('/payment', function (Request $request, Gateway $gateway) {
   // $transaction = $result->transaction;
 
 
-  if ($result->success) {
+  if ($result->success) { 
     if ($sponsorshipActiv == 0) {
       $dateEnd = Carbon::now()->addHour($sponsorship->duration);
       $user->sponsorship()->attach($sponsorshipId, [
@@ -134,7 +135,7 @@ Route::get('/storic', function () {
   $user = User::find(Auth::id());
   $sponsorships = $user->sponsorship;
   // dd($sponsorship);
-  $Sponsorships = $user->sponsorship->last()->pivot->take(4)->get()->reverse();
+  // $Sponsorships = $user->sponsorship->last()->pivot->take(4)->get()->reverse();
   $indexLastSponsorship= (($user->sponsorship->count())-1);
   if($indexLastSponsorship>=5){
     $startIndex= $indexLastSponsorship -5;

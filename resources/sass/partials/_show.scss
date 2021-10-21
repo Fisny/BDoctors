@@ -1,76 +1,161 @@
-// body{
-//     background-color: $celeste;
-// }
+.container {
+    // SEZIONE PRINCIPALE - PROFILO DEL MEDICO
+    .portfolio {
+        padding: 6%;
+        text-align: center;
+        border-radius: 8px;
+        .heading {
+            background: #fff;
+            padding: 1%;
+            display: flex;
+            text-align: left;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            box-shadow: 0px 0px 4px 0px #545b62;
+            .heading-title {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .heading img {
+            width: 10%;
+        }
+        .bio-info {
+            padding: 5%;
+            background: #fff;
+            box-shadow: 0px 0px 4px 0px #b0b3b7;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+        .imgcontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .name {
+            font-family: "Charmonman", cursive;
+            font-weight: 600;
+        }
+        .rating {
+            color: gold;
+            font-size: 20px;
+        }
+        .bio-image {
+            text-align: center;
+        }
+        .bio-image img {
+            width: 200px;
+            height: 200px;
+            margin: 0;
+            padding: 0;
+            border-radius: 50%;
+        }
+        .bio-content {
+            text-align: left;
+        }
 
-
-.show-column{
-    background-color: white;
-    border: 2px solid $medium2;
-    border-radius: 10px;
-    margin-bottom: 10px;
-
-
-    .profile_picture{
-        max-width: 150px;
-        max-height:150px;
-        border: 2px solid $medium2;
+        .bio-content p {
+            font-weight: 600;
+            font-size: 30px;
+        }
     }
 
-    .rating{
-        color: gold;
-        font-size: 20px;
+    // SEZIONE OPERATIVA
+    // Recensioni
+    .review-container {
+        padding: 0 6%;
+
+        .review-container-inside {
+            box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            background-color: rgb(255, 255, 255);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            .no-auto-review {
+                text-align: center;
+            }
+            .box_review {
+                .box-review-headline {
+                    background-color: $strongblue;
+                    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+                    color: #ffff;
+                    text-align: center;
+                    padding: 10px;
+                    border-radius: 8px;
+                    h4 {
+                        margin-bottom: 0;
+                    }
+                }
+                .form-group-container {
+                    form {
+                        .form-group {
+                            margin: 10px 0;
+                            display: flex;
+                            align-items: center;
+                            .usernameReviewer {
+                                margin-bottom: 0;
+                            }
+                            .username-input {
+                                width: 80%;
+                                margin: 0 auto;
+                            }
+                            .ratingReviewer {
+                                margin-bottom: 0;
+                                margin-right: 30px;
+                            }
+                            .rating {
+                                color: gold;
+                                font-size: 20px;
+                            }
+                        }
+                        .review-txt {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            textarea {
+                                width: 100%;
+                                border: 1px solid lightgray;
+                                border-radius: 4px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
-}
-
-// .contacts{
-//     margin-right: 10px;
-// }
-.modal-title{
-    color: black;
-}
-
-.minor-text{
-    font-size: 14px;
-    font-style: oblique;
-    color: $tiffany;
-}
-.reviews{
-
-
-    .box_review{
-        width: 100%;
+    .bdoctor-button {
+        background-color: #05a95c;
+        border: none;
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    
-    .new_review{
-        height: 50px;
-        width: 100%;
-        border: 1px solid $medium2 ;
-        transition: all 0.5s ease;
+    .minibi {
+        color: rgb(213, 64, 111);
     }
-    
-    .new_review:focus{
-        border: 1px solid $medium2 ;
-        height: 200px;
+    .review-list-container {
+        margin-top: 20px;
+        padding: 2% 6%;
+        .card-review {
+            box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ffff;
+            transition: 0.5s ease-in;
+            &:hover {
+                transform: scale(1.05);
+                transition: 0.5s ease-out;
+            }
+        }
+        i {
+            color: goldenrod;
+        }
     }
-    
-}
-
-.bdoctor-button{
-    background-color: $tiffany;
-    border-color: $tiffany;
-}
-
-.card-review{
-    padding-top: 10px;
-    border-top: 1px solid #68d8d6;
-}
-
-.click-border{
-    border: 2px solid black;
-};
-
-.specialization-badge{
-    background-color: $strongblue;
-    color: white;
-    font-size: 16px;
 }
