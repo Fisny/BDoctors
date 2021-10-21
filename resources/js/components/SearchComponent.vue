@@ -7,7 +7,7 @@
       <div class="custom-line"></div>
     </div>
 
-    <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE. -->
+        <!-- SEZIONE DI RICERCA PER SPECIALIZZAZIONE. -->
     <div class="filter-container">
       <select
         class="form-control"
@@ -26,12 +26,9 @@
           {{ specialization.name }}
         </option>
       </select>
-      <!-- <a :href="'/search/' + selected" class="search-button"
-        >Effettua la Ricerca</a
-      > -->
     </div>
 
-    <h5>Migliora la tua ricerca grazie ai filtri<span>.</span></h5>
+  <h5>Migliora la tua ricerca grazie ai filtri<span>.</span></h5>
 
     <div class="filter-item-container">
       <div class="filter-item">
@@ -40,7 +37,7 @@
           <option value="" disabled selected>
             Filtra per indice di gradimento
           </option>
-          <option v-for="star in stars" v-bind:key="star[0]">
+          <option v-for="star in stars" v-bind:value="star[0]">
             {{ star[1] }}
           </option>
         </select>
@@ -56,7 +53,7 @@
           <option value="" disabled selected>
             Filtra per numero di recensioni
           </option>
-          <option v-for="review in reviewRange" v-bind:key="review[0]">
+          <option v-for="review in reviewRange" v-bind:value="review[0]">
             {{ review[1] }}
           </option>
         </select>
@@ -69,43 +66,39 @@
     >
       <h6>Filtra</h6>
     </div>
-
-    <div
-      class="sponsored-doctor-container animate__animated animate__fadeInDown"
-    >
-      <div v-for="doctor in doctors" :key="doctor.id" class="sponsored-doctor">
-        <div class="premium-card">
-          <div class="premium-name">
-            {{ doctor.qualification }} {{ doctor.name }} {{ doctor.lastname }}
-          </div>
-          <div class="premium-card-body">
-            <div class="row">
+ <div class="sponsored-doctor-container animate__animated animate__fadeInDown">
+    <!-- STAMPA DEI MEDICI (ORDINE PER SPONSORIZZAZIONE ATTIVA) -->
+    <div v-for="doctor in doctors" :key="doctor.id" class="test">
+      <div class="premium-card">
+        <h5 class="premium-name">
+          {{ doctor.qualification }} {{ doctor.name }} {{ doctor.lastname }}
+        </h5>
+        <div class="premium-card-body">
+          <div class="row">
               <div class="col-xs-12 col-md-6 specializations">
                 <div
-                  v-for="specialization in doctor.specialization"
-                  :key="specialization.id"
-                  class="specialization-item-v2"
-                >
-                  {{ specialization.name }}
-                </div>
-              </div>
-              <div class="col-xs-12 col-md-6 details">
-                RATING
-                <rating-static
-                  class="doctors-stars"
-                  :vote="avgVote(doctor)"
-                ></rating-static>
-              </div>
-            </div>
-            <a :href="'/show/' + doctor.id" class="sponsored-doctor-info"
-              ><i class="bi bi-info-circle"></i
-            ></a>
+            v-for="specialization in doctor.specialization"
+            :key="specialization.id"
+            class="specialization-item-v2"
+          >
+         {{ specialization.name }}
           </div>
+          </div>
+                      <div class="col-xs-12 col-md-6 details">
+                <a :href="'/users/' + doctor.id" class="btn btn-primary"
+            >Visita il profilo</a
+          >
+              </div>
+      
         </div>
+          </div>
+      </div>
       </div>
     </div>
   </div>
+
 </template>
+
 
 <script>
 export default {
@@ -150,11 +143,8 @@ export default {
   props: ["specializationId"],
   methods: {
     searchStringInArray(str, strArray) {
-      console.log("prova");
       for (var j = 0; j < strArray.length; j++) {
-        console.log("funzione " + strArray[j].name + " " + strArray[j].id);
         if (strArray[j].name == str) {
-          console.log("risultato " + strArray[j].id);
           return strArray[j].id;
         }
       }
@@ -199,7 +189,6 @@ export default {
     },
     // Ricerca medici per specializzazione
     startFilter: function (id) {
-      console.log("idX " + id);
       axios
         .get("http://127.0.0.1:8000/api/doctors/filter/" + id)
         .then((response) => {
@@ -215,43 +204,33 @@ export default {
     // Filtro per media voto
     starFilter: function (star) {
       this.doctorsTmp = [];
-      console.log(this.doctorsBackup);
       this.doctorsBackup.forEach((doctor) => {
         this.somma = 0;
         this.mediaStars = 0;
         doctor.reviews.forEach((review) => {
           this.somma += review.vote;
         });
-        console.log("somma " + this.somma);
-        console.log("media " + this.mediaStars);
+
         this.arrayLengthTmp = doctor.reviews.length;
-        console.log("arrayL " + this.arrayLengthTmp);
         this.mediaStars = this.somma / this.arrayLengthTmp;
-        console.log("media" + this.mediaStars);
         if (this.mediaStars >= star) {
-          console.log("salva");
           this.doctorsTmp.push(doctor);
         }
       });
       this.doctors = this.doctorsTmp;
-      // console.log(this.doctorsTmp[0]);
     },
     // Filtro per numero di recensioni
     reviewFilter: function (review) {
-      console.log(this.doctors);
       this.nReview = 0;
       this.doctorsTmp = [];
       this.doctors.forEach((doctor) => {
         this.nReview = doctor.reviews.length;
 
         if (this.nReview >= review) {
-          console.log("salva");
           this.doctorsTmp.push(doctor);
         }
       });
-      console.log(this.doctorsTmp);
       this.doctors = this.doctorsTmp;
-      // console.log(this.doctorsTmp[0]);
     },
   },
 };
@@ -260,3 +239,4 @@ export default {
 <style lang="sass" scoped>
 @import '../../sass/app-vuejs.scss'
 </style>
+

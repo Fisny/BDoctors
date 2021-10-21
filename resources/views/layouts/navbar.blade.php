@@ -215,7 +215,9 @@
                 letter-spacing: 0.3ch;
                 width: 100%;
             }
-            
+            a.navbardi-link{
+                text-decoration: none;
+            }
             .logo svg {
                 transform: rotate(0deg);
                 transition: var(--transition-speed);
