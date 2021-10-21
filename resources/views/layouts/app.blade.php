@@ -101,6 +101,7 @@
         <main class="py-4">
             @extends('layouts.navbardi')
             @yield('content') 
+            @extends('layouts.footer')
         </main>
     </div>
 
