@@ -85,8 +85,11 @@
         </nav>
 
         <style>
+
+           
             
             :root {
+                text-decoration: none;
                 font-size: 16px;
                 font-family: 'Open Sans';
                 --text-primary: #b6b6b6;
@@ -96,6 +99,10 @@
                 --transition-speed: 600ms;
             }
             
+
+            a{
+                text-decoration: none;
+            }
             .navbardi-logo{
                 width: 60%;
             }
@@ -173,6 +180,7 @@
             .link-text {
                 display: none;
                 margin-left: 1rem;
+                text-decoration: none;
             }
             
             .navbardi-link svg {
@@ -184,7 +192,7 @@
 
             /* hover */
             .fa-primary {
-                color: #00FFBB;
+                color: #00aeff;
             }
             
             .fa-secondary {
@@ -264,6 +272,7 @@
             
                 .navbardi:hover .link-text {
                 display: inline;
+                text-decoration: none;
                 }
             
                 .navbardi:hover .logo svg
