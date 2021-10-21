@@ -64,6 +64,15 @@
                 </a>
             </li>
 
+            <li class="navbardi-item">
+                <a href="{{ route('users.show') }}" class="navbardi-link">
+                <i class="fas fa-info"></i>
+                <span class="link-text"><b>About us</b></span>
+                </a>
+            </li>
+
+
+
             <li class="navbardi-item" id="themeButton">
                 
             </li>
@@ -77,8 +86,8 @@
                 font-family: 'Open Sans';
                 --text-primary: #b6b6b6;
                 --text-secondary: #ececec;
-                --bg-primary: #00FFBB;
-                --bg-secondary: #00d39b;
+                --bg-primary: rgb(0, 77, 145);
+                --bg-secondary: #0078e0;
                 --transition-speed: 600ms;
             }
             
