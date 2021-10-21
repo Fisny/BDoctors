@@ -33,17 +33,16 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/info') }}">About</a>
+                <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url('/') }}">BDOCTORS</a>
+                    </li>
+                </ul>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
                     aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarsExample05">
-                    <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{ url('/') }}">BDOCTORS</a>
-                        </li>
-                    </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -101,6 +100,7 @@
         </nav>
 
         <main class="py-4">
+            @extends('layouts.navbar')
             @yield('content')
         </main>
 
