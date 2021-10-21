@@ -137,14 +137,24 @@ Route::get('/storic', function () {
   // dd($sponsorship);
   // $Sponsorships = $user->sponsorship->last()->pivot->take(4)->get()->reverse();
   $indexLastSponsorship= (($user->sponsorship->count())-1);
-  if($indexLastSponsorship>=5){
-    $startIndex= $indexLastSponsorship -5;
+  // dd($indexLastSponsorship);
+
+  if($indexLastSponsorship>0){
+    $lastSponsorshioDuration= $user->sponsorship[$indexLastSponsorship]->duration;
+    $lastSponsorshioDateEnd=  $user->sponsorship[$indexLastSponsorship]->pivot->date_end;
+    $lastSponsorshioName = $user->sponsorship[$indexLastSponsorship]->name;
+    $startIndex = 0;
+    // $startIndex= $indexLastSponsorship -5;
+    // $indexLastSponsorship--;
   } else {
     $startIndex = 0;
+    $lastSponsorshioDuration= "Nessuna sponsorizzazione";
+    $lastSponsorshioDateEnd= "";
+    $lastSponsorshioName = "";
   }
   // dd($startIndex);
 
-  return view('app/storic', compact("user","indexLastSponsorship", "startIndex"));
+  return view('app/storic', compact("user","indexLastSponsorship", "startIndex", "lastSponsorshioDuration","lastSponsorshioDateEnd","lastSponsorshioName"));
 })->name('storic');
 
 
