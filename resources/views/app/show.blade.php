@@ -29,13 +29,13 @@
             $loggedUser= Auth::user();
             @endphp
 
-            @if ($user->id == $loggedUser->id)
+            
                 <div class="my-1">
                     <a href="{{url('users/'.$user->id.'/edit')}}">
                         <button class="btn btn-secondary"><i class="bi bi-pencil-square mr-2"></i> Modifica Profilo</button>
                     </a>
                 </div>
-            @endif
+           
 
             <h5 class="pt-2">Contatti</h5>
             <div>
