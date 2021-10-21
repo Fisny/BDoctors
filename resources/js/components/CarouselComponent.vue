@@ -28,8 +28,8 @@
         </div>
       </div>
     </div> -->
-    <div class="row row-fade-out">
-      <div class="scroll">
+    <div class="row row-fade-out flex-grow-1">
+      <div class="scroll flex-grow-1">
         <div
           v-for="doctor in doctors"
           :key="doctor.id"

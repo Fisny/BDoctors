@@ -7,7 +7,7 @@
       data-toggle="modal"
       data-target="#exampleModal"
     >
-      Manda un messaggio
+      <i class="bi bi-chat-left-dots mr-2"></i> Manda un messaggio
     </button>
     <div>
       <div
