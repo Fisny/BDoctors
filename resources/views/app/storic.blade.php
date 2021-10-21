@@ -9,11 +9,11 @@
 
         <div class="last-sponsorship-container">
             <div class="last-sponsorship-item">
-                <h3>Ultima sponsorizzazione acquistata: {{ $user->sponsorship[$indexLastSponsorship]->name }}</h3>
+                <h3>Ultima sponsorizzazione acquistata: {{ $lastSponsorshioName }}</h3>
                 <h6>Dettagli:</h6>
                 <ul>
-                    <li>Durata: {{ $user->sponsorship[$indexLastSponsorship]->duration }}</li>
-                    <li>Data di scadenza: {{ $user->sponsorship[$indexLastSponsorship]->pivot->date_end }}</li>
+                    <li>Durata: {{$lastSponsorshioDuration  }}</li>
+                    <li>Data di scadenza: {{ $lastSponsorshioDateEnd }}</li>
                 </ul>
                 <div class="comeback-button-v2">
                     <h6><a href="{{ route('sponsorship') }}">Acquista una nuova sponsorizzazione</a></h6>
@@ -23,7 +23,7 @@
             {{-- Restituisce le ultime quattro sponsorizzazioni in ordine inverso --}}
             <div class="last-five">
                 <h3>Le tue ultime sponsorizzazioni:</h3>
-                @for ($i = $indexLastSponsorship - 1; $i >= $startIndex; $i--)
+                @for ($i = $indexLastSponsorship-1 ; $i >= $startIndex; $i--)
                     <div class="last-five-item">
                         <h4>Piano 
                            @if ($user->sponsorship[$i]->id === 1) 
