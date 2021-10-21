@@ -41,7 +41,7 @@
 
 
         {{-- DEVELOPERS LIST --}}
-        <div class="developer-container animate__animated animate__zoomInLeft">
+        <div class="developer-container">
             <div class="developer-card">
                 <div class="content">
                     <h4>Carlo Durand</h4>

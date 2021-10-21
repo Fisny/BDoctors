@@ -31,7 +31,7 @@
                             <a href="{{ url('/info') }}" class="white">I nostri Contributors <i class="fas fa-arrow-right"></i></a>
                         </div>
                         
-                        <p>BDoctors offre una vasta gamma di professionisti del settore.</p>
+                        <p>BDoctors offre una vasta gamma<br>di professionisti del settore.</p>
                     </div>
 
                     <!-- mid -->
@@ -45,14 +45,14 @@
 
                     <!-- rightt -->
                     <div class="form col-6 col-md-4 col-12"> 
-                        <h1>Conttattaci</h1>
+                        <h1>Contatti</h1>
                         <p><i class="fas fa-map-marker-alt"></i> Piazzale Giovanni dalle Bande</p>
                         <p><i class="fas fa-road"></i> Nere, 9 20146, Milano</p>
                         <p><i class="fas fa-phone-alt"></i> 0240031288</p>
                         <p><i class="far fa-envelope"></i> Boolean Careers</p>
                     </div>
 
-                    <p class="cp">Copyright © BDOCTORS™ 2021</p>
+                    <p> <div class="footer-custom">Made with <i class="bi bi-heart-fill"></i> by <a href="/info" class="siamounasquadrafortissimi">Team3</a><br>Copyright © BDOCTORS™ 2021</div></p>
 
                 </div>
             </div>
@@ -69,6 +69,7 @@
                 background-color: #2c292f;
                 width: 100%;
                 margin-top: 50px;
+                padding-left: 250px;
             }
             
             .immagine-footer{
