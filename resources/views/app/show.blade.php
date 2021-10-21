@@ -4,7 +4,7 @@
     <div class="container">
 
         {{-- SEZIONE PRINCIPALE - PROFILO --}}
-        <div class="container portfolio animate__animated animate__bounceInDown">
+        <div class="container portfolio">
             <div class="row">
                 <div class="col-md-12">
                     <div class="heading">
