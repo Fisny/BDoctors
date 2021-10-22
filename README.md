@@ -1,4 +1,4 @@
-<p align="center"><img src="img/bdoctors-screenshot.png" width=""></p>
+<p align="center"><img src="public/img/bdoctors-screenshot.png" width=""></p>
 
 ## Che cos'è BDoctors?
 
@@ -26,6 +26,8 @@ Ad esempio come lavorare in un team di sviluppatori!
     <li><b>Simone Di Meglio</b> (<a href="https://github.com/simonedimeglio">Github</a>)(<a href="https://www.linkedin.com/in/simonedimeglio/">Linkedin</a>)</li>
     <li><b>Valentina Varcarcell</b> (<a href="https://github.com/vvalcarcell">Github</a>)(<a href="https://www.linkedin.com/in/valentina-federica-valcarcell-palma/">Linkedin</a>)</li>
 </ul>
+
+
 ## Tecnologie utilizzate
 
 <ul>
