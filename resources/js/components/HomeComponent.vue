@@ -21,7 +21,7 @@
               v-model="selected"
               onchange="location = /search/ + this.value;"
             >
-              <option value="" disabled selected>
+              <option value="Seleziona una Specializzazione" disabled selected>
                 Seleziona una Specializzazione
               </option>
               <option
