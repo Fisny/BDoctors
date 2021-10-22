@@ -129,9 +129,9 @@ export default {
         [5, "Cinque stelle"],
       ],
       reviewRange: [
-        [0, "Nessuna recensione"],
+        [0, "Nessun filtro recensione"],
         [2, "Oltre due recensioni"],
-        [3, "Oltre tre recensioni"],
+        [4, "Oltre tre recensioni"],
         [6, "Oltre sei recensioni"],
       ],
       mediaStars: 0,
