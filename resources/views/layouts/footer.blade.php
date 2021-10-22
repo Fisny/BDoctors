@@ -35,7 +35,7 @@
 
                     <!-- mid -->
                     <div class="form col-6 col-md-4 col-12">
-                        <h1>Seguici</h1>
+                        <h1 class="h-footer">Seguici</h1>
                         <p><a href="https://www.facebook.com/boolean.careers" class="white"><i class="fab fa-facebook-square"></i> Facebook</a></p>
                         <p><a href="https://www.linkedin.com/school/boolean-careers/" class="white"><i class="fab fa-linkedin"></i> Linkedin</a></p>
                         <p><a href="https://www.instagram.com/boolean.careers/" class="white"><i class="fab fa-instagram"></i> Instagram</a></p>
@@ -44,7 +44,7 @@
 
                     <!-- rightt -->
                     <div class="form col-6 col-md-4 col-12"> 
-                        <h1>Contatti</h1>
+                        <h1 class="h-footer">Contatti</h1>
                         <p><i class="fas fa-map-marker-alt"></i> Piazzale Giovanni dalle Bande</p>
                         <p><i class="fas fa-road"></i> Nere, 9 20146, Milano</p>
                         <p><i class="fas fa-phone-alt"></i> 0240031288</p>
@@ -89,12 +89,12 @@
                 
             }
 
-            h1{
+            .h-footer{
                 margin-bottom: 20px;
                 transition: var(--transition-speed);
             }
             
-            h1:hover{
+            .h-footer:hover{
                 font-size: 42px;
                 color: #0078e0;
             }
@@ -180,6 +180,7 @@
                 text-align: center;
             }
 
+        
             @media only screen and (max-width: 596px) {
                 .immagine, .form {
                     text-align: center;
@@ -193,6 +194,7 @@
                 padding-left: 0px;
             }
             }
+        
 
     </style>
 
