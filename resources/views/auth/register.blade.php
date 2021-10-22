@@ -96,13 +96,7 @@
                             <label for="specializations" class="col-md-4 col-form-label text-md-right">{{ __('Specializations') }}</label>
 
                             <div class="form-check col-md-6 mx-3 mt-2">
-                                <!-- <input id="specializations" type="text" class="form-control @error('specializations') is-invalid @enderror" name="specializations" value="{{ old('specializations') }}" required autocomplete="specializations" autofocus>
-
-                                @error('specializations')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror -->
+                              
 
 
                                 @foreach ($specializations as $specialization)
