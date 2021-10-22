@@ -104,7 +104,7 @@ export default {
   data() {
     return {
       newMessage: {
-        user_id: window.location.pathname.replace("/users/", ""),
+        user_id: window.location.pathname.replace("/show/", ""),
         name: null,
         lastname: null,
         text: null,
@@ -121,7 +121,7 @@ export default {
       // })
 
       this.newReview = {
-        user_id: window.location.pathname.replace("/users/", ""),
+        user_id: window.location.pathname.replace("/show/", ""),
         name: null,
         lastname: null,
         text: null,
