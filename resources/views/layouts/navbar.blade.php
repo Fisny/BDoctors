@@ -39,12 +39,19 @@
                 </a>
             </li>
 
-            <li class="navbardi-item">
-                <a href="{{ url('/sponsorship') }}" class="navbardi-link">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="link-text"><b>Shop</b></span>
-                </a>
-            </li>
+            @php
+                use Illuminate\Support\Facades\Auth;
+                $loggedUser = Auth::id();
+            @endphp
+            @if (Auth::check())
+                <li class="navbardi-item">
+                    <a href="{{ url('/sponsorship') }}" class="navbardi-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="link-text"><b>Shop</b></span>
+                    </a>
+                </li>
+            @endif
+            
 
             <li class="navbardi-item">
                 <a href="{{ url('/info') }}" class="navbardi-link">
@@ -52,10 +59,7 @@
                     <span class="link-text"><b>About us</b></span>
                 </a>
             </li>
-            @php
-                use Illuminate\Support\Facades\Auth;
-                $loggedUser = Auth::id();
-            @endphp
+          
             @if (Auth::check())
                 <li class="navbardi-item">
                     <a href="{{ url('show/' . $loggedUser) }}" class="navbardi-link">
