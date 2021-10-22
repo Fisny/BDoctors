@@ -13,12 +13,12 @@
             </h2>
           </div>
 
-          <!-- SEZIONE DI RICERCA MENO FIGA -->
+          <!-- SEZIONE DI RICERCA -->
           <div class="filter-container">
             <select
               class="form-control animate__animated animate__headShake"
               name="template"
-              v-model="specializationSelected"
+              v-model="selected"
               onchange="location = /search/ + this.value;"
             >
               <option value="" disabled selected>
