@@ -21,7 +21,7 @@
 
                     <!-- left -->
                     <div class="form col-6 col-md-4 col-12">
-                        <h1>BDoctors</h1>
+                        <h1 class="h-footer">BDoctors</h1>
                         <div>
                             <a href="{{ url('/') }}" class="white">I nostri dottori <i class="fas fa-arrow-right"></i></a>
                         </div>
